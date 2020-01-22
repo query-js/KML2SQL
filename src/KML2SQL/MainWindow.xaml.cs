@@ -5,7 +5,9 @@ using System;
 using System.Diagnostics;
 using System.Globalization;
 using System.IO;
+using System.Threading;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Windows;
 using System.Windows.Input;
 
@@ -30,6 +32,13 @@ namespace KML2SQL
             saveScriptTo.Text = Utility.GetDefaultScriptSaveLoc();
             RestoreSettings();
             Task.Run(UpdateChecker.CheckForNewVersion);
+        }
+
+        private void ResetUploadButton()
+        {
+            CreateDatabaseButton.Content = "Start";
+            if (CreateDatabaseButton.Visibility != Visibility.Visible)
+                CreateDatabaseButton.Visibility = Visibility.Visible;
         }
 
         private void serverNameBox_GotFocus(object sender, RoutedEventArgs e)
@@ -143,6 +152,9 @@ namespace KML2SQL
                     Clipboard.Clear();
                     Clipboard.SetText(script);
                 }
+
+                await Task.Delay(2000);
+                ResetUploadButton();
             }
             catch (Exception ex)
             {
