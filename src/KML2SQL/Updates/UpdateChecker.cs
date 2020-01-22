@@ -3,6 +3,7 @@ using Semver;
 using System;
 using System.Diagnostics;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Reflection;
 using System.Threading.Tasks;
@@ -22,6 +23,7 @@ namespace KML2SQL.Updates
             {
                 settings.UpdateInfo.LastCheckedForUpdates = DateTime.Now;
                 HttpClient client = new HttpClient();
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
                 HttpResponseMessage response = await client.GetAsync(apiUrl);
                 if (response.IsSuccessStatusCode)
                 {
