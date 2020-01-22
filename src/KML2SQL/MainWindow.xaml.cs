@@ -78,7 +78,7 @@ namespace KML2SQL
             sridBox.IsEnabled = false;
         }
 
-        private async void CreateDatabaseButton_Click(object sender, RoutedEventArgs routedArgs)
+        private void CreateDatabaseButton_Click(object sender, RoutedEventArgs routedArgs)
         {
             SaveSettings();
             UploadFile();
