@@ -13,8 +13,8 @@ namespace KML2SQL.Updates
 {
     public static class UpdateChecker
     {
-        private static readonly string apiUrl = "https://api.github.com/repos/query-js/KML2SQL/releases/latest";
-        private static readonly string downloadUrl = "https://github.com/query-js/KML2SQL/releases";
+        private static readonly string apiUrl = $"{Uri.UriSchemeHttps}{Uri.SchemeDelimiter}api.github.com/repos/query-js/KML2SQL/releases/latest";
+        private static readonly string downloadUrl = $"{Uri.UriSchemeHttps}{Uri.SchemeDelimiter}github.com/query-js/KML2SQL/releases";
 
         public static async Task CheckForNewVersion()
         {
@@ -22,8 +22,9 @@ namespace KML2SQL.Updates
             if (CheckForUpdates(settings))
             {
                 settings.UpdateInfo.LastCheckedForUpdates = DateTime.Now;
+
                 HttpClient client = new HttpClient();
-                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
+                client.DefaultRequestHeaders.Add("User-Agent", "KML2SQL.Updater");
                 HttpResponseMessage response = await client.GetAsync(apiUrl);
                 if (response.IsSuccessStatusCode)
                 {
