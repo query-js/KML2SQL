@@ -1,15 +1,9 @@
-﻿using System;
-using System.IO;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Kml2Sql.Mapping;
 using KML2SQL;
-using SharpKml.Base;
-using SharpKml.Dom;
-using SharpKml.Engine;
-using System.Diagnostics;
-using System.Text;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Configuration;
-using Kml2Sql.Mapping;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 
 namespace KML2SQLTests
@@ -23,8 +17,8 @@ namespace KML2SQLTests
         //
         //===================================================================================================
 
-        string _tablePrefix = "Kml2SqlTest";
-        string connectionString;
+        private string _tablePrefix = "Kml2SqlTest";
+        private string connectionString;
 
         [TestInitialize]
         public void InitializeTests()
@@ -41,7 +35,6 @@ namespace KML2SQLTests
                 var uploader = new Uploader(fileName, config);
                 uploader.Upload(connection, true);
             }
-
         }
 
         private Kml2SqlConfig GetConfig(string tableName, PolygonType geoType)
@@ -62,7 +55,6 @@ namespace KML2SQLTests
                 var uploader = new Uploader(fileName, config);
                 uploader.Upload(connection, true);
             }
-
         }
 
         [TestMethod]
@@ -89,7 +81,7 @@ namespace KML2SQLTests
         [TestMethod]
         public void BasicKML()
         {
-            Upload( @"TestData\Basic.kml", "Basic", PolygonType.Geography);
+            Upload(@"TestData\Basic.kml", "Basic", PolygonType.Geography);
         }
 
         [TestMethod]
@@ -116,7 +108,7 @@ namespace KML2SQLTests
         [TestMethod]
         public void SchoolTest()
         {
-            Upload( @"TestData\school.kml", "School", PolygonType.Geography);
+            Upload(@"TestData\school.kml", "School", PolygonType.Geography);
         }
 
         [TestMethod]

@@ -1,12 +1,8 @@
-﻿using System;
-using System.IO;
-using System.Linq;
-using System.Collections.Generic;
-using System.Configuration;
+﻿using System.IO;
 
 namespace KML2SQL
 {
-    static class SettingsPersister
+    internal static class SettingsPersister
     {
         private static object _sync = new object();
         private static string FileName = Path.Combine(Utility.GetApplicationFolder(), "KML2SQL.settings");
@@ -17,8 +13,9 @@ namespace KML2SQL
             {
                 var settingsText = Newtonsoft.Json.JsonConvert.SerializeObject(settings);
                 File.WriteAllText(FileName, settingsText);
-            }            
+            }
         }
+
         public static Settings Retrieve()
         {
             lock (_sync)
@@ -34,11 +31,10 @@ namespace KML2SQL
                     catch
                     {
                         File.Delete(FileName);
-                    }                    
+                    }
                 }
                 return null;
             }
         }
-
     }
 }

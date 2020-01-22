@@ -1,35 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
-using System.Text;
+﻿using Kml2Sql.Mapping;
+using KML2SQL.Updates;
+using Microsoft.Win32;
+using System;
+using System.Diagnostics;
+using System.Globalization;
+using System.IO;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.IO;
-using Microsoft.Win32;
-using System.Diagnostics;
-using Kml2Sql.Mapping;
-using KML2SQL.Updates;
-using System.Globalization;
-using System.Threading;
-using System.Windows;
+
 namespace KML2SQL
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    /// 
+    ///
     public partial class MainWindow : Window
     {
-        Kml2SqlConfig config;
+        private Kml2SqlConfig config;
 
         public MainWindow()
         {
@@ -155,7 +143,6 @@ namespace KML2SQL
                     Clipboard.Clear();
                     Clipboard.SetText(script);
                 }
-
             }
             catch (Exception ex)
             {
@@ -222,6 +209,7 @@ namespace KML2SQL
             settings.FixBrokenPolygons = fixBrokenPolygons.IsChecked.Value;
             SettingsPersister.Persist(settings);
         }
+
         private void RestoreSettings()
         {
             var settings = SettingsPersister.Retrieve();
@@ -270,7 +258,6 @@ namespace KML2SQL
 
         private void databaseNameBox_GotFocus(object sender, RoutedEventArgs e)
         {
-
             if (databaseNameBox.Text == "myDatabase")
                 databaseNameBox.Clear();
         }
@@ -326,7 +313,6 @@ namespace KML2SQL
             About about = new About();
             about.Show();
         }
-
 
         private void Log_Click(object sender, RoutedEventArgs e)
         {

@@ -1,22 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SharpKml.Base;
+﻿using SharpKml.Base;
 using SharpKml.Dom;
 using SharpKml.Engine;
+using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Linq;
 
 namespace Kml2Sql.Mapping
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class MapFeature
     {
         #region Properties
+
         /// <summary>
         /// Original SharpKML representation of placemark.
         /// </summary>
@@ -51,7 +48,8 @@ namespace Kml2Sql.Mapping
         /// Type of Placemark shape.
         /// </summary>
         public ShapeType ShapeType { get; private set; }
-        #endregion
+
+        #endregion Properties
 
         private Kml2SqlConfig _configuration;
 
@@ -84,7 +82,6 @@ namespace Kml2Sql.Mapping
             }
         }
 
-
         private void InitializeCoordinates(Placemark placemark)
         {
             switch (this.ShapeType)
@@ -92,9 +89,11 @@ namespace Kml2Sql.Mapping
                 case ShapeType.LineString:
                     Coordinates = InitializeLineCoordinates(placemark);
                     break;
+
                 case ShapeType.Point:
                     Coordinates = InitializePointCoordinates(placemark);
                     break;
+
                 case ShapeType.Polygon:
                     Vector[][] coords = InitializePolygonCoordinates(placemark);
                     Coordinates = coords[0];
@@ -198,7 +197,6 @@ namespace Kml2Sql.Mapping
         {
             return MapFeatureCommandCreator.CreateCommand(this, _configuration);
         }
-
 
         internal string GetInsertQuery(bool declareVariables = true)
         {

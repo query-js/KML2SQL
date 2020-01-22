@@ -1,33 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Newtonsoft.Json.Linq;
+using Semver;
+using System;
+using System.Diagnostics;
 using System.Linq;
 using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using System.Reflection;
-using System.Net.Http.Headers;
+using System.Threading.Tasks;
 using System.Windows;
-using System.Diagnostics;
-using Semver;
 
 namespace KML2SQL.Updates
 {
     public static class UpdateChecker
     {
-        static readonly string apiUrl = "https://api.github.com/repos/query-js/kml2sql/releases/latest";
-        static readonly string downloadUrl = "https://github.com/query-js/KML2SQL/releases/latest";
+        private static readonly string apiUrl = "https://api.github.com/repos/query-js/KML2SQL/releases/latest";
+        private static readonly string downloadUrl = "https://github.com/query-js/KML2SQL/releases";
+
         public static async Task CheckForNewVersion()
         {
             var settings = SettingsPersister.Retrieve();
             if (CheckForUpdates(settings))
             {
                 settings.UpdateInfo.LastCheckedForUpdates = DateTime.Now;
-                var client = new HttpClient();
-                //client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/vnd.github.v3+json"));
-                client.DefaultRequestHeaders.Add("User-Agent", "query-js");
-                var response = await client.GetAsync(apiUrl);
+                HttpClient client = new HttpClient();
+                HttpResponseMessage response = await client.GetAsync(apiUrl);
                 if (response.IsSuccessStatusCode)
                 {
                     var latestVersion = await GetLatestVersion(response);
@@ -55,17 +50,17 @@ namespace KML2SQL.Updates
 
         private static async Task<SemVersion> GetLatestVersion(HttpResponseMessage response)
         {
-            var json = await response.Content.ReadAsStringAsync();
-            var obj = JObject.Parse(json);
-            var latestVersionString = (string)obj["tag_name"];
-            var latestVersion = SemVersion.Parse(latestVersionString);
+            string json = await response.Content.ReadAsStringAsync();
+            JObject obj = JObject.Parse(json);
+            string latestVersionString = (string)obj["tag_name"];
+            SemVersion latestVersion = SemVersion.Parse(latestVersionString);
             return latestVersion;
         }
 
         private static bool ShouldNag(Settings settings, SemVersion latestVersion)
         {
             bool shouldNag = false;
-            var lastVersionSeen = SemVersion.Parse(settings.UpdateInfo.LastVersionSeen ?? "0.1");
+            SemVersion lastVersionSeen = SemVersion.Parse(settings.UpdateInfo.LastVersionSeen ?? "0.1");
             if (latestVersion > lastVersionSeen)
             {
                 shouldNag = true;
@@ -84,15 +79,14 @@ namespace KML2SQL.Updates
             {
                 settings.UpdateInfo = new UpdateInfo();
             }
-            var check = 
-                    settings.UpdateInfo.LastCheckedForUpdates < DateTime.Now.AddDays(-1) &&
-                    settings.UpdateInfo.LastTimeNagged < DateTime.Now.AddDays(-7);
+            bool check = settings.UpdateInfo.LastCheckedForUpdates < DateTime.Now.AddDays(-1)
+                         && settings.UpdateInfo.LastTimeNagged < DateTime.Now.AddDays(-7);
             return check;
         }
 
         internal static string GetCurrentVersion()
         {
-            var attr = Assembly
+            AssemblyInformationalVersionAttribute[] attr = Assembly
                 .GetEntryAssembly()
                 .GetCustomAttributes(typeof(AssemblyInformationalVersionAttribute), false)
                 as AssemblyInformationalVersionAttribute[];

@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace KML2SQL.Updates
 {
-    class UpdateInfo
+    internal class UpdateInfo
     {
         public DateTime LastCheckedForUpdates { get; set; }
         public DateTime LastTimeNagged { get; set; }

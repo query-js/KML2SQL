@@ -1,5 +1,4 @@
-﻿using SharpKml.Base;
-using SharpKml.Dom;
+﻿using SharpKml.Dom;
 using SharpKml.Engine;
 using System;
 using System.Collections.Generic;
@@ -19,6 +18,7 @@ namespace Kml2Sql.Mapping
         /// Configuration settings for the Mapper.
         /// </summary>
         public Kml2SqlConfig Configuration { get; private set; } = new Kml2SqlConfig();
+
         private IEnumerable<MapFeature> _mapFeatures;
 
         public Kml2SqlMapper(Stream fileStream, Kml2SqlConfig configuration) : this(fileStream)
@@ -40,7 +40,6 @@ namespace Kml2Sql.Mapping
             int id = 1;
             foreach (var placemark in kml.Flatten().OfType<Placemark>())
             {
-
                 if (HasValidElement(placemark))
                 {
                     MapFeature mapFeature = new MapFeature(placemark, id, Configuration);
@@ -102,7 +101,6 @@ namespace Kml2Sql.Mapping
             }
             return sb.ToString();
         }
-
 
         /// <summary>
         /// Get SQL query that will create a table for MapFeature objects. Column names are based on

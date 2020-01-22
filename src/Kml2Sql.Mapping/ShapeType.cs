@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Kml2Sql.Mapping
+﻿namespace Kml2Sql.Mapping
 {
     /// <summary>
     /// Type of Shape for MapFeatures.

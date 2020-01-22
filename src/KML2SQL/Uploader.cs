@@ -1,11 +1,9 @@
 ﻿using Kml2Sql.Mapping;
 using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace KML2SQL
 {
@@ -28,11 +26,15 @@ namespace KML2SQL
             }
         }
 
-        public Uploader(FileStream stream) : this(stream, null) { }
+        public Uploader(FileStream stream) : this(stream, null)
+        {
+        }
 
-        public Uploader(string filePath) : this(filePath, null) { }
+        public Uploader(string filePath) : this(filePath, null)
+        {
+        }
 
-        public Uploader(FileStream stream, Kml2SqlConfig configuration, Progress<ProgressReoprt> onChange) 
+        public Uploader(FileStream stream, Kml2SqlConfig configuration, Progress<ProgressReoprt> onChange)
             : this(stream, configuration)
         {
             OnProgressChange = onChange;
@@ -70,8 +72,7 @@ namespace KML2SQL
                     }
                     catch
                     {
-
-                    }                    
+                    }
                 }
                 ReportProgress("Creating Table", 0);
                 CreateTable(connection);
@@ -81,7 +82,7 @@ namespace KML2SQL
                     ReportProgress(GetProgressMessage(mapFeatures[i]), GetPercentage(i + 1, mapFeatures.Length));
                     sqlCommand = mapFeatures[i].GetInsertCommand();
                     sqlCommand.Connection = connection;
-                    sqlCommand.ExecuteNonQuery();                
+                    sqlCommand.ExecuteNonQuery();
                 }
                 ReportProgress("Done!", 100);
             }
@@ -93,7 +94,6 @@ namespace KML2SQL
                 }
                 throw;
             }
-
         }
 
         private static string GetProgressMessage(MapFeature mf)
@@ -131,13 +131,12 @@ namespace KML2SQL
             tableCommand.ExecuteNonQuery();
         }
 
-
         public void DropTable(SqlConnection connection)
         {
             string dropCommandString = String.Format("DROP TABLE {0};", Mapper.Configuration.TableName);
             var dropCommand = new SqlCommand(dropCommandString, connection);
             dropCommand.CommandType = System.Data.CommandType.Text;
-            dropCommand.ExecuteNonQuery();    
+            dropCommand.ExecuteNonQuery();
         }
 
         private void ReportProgress(string message, int percentage)
@@ -150,9 +149,7 @@ namespace KML2SQL
                 OnProgressChange.Report(report);
             }
         }
-
     }
-
 
     public class ProgressReoprt
     {

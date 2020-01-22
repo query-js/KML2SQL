@@ -60,7 +60,7 @@
         </member>
         <member name="T:SharpKml.Base.ElementEventArgs">
             <summary>
-            Provides data for the <see cref="E:SharpKml.Base.Parser.ElementAdded"/> event.
+            Provides data for the <see cref="E:SharpKml.Base.Parser.ElementAdded" /> event.
             </summary>
         </member>
         <member name="M:SharpKml.Base.ElementEventArgs.#ctor(SharpKml.Dom.Element)">
@@ -73,7 +73,7 @@
         </member>
         <member name="P:SharpKml.Base.ElementEventArgs.Element">
             <summary>
-            Gets the <see cref="T:SharpKml.Dom.Element"/> found during parsing.
+            Gets the <see cref="T:SharpKml.Dom.Element" /> found during parsing.
             </summary>
         </member>
         <member name="T:SharpKml.Base.ElementWalker">
@@ -81,7 +81,7 @@
         </member>
         <member name="M:SharpKml.Base.ElementWalker.Walk(SharpKml.Dom.Element)">
             <summary>
-            Navigates the specified <see cref="T:SharpKml.Dom.Element"/> and it's children.
+            Navigates the specified <see cref="T:SharpKml.Dom.Element" /> and it's children.
             </summary>
             <param name="root">The <c>Element</c> to navigate.</param>
             <exception cref="T:System.ArgumentNullException">root is null.</exception>
@@ -109,7 +109,7 @@
         </member>
         <member name="M:SharpKml.Dom.Element.AddChild``1(``0)">
             <summary>
-            Adds a valid child Element to the end of <see cref="P:SharpKml.Dom.Element.Children"/>.
+            Adds a valid child Element to the end of <see cref="P:SharpKml.Dom.Element.Children" />.
             </summary>
             <typeparam name="T">A type deriving from Element.</typeparam>
             <param name="child">The Element to be added.</param>
@@ -120,7 +120,7 @@
             <exception cref="T:System.ArgumentNullException">child is null.</exception>
             <exception cref="T:System.InvalidOperationException">
             child belongs to another Element (i.e. the value of it's
-            <see cref="P:SharpKml.Dom.Element.Parent"/> is not null).
+            <see cref="P:SharpKml.Dom.Element.Parent" /> is not null).
             </exception>
         </member>
         <member name="M:SharpKml.Dom.Element.AddInnerText(System.String)">
@@ -138,7 +138,7 @@
         </member>
         <member name="M:SharpKml.Dom.Element.RemoveChild(SharpKml.Dom.Element)">
             <summary>
-            Removes the specified Element from the <see cref="P:SharpKml.Dom.Element.Children"/> collection.
+            Removes the specified Element from the <see cref="P:SharpKml.Dom.Element.Children" /> collection.
             </summary>
             <param name="child">The Element to remove.</param>
             <returns>
@@ -150,7 +150,7 @@
         </member>
         <member name="M:SharpKml.Dom.Element.ClearInnerText">
             <summary>
-            Removes all characters from <see cref="P:SharpKml.Dom.Element.InnerText"/>.
+            Removes all characters from <see cref="P:SharpKml.Dom.Element.InnerText" />.
             </summary>
         </member>
         <member name="M:SharpKml.Dom.Element.RegisterValidChild``1">
@@ -162,7 +162,7 @@
         <member name="M:SharpKml.Dom.Element.UpdatePropertyChild``1(``0,``0@)">
             <summary>
             Sets the specified element to the specified value, updating
-            <see cref="P:SharpKml.Dom.Element.Parent"/> information as necessary.
+            <see cref="P:SharpKml.Dom.Element.Parent" /> information as necessary.
             </summary>
             <typeparam name="T">A type deriving from Element.</typeparam>
             <param name="value">The new value to set to the element.</param>
@@ -266,7 +266,7 @@
             <returns>The file contents as a read-only stream.</returns>
             <exception cref="T:System.IO.IOException">
             An error occurred reading the file. See the
-            <see cref="P:System.Exception.InnerException"/> for more details.
+            <see cref="P:System.Exception.InnerException" /> for more details.
             </exception>
         </member>
         <member name="M:SharpKml.Engine.FileHandler.ReadBytes(System.Uri)">
@@ -277,7 +277,7 @@
             <returns>The file contents.</returns>
             <exception cref="T:System.IO.IOException">
             An error occurred reading the file. See the
-            <see cref="P:System.Exception.InnerException"/> for more details.
+            <see cref="P:System.Exception.InnerException" /> for more details.
             </exception>
         </member>
         <member name="M:SharpKml.Engine.FileHandler.ReadFile(System.String)">
@@ -304,11 +304,11 @@
         </member>
         <member name="T:SharpKml.Dom.Placemark">
             <summary>
-            Represents a <see cref="T:SharpKml.Dom.Feature"/> that contains a <see cref="P:SharpKml.Dom.Placemark.Geometry"/>.
+            Represents a <see cref="T:SharpKml.Dom.Feature" /> that contains a <see cref="P:SharpKml.Dom.Placemark.Geometry" />.
             </summary>
             <remarks>
             <para>OGC KML 2.2 Section 9.11</para>
-            <para>A Placemark with a <see cref="T:SharpKml.Dom.Point"/> geometry should be drawn
+            <para>A Placemark with a <see cref="T:SharpKml.Dom.Point" /> geometry should be drawn
             with an icon to mark the Placemark in the geographic view. The point
             itself determines the position of the Placemark's name and display
             icon.</para>
@@ -337,7 +337,7 @@
             </remarks>
         </member>
         <member name="F:SharpKml.Dom.Feature.DefaultVisibility">
-            <summary>The default value that should be used for <see cref="P:SharpKml.Dom.Feature.Visibility"/>.</summary>
+            <summary>The default value that should be used for <see cref="P:SharpKml.Dom.Feature.Visibility" />.</summary>
         </member>
         <member name="P:SharpKml.Dom.Feature.Address">
             <summary>
@@ -355,7 +355,7 @@
             </summary>
             <remarks>
             This may be used to geocode the location of a Feature if it does not
-            contain a <see cref="T:SharpKml.Dom.Geometry"/> element.
+            contain a <see cref="T:SharpKml.Dom.Geometry" /> element.
             </remarks>
         </member>
         <member name="P:SharpKml.Dom.Feature.AtomAuthor">
@@ -368,8 +368,8 @@
             </summary>
             <remarks>
             This value is inheritable - see section 9.6.2
-            The URL is encoded as the value of <see cref="P:SharpKml.Dom.Atom.Link.Href"/>. The
-            <see cref="P:SharpKml.Dom.Atom.Link.Relation"/> property shall be present and its
+            The URL is encoded as the value of <see cref="P:SharpKml.Dom.Atom.Link.Href" />. The
+            <see cref="P:SharpKml.Dom.Atom.Link.Relation" /> property shall be present and its
             value shall be "related".
             </remarks>
         </member>
@@ -389,7 +389,7 @@
         </member>
         <member name="P:SharpKml.Dom.Feature.Open">
             <summary>
-            Gets or sets whether a <see cref="T:SharpKml.Dom.Container"/> appears expanded (true)
+            Gets or sets whether a <see cref="T:SharpKml.Dom.Container" /> appears expanded (true)
             or collapsed (false) when first loaded into the list view.
             </summary>
         </member>
@@ -399,7 +399,7 @@
         </member>
         <member name="P:SharpKml.Dom.Feature.Region">
             <summary>
-            Gets or sets the associated <see cref="P:SharpKml.Dom.Feature.Region"/> of the Feature.
+            Gets or sets the associated <see cref="P:SharpKml.Dom.Feature.Region" /> of the Feature.
             </summary>
             <remarks>This value is inheritable - see section 9.6.2</remarks>
         </member>
@@ -412,17 +412,17 @@
         </member>
         <member name="P:SharpKml.Dom.Feature.StyleUrl">
             <summary>
-            Gets or sets a reference to a <see cref="T:SharpKml.Dom.Style"/> or
-            <see cref="T:SharpKml.Dom.StyleMapCollection"/>.
+            Gets or sets a reference to a <see cref="T:SharpKml.Dom.Style" /> or
+            <see cref="T:SharpKml.Dom.StyleMapCollection" />.
             </summary>
             <remarks>
             The value of the fragment shall be the id of a <c>Style</c> or
-            <c>StyleMap</c> defined in a <see cref="T:SharpKml.Dom.Document"/>.
+            <c>StyleMap</c> defined in a <see cref="T:SharpKml.Dom.Document" />.
             </remarks>
         </member>
         <member name="P:SharpKml.Dom.Feature.Time">
             <summary>
-            Gets or sets a <see cref="T:SharpKml.Dom.TimePrimitive"/> that affects the visibility
+            Gets or sets a <see cref="T:SharpKml.Dom.TimePrimitive" /> that affects the visibility
             of the Feature.
             </summary>
             <remarks>This value is inheritable - see section 9.6.2</remarks>
@@ -448,7 +448,7 @@
         </member>
         <member name="P:SharpKml.Dom.Placemark.Geometry">
             <summary>
-            Gets or sets the associated <see cref="P:SharpKml.Dom.Placemark.Geometry"/> of this instance.
+            Gets or sets the associated <see cref="P:SharpKml.Dom.Placemark.Geometry" /> of this instance.
             </summary>
         </member>
         <member name="T:SharpKml.Dom.AltitudeMode">
@@ -473,18 +473,18 @@
             <summary>Specifies the color mode for a graphic element.</summary>
             <remarks>
             <para>OGC KML 2.2 Section 16.7</para>
-            <para>If the value is <see cref="F:SharpKml.Dom.ColorMode.Random"/> then the color components are
+            <para>If the value is <see cref="F:SharpKml.Dom.ColorMode.Random" /> then the color components are
             modified as follows:</para>
             <list type="bullet">
             <item><description>If a single color component is specified (for example
-            <see cref="P:SharpKml.Base.Color32.Red"/> equals 255), random color values for that one
+            <see cref="P:SharpKml.Base.Color32.Red" /> equals 255), random color values for that one
             component will be selected. In this case, the values would range from 0
             (black) to 255 (full red).</description></item>
             <item><description>If values for two or for all three color components
             are specified, a random linear scale is applied to each color component,
             with results ranging from black to the maximum values specified for each
             component.</description></item>
-            <item><description>The opacity of a color (<see cref="P:SharpKml.Base.Color32.Alpha"/>)
+            <item><description>The opacity of a color (<see cref="P:SharpKml.Base.Color32.Alpha" />)
             is never randomized.</description></item>
             </list>
             </remarks>
@@ -508,7 +508,7 @@
         <member name="T:SharpKml.Dom.GridOrigin">
             <summary>
             Specifies where to begin numbering the tiles in a layer of an
-            <see cref="T:SharpKml.Dom.ImagePyramid"/>.
+            <see cref="T:SharpKml.Dom.ImagePyramid" />.
             </summary>
             <remarks>OGC KML 2.2 Section 16.12</remarks>
         </member>
@@ -524,12 +524,12 @@
         </member>
         <member name="T:SharpKml.Dom.ItemIconStates">
             <summary>
-            Specifies the current state of a <see cref="T:SharpKml.Dom.NetworkLink"/> or
-            <see cref="T:SharpKml.Dom.Folder"/>.
+            Specifies the current state of a <see cref="T:SharpKml.Dom.NetworkLink" /> or
+            <see cref="T:SharpKml.Dom.Folder" />.
             </summary>
             <remarks>
             <para>OGC KML 2.2 Section 16.13</para>
-            <para>This enumeration has a <see cref="T:System.FlagsAttribute"/> attribute
+            <para>This enumeration has a <see cref="T:System.FlagsAttribute" /> attribute
             that allows a bitwise combination of its member values.</para>
             </remarks>
         </member>
@@ -556,26 +556,26 @@
         </member>
         <member name="T:SharpKml.Dom.ListItemType">
             <summary>
-            Specifies how a <see cref="T:SharpKml.Dom.Feature"/> and its contents shall be
+            Specifies how a <see cref="T:SharpKml.Dom.Feature" /> and its contents shall be
             displayed as items in a list view.
             </summary>
             <remarks>OGC KML 2.2 Section 16.15</remarks>
         </member>
         <member name="F:SharpKml.Dom.ListItemType.Check">
             <summary>
-            The <see cref="T:SharpKml.Dom.Feature"/>'s visibility is tied to its item's checkbox.
+            The <see cref="T:SharpKml.Dom.Feature" />'s visibility is tied to its item's checkbox.
             </summary>
         </member>
         <member name="F:SharpKml.Dom.ListItemType.RadioFolder">
             <summary>
-            Only one of the <see cref="T:SharpKml.Dom.Container"/>'s items shall be visible
+            Only one of the <see cref="T:SharpKml.Dom.Container" />'s items shall be visible
             at a time.
             </summary>
         </member>
         <member name="F:SharpKml.Dom.ListItemType.CheckOffOnly">
             <summary>
             Use a normal checkbox for visibility but do not display the
-            <see cref="T:SharpKml.Dom.Container"/>'s children in the list view.
+            <see cref="T:SharpKml.Dom.Container" />'s children in the list view.
             </summary>
             <remarks>
             A checkbox allows the user to toggle visibility of the child
@@ -587,7 +587,7 @@
             Prevents all items from being made visible at once.
             </summary>
             <remarks>
-            The user can turn everything in the <see cref="T:SharpKml.Dom.Container"/> off but
+            The user can turn everything in the <see cref="T:SharpKml.Dom.Container" /> off but
             cannot turn everything on at the same time. This setting is useful
             for <c>Container</c>'s containing large amounts of data.
             </remarks>
@@ -599,13 +599,13 @@
         <member name="F:SharpKml.Dom.RefreshMode.OnChange">
             <summary>
             Refresh when the resource is first loaded and whenever the
-            <see cref="T:SharpKml.Dom.Link"/> parameters change.
+            <see cref="T:SharpKml.Dom.Link" /> parameters change.
             </summary>
         </member>
         <member name="F:SharpKml.Dom.RefreshMode.OnInterval">
             <summary>
             Refresh the resource as specified in
-            <see cref="P:SharpKml.Dom.LinkType.RefreshInterval"/>.
+            <see cref="P:SharpKml.Dom.LinkType.RefreshInterval" />.
             </summary>
         </member>
         <member name="F:SharpKml.Dom.RefreshMode.OnExpire">
@@ -630,18 +630,18 @@
         </member>
         <member name="T:SharpKml.Dom.StyleState">
             <summary>
-            Specifies the style state inside a <see cref="T:SharpKml.Dom.Pair"/>.
+            Specifies the style state inside a <see cref="T:SharpKml.Dom.Pair" />.
             </summary>
             <remarks>OGC KML 2.2 Section 16.18</remarks>
         </member>
         <member name="F:SharpKml.Dom.StyleState.Normal">
             <summary>
-            Specifies a normal style for a <see cref="T:SharpKml.Dom.Placemark"/>.
+            Specifies a normal style for a <see cref="T:SharpKml.Dom.Placemark" />.
             </summary>
         </member>
         <member name="F:SharpKml.Dom.StyleState.Highlight">
             <summary>
-            Specifies a highlighted style for a <see cref="T:SharpKml.Dom.Placemark"/>.
+            Specifies a highlighted style for a <see cref="T:SharpKml.Dom.Placemark" />.
             </summary>
         </member>
         <member name="T:SharpKml.Dom.Unit">
@@ -661,13 +661,13 @@
         </member>
         <member name="T:SharpKml.Dom.InnerBoundary">
             <summary>
-            Specifies an inner boundary of a <see cref="T:SharpKml.Dom.Polygon"/>.
+            Specifies an inner boundary of a <see cref="T:SharpKml.Dom.Polygon" />.
             </summary>
             <remarks>OGC KML 2.2 Section 10.8.3.5</remarks>
         </member>
         <member name="P:SharpKml.Dom.InnerBoundary.LinearRing">
             <summary>
-            Gets or sets the <see cref="P:SharpKml.Dom.InnerBoundary.LinearRing"/> acting as the boundary.
+            Gets or sets the <see cref="P:SharpKml.Dom.InnerBoundary.LinearRing" /> acting as the boundary.
             </summary>
         </member>
         <member name="T:SharpKml.Dom.LinearRing">
@@ -676,9 +676,9 @@
             </summary>
             <remarks>
             <para>OGC KML 2.2 Section 10.5</para>
-            <para>If LinearRing is used to define a boundary for a <see cref="T:SharpKml.Dom.Polygon"/>
-            then <see cref="P:SharpKml.Dom.LinearRing.Extrude"/>, <see cref="P:SharpKml.Dom.LinearRing.Tessellate"/> and
-            <see cref="P:SharpKml.Dom.LinearRing.AltitudeMode"/> should not be specified.</para>
+            <para>If LinearRing is used to define a boundary for a <see cref="T:SharpKml.Dom.Polygon" />
+            then <see cref="P:SharpKml.Dom.LinearRing.Extrude" />, <see cref="P:SharpKml.Dom.LinearRing.Tessellate" /> and
+            <see cref="P:SharpKml.Dom.LinearRing.AltitudeMode" /> should not be specified.</para>
             </remarks>
         </member>
         <member name="T:SharpKml.Dom.Geometry">
@@ -714,9 +714,9 @@
             </summary>
             <remarks>
             The geometry is extruded toward the Earth's center of mass. To
-            extrude a geometry, <see cref="P:SharpKml.Dom.LinearRing.AltitudeMode"/> shall be either
-            <see cref="F:SharpKml.Dom.AltitudeMode.RelativeToGround"/> or
-            <see cref="F:SharpKml.Dom.AltitudeMode.Absolute"/>, and the altitude component
+            extrude a geometry, <see cref="P:SharpKml.Dom.LinearRing.AltitudeMode" /> shall be either
+            <see cref="F:SharpKml.Dom.AltitudeMode.RelativeToGround" /> or
+            <see cref="F:SharpKml.Dom.AltitudeMode.Absolute" />, and the altitude component
             should be greater than 0 (that is, in the air).
             </remarks>
         </member>
@@ -726,7 +726,7 @@
             </summary>
             <remarks>
             To enable tessellation, the value should be set to true and
-            <see cref="P:SharpKml.Dom.LinearRing.AltitudeMode"/> shall be <see cref="F:SharpKml.Dom.AltitudeMode.ClampToGround"/>.
+            <see cref="P:SharpKml.Dom.LinearRing.AltitudeMode" /> shall be <see cref="F:SharpKml.Dom.AltitudeMode.ClampToGround" />.
             </remarks>
         </member>
         <member name="P:SharpKml.Dom.LinearRing.GXAltitudeMode">
@@ -748,13 +748,13 @@
         </member>
         <member name="T:SharpKml.Dom.OuterBoundary">
             <summary>
-            Specifies the exterior boundary of a <see cref="T:SharpKml.Dom.Polygon"/>.
+            Specifies the exterior boundary of a <see cref="T:SharpKml.Dom.Polygon" />.
             </summary>
             <remarks>OGC KML 2.2 Section 10.8.3.4</remarks>
         </member>
         <member name="P:SharpKml.Dom.OuterBoundary.LinearRing">
             <summary>
-            Gets or sets the <see cref="P:SharpKml.Dom.OuterBoundary.LinearRing"/> acting as the boundary.
+            Gets or sets the <see cref="P:SharpKml.Dom.OuterBoundary.LinearRing" /> acting as the boundary.
             </summary>
         </member>
         <member name="T:SharpKml.Dom.Point">
@@ -778,9 +778,9 @@
             </summary>
             <remarks>
             The geometry is extruded toward the Earth's center of mass. To
-            extrude a geometry, <see cref="P:SharpKml.Dom.Point.AltitudeMode"/> shall be either
-            <see cref="F:SharpKml.Dom.AltitudeMode.RelativeToGround"/> or
-            <see cref="F:SharpKml.Dom.AltitudeMode.Absolute"/>, and the altitude component
+            extrude a geometry, <see cref="P:SharpKml.Dom.Point.AltitudeMode" /> shall be either
+            <see cref="F:SharpKml.Dom.AltitudeMode.RelativeToGround" /> or
+            <see cref="F:SharpKml.Dom.AltitudeMode.Absolute" />, and the altitude component
             should be greater than 0 (that is, in the air).
             </remarks>
         </member>
@@ -814,9 +814,9 @@
             </summary>
             <remarks>
             The geometry is extruded toward the Earth's center of mass. To
-            extrude a geometry, <see cref="P:SharpKml.Dom.LineString.AltitudeMode"/> shall be either
-            <see cref="F:SharpKml.Dom.AltitudeMode.RelativeToGround"/> or
-            <see cref="F:SharpKml.Dom.AltitudeMode.Absolute"/>, and the altitude component
+            extrude a geometry, <see cref="P:SharpKml.Dom.LineString.AltitudeMode" /> shall be either
+            <see cref="F:SharpKml.Dom.AltitudeMode.RelativeToGround" /> or
+            <see cref="F:SharpKml.Dom.AltitudeMode.Absolute" />, and the altitude component
             should be greater than 0 (that is, in the air).
             </remarks>
         </member>
@@ -826,7 +826,7 @@
             </summary>
             <remarks>
             To enable tessellation, the value should be set to true and
-            <see cref="P:SharpKml.Dom.LineString.AltitudeMode"/> shall be <see cref="F:SharpKml.Dom.AltitudeMode.ClampToGround"/>.
+            <see cref="P:SharpKml.Dom.LineString.AltitudeMode" /> shall be <see cref="F:SharpKml.Dom.AltitudeMode.ClampToGround" />.
             </remarks>
         </member>
         <member name="P:SharpKml.Dom.LineString.GXAltitudeMode">
@@ -861,14 +861,14 @@
         </member>
         <member name="M:SharpKml.Dom.Polygon.AddInnerBoundary(SharpKml.Dom.InnerBoundary)">
             <summary>
-            Adds the specified <see cref="P:SharpKml.Dom.Polygon.InnerBoundary"/> to this instance.
+            Adds the specified <see cref="P:SharpKml.Dom.Polygon.InnerBoundary" /> to this instance.
             </summary>
             <param name="boundary">
             The <c>InnerBoundary</c> to add to this instance.
             </param>
             <exception cref="T:System.ArgumentNullException">boundary is null.</exception>
             <exception cref="T:System.InvalidOperationException">
-            boundary belongs to another <see cref="T:SharpKml.Dom.Element"/>.
+            boundary belongs to another <see cref="T:SharpKml.Dom.Element" />.
             </exception>
         </member>
         <member name="P:SharpKml.Dom.Polygon.AltitudeMode">
@@ -883,15 +883,15 @@
             <remarks>
             Only the outer boundary should be extruded. The geometry is extruded
             toward the Earth's center of mass. To extrude a geometry, the
-            <see cref="P:SharpKml.Dom.Polygon.AltitudeMode"/> shall be either
-            <see cref="F:SharpKml.Dom.AltitudeMode.RelativeToGround"/> or
-            <see cref="F:SharpKml.Dom.AltitudeMode.Absolute"/>, and the altitude component
+            <see cref="P:SharpKml.Dom.Polygon.AltitudeMode" /> shall be either
+            <see cref="F:SharpKml.Dom.AltitudeMode.RelativeToGround" /> or
+            <see cref="F:SharpKml.Dom.AltitudeMode.Absolute" />, and the altitude component
             should be greater than 0 (that is, in the air).
             </remarks>
         </member>
         <member name="P:SharpKml.Dom.Polygon.InnerBoundary">
             <summary>
-            Gets a collection of <see cref="P:SharpKml.Dom.Polygon.InnerBoundary"/> elements.
+            Gets a collection of <see cref="P:SharpKml.Dom.Polygon.InnerBoundary" /> elements.
             </summary>
             <remarks>It is advised that the rings not cross each other.</remarks>
         </member>
@@ -904,7 +904,7 @@
             </summary>
             <remarks>
             To enable tessellation, the value should be set to true and
-            <see cref="P:SharpKml.Dom.Polygon.AltitudeMode"/> shall be <see cref="F:SharpKml.Dom.AltitudeMode.ClampToGround"/>.
+            <see cref="P:SharpKml.Dom.Polygon.AltitudeMode" /> shall be <see cref="F:SharpKml.Dom.AltitudeMode.ClampToGround" />.
             </remarks>
         </member>
         <member name="P:SharpKml.Dom.Polygon.GXAltitudeMode">
@@ -935,7 +935,7 @@
         </member>
         <member name="P:SharpKml.Dom.GX.AnimatedUpdate.Update">
             <summary>
-            Gets or sets the associated <see cref="P:SharpKml.Dom.GX.AnimatedUpdate.Update"/> of this instance.
+            Gets or sets the associated <see cref="P:SharpKml.Dom.GX.AnimatedUpdate.Update" /> of this instance.
             </summary>
         </member>
         <member name="P:SharpKml.Dom.GX.AnimatedUpdate.DelayedStart">
@@ -957,7 +957,7 @@
         </member>
         <member name="P:SharpKml.Dom.GX.FlyTo.View">
             <summary>
-            Gets or sets the associated <see cref="T:SharpKml.Dom.AbstractView"/> of this instance.
+            Gets or sets the associated <see cref="T:SharpKml.Dom.AbstractView" /> of this instance.
             </summary>
         </member>
         <member name="T:SharpKml.Dom.GX.LatLonQuad">
@@ -981,7 +981,7 @@
         </member>
         <member name="T:SharpKml.Dom.GX.MultipleTrack">
             <summary>
-            Used to combine multiple <see cref="T:SharpKml.Dom.GX.Track"/>s into a single conceptual unit.
+            Used to combine multiple <see cref="T:SharpKml.Dom.GX.Track" />s into a single conceptual unit.
             </summary>
             <remarks>This is not part of the OGC KML 2.2 standard.</remarks>
         </member>
@@ -990,12 +990,12 @@
         </member>
         <member name="M:SharpKml.Dom.GX.MultipleTrack.AddTrack(SharpKml.Dom.GX.Track)">
             <summary>
-            Adds the specified <see cref="T:SharpKml.Dom.GX.Track"/> to this instance.
+            Adds the specified <see cref="T:SharpKml.Dom.GX.Track" /> to this instance.
             </summary>
             <param name="track">The <c>Track</c> to add to this instance.</param>
             <exception cref="T:System.ArgumentNullException">track is null.</exception>
             <exception cref="T:System.InvalidOperationException">
-            track belongs to another <see cref="T:SharpKml.Dom.Element"/>.
+            track belongs to another <see cref="T:SharpKml.Dom.Element" />.
             </exception>
         </member>
         <member name="P:SharpKml.Dom.GX.MultipleTrack.AltitudeMode">
@@ -1016,12 +1016,12 @@
         </member>
         <member name="P:SharpKml.Dom.GX.MultipleTrack.Tracks">
             <summary>
-            Gets the <see cref="T:SharpKml.Dom.GX.Track"/>s contained by this instance.
+            Gets the <see cref="T:SharpKml.Dom.GX.Track" />s contained by this instance.
             </summary>
         </member>
         <member name="T:SharpKml.Dom.GX.Playlist">
             <summary>
-            Contains any number of <see cref="T:SharpKml.Dom.GX.TourPrimitive"/> elements.
+            Contains any number of <see cref="T:SharpKml.Dom.GX.TourPrimitive" /> elements.
             </summary>
             <remarks>This is not part of the OGC KML 2.2 standard.</remarks>
         </member>
@@ -1030,19 +1030,19 @@
         </member>
         <member name="M:SharpKml.Dom.GX.Playlist.AddTourPrimitive(SharpKml.Dom.GX.TourPrimitive)">
             <summary>
-            Adds the specified <see cref="T:SharpKml.Dom.GX.TourPrimitive"/> to this instance.
+            Adds the specified <see cref="T:SharpKml.Dom.GX.TourPrimitive" /> to this instance.
             </summary>
             <param name="tour">
             The <c>TourPrimitive</c> to add to this instance.
             </param>
             <exception cref="T:System.ArgumentNullException">tour is null.</exception>
             <exception cref="T:System.InvalidOperationException">
-            tour belongs to another <see cref="T:SharpKml.Dom.Element"/>.
+            tour belongs to another <see cref="T:SharpKml.Dom.Element" />.
             </exception>
         </member>
         <member name="P:SharpKml.Dom.GX.Playlist.Values">
             <summary>
-            Gets the <see cref="T:SharpKml.Dom.GX.TourPrimitive"/>s stored by this instance.
+            Gets the <see cref="T:SharpKml.Dom.GX.TourPrimitive" />s stored by this instance.
             </summary>
         </member>
         <member name="T:SharpKml.Dom.GX.SoundCue">
@@ -1065,12 +1065,12 @@
         </member>
         <member name="T:SharpKml.Dom.GX.TimeSpan">
             <summary>
-            Copy of <see cref="T:SharpKml.Dom.TimeSpan"/> in the extension namespace.
+            Copy of <see cref="T:SharpKml.Dom.TimeSpan" /> in the extension namespace.
             </summary>
             <remarks>
             <para>This is not part of the OGC KML 2.2 standard.</para>
             <para>This class allows for the inclusion of time values in
-            <see cref="T:SharpKml.Dom.AbstractView"/>.</para>
+            <see cref="T:SharpKml.Dom.AbstractView" />.</para>
             </remarks>
         </member>
         <member name="T:SharpKml.Dom.TimePrimitive">
@@ -1078,8 +1078,8 @@
             <remarks>
             <para>OGC KML 2.2 Section 15.1</para>
             <para>All DateTime instances in TimePrimitive and its descendants should
-            be in the UTC form (i.e. have their <see cref="P:System.DateTime.Kind"/>
-            set to <see cref="F:System.DateTimeKind.Utc"/>).</para>
+            be in the UTC form (i.e. have their <see cref="P:System.DateTime.Kind" />
+            set to <see cref="F:System.DateTimeKind.Utc" />).</para>
             </remarks>
         </member>
         <member name="P:SharpKml.Dom.GX.TimeSpan.Begin">
@@ -1090,12 +1090,12 @@
         </member>
         <member name="T:SharpKml.Dom.GX.Timestamp">
             <summary>
-            Copy of <see cref="T:SharpKml.Dom.Timestamp"/> in the extension namespace.
+            Copy of <see cref="T:SharpKml.Dom.Timestamp" /> in the extension namespace.
             </summary>
             <remarks>
             <para>This is not part of the OGC KML 2.2 standard.</para>
             <para>This class allows for the inclusion of time values in
-            <see cref="T:SharpKml.Dom.AbstractView"/>.</para>
+            <see cref="T:SharpKml.Dom.AbstractView" />.</para>
             </remarks>
         </member>
         <member name="P:SharpKml.Dom.GX.Timestamp.When">
@@ -1107,7 +1107,7 @@
         </member>
         <member name="P:SharpKml.Dom.GX.Tour.Playlist">
             <summary>
-            Gets or sets the associated <see cref="P:SharpKml.Dom.GX.Tour.Playlist"/> of this instance.
+            Gets or sets the associated <see cref="P:SharpKml.Dom.GX.Tour.Playlist" /> of this instance.
             </summary>
         </member>
         <member name="T:SharpKml.Dom.GX.TourControl">
@@ -1130,19 +1130,19 @@
         </member>
         <member name="M:SharpKml.Dom.GX.Track.AddAngle(SharpKml.Base.Angle)">
             <summary>
-            Adds the specified value to <see cref="P:SharpKml.Dom.GX.Track.Angles"/>.</summary>
+            Adds the specified value to <see cref="P:SharpKml.Dom.GX.Track.Angles" />.</summary>
             <param name="value">The value to add.</param>
             <exception cref="T:System.ArgumentNullException">value is null.</exception>
         </member>
         <member name="M:SharpKml.Dom.GX.Track.AddCoordinate(SharpKml.Base.Vector)">
             <summary>
-            Adds the specified value to <see cref="P:SharpKml.Dom.GX.Track.Coordinates"/>.</summary>
+            Adds the specified value to <see cref="P:SharpKml.Dom.GX.Track.Coordinates" />.</summary>
             <param name="value">The value to add.</param>
             <exception cref="T:System.ArgumentNullException">value is null.</exception>
         </member>
         <member name="M:SharpKml.Dom.GX.Track.AddWhen(System.String)">
             <summary>
-            Adds the specified value to <see cref="P:SharpKml.Dom.GX.Track.When"/>.</summary>
+            Adds the specified value to <see cref="P:SharpKml.Dom.GX.Track.When" />.</summary>
             <param name="value">The value to add.</param>
             <exception cref="T:System.ArgumentNullException">value is null.</exception>
         </member>
@@ -1151,7 +1151,7 @@
             Processes the &lt;gx:angles&gt;, &lt;gx:coord&gt; and &lt;when&gt;
             elements.
             </summary>
-            <param name="orphan">The <see cref="T:SharpKml.Dom.Element"/> to add.</param>
+            <param name="orphan">The <see cref="T:SharpKml.Dom.Element" /> to add.</param>
         </member>
         <member name="P:SharpKml.Dom.GX.Track.AltitudeMode">
             <summary>
@@ -1160,7 +1160,7 @@
         </member>
         <member name="P:SharpKml.Dom.GX.Track.Angles">
             <summary>
-            Gets a collection of <see cref="T:SharpKml.Base.Angle"/> containing the heading,
+            Gets a collection of <see cref="T:SharpKml.Base.Angle" /> containing the heading,
             tilt and roll for the icons and models.
             </summary>
         </member>
@@ -1169,7 +1169,7 @@
         </member>
         <member name="P:SharpKml.Dom.GX.Track.ExtendedData">
             <summary>
-            Gets or sets custom data elements defined in a <see cref="T:SharpKml.Dom.Schema"/>
+            Gets or sets custom data elements defined in a <see cref="T:SharpKml.Dom.Schema" />
             earlier in the KML file.
             </summary>
         </member>
@@ -1180,7 +1180,7 @@
         </member>
         <member name="P:SharpKml.Dom.GX.Track.Model">
             <summary>
-            Gets or sets the <see cref="P:SharpKml.Dom.GX.Track.Model"/> used to indicate the current
+            Gets or sets the <see cref="P:SharpKml.Dom.GX.Track.Model" /> used to indicate the current
             position on the track.
             </summary>
         </member>
@@ -1194,12 +1194,12 @@
         </member>
         <member name="T:SharpKml.Dom.ICustomElement">
             <summary>
-            Allows customized serialization of an <see cref="T:SharpKml.Dom.Element"/>.
+            Allows customized serialization of an <see cref="T:SharpKml.Dom.Element" />.
             </summary>
         </member>
         <member name="M:SharpKml.Dom.ICustomElement.CreateStartElement(System.Xml.XmlWriter)">
             <summary>Writes the start of an XML element.</summary>
-            <param name="writer">An <see cref="T:System.Xml.XmlWriter"/> to write to.</param>
+            <param name="writer">An <see cref="T:System.Xml.XmlWriter" /> to write to.</param>
         </member>
         <member name="P:SharpKml.Dom.ICustomElement.ProcessChildren">
             <summary>
@@ -1218,7 +1218,7 @@
         </member>
         <member name="M:SharpKml.Dom.GX.Track.VectorElement.CreateStartElement(System.Xml.XmlWriter)">
             <summary>Writes the start of an XML element.</summary>
-            <param name="writer">An <see cref="T:System.Xml.XmlWriter"/> to write to.</param>
+            <param name="writer">An <see cref="T:System.Xml.XmlWriter" /> to write to.</param>
         </member>
         <member name="P:SharpKml.Dom.GX.Track.VectorElement.ProcessChildren">
             <summary>
@@ -1281,12 +1281,12 @@
         <member name="M:SharpKml.Dom.GX.Track.WhenElement.#ctor(System.String)">
             <summary>Initializes a new instance of the WhenElement class.</summary>
             <param name="value">
-            The value to set the <see cref="P:SharpKml.Dom.Element.InnerText"/> to.
+            The value to set the <see cref="P:SharpKml.Dom.Element.InnerText" /> to.
             </param>
         </member>
         <member name="M:SharpKml.Dom.GX.Track.WhenElement.CreateStartElement(System.Xml.XmlWriter)">
             <summary>Writes the start of an XML element.</summary>
-            <param name="writer">An <see cref="T:System.Xml.XmlWriter"/> to write to.</param>
+            <param name="writer">An <see cref="T:System.Xml.XmlWriter" /> to write to.</param>
         </member>
         <member name="P:SharpKml.Dom.GX.Track.WhenElement.ProcessChildren">
             <summary>
@@ -1298,8 +1298,8 @@
         </member>
         <member name="T:SharpKml.Dom.GX.Wait">
             <summary>
-            The camera remains still for the specified <see cref="P:SharpKml.Dom.GX.Wait.Duration"/> before
-            playing the next <see cref="T:SharpKml.Dom.GX.TourPrimitive"/>.
+            The camera remains still for the specified <see cref="P:SharpKml.Dom.GX.Wait.Duration" /> before
+            playing the next <see cref="T:SharpKml.Dom.GX.TourPrimitive" />.
             </summary>
             <remarks>This is not part of the OGC KML 2.2 standard.</remarks>
         </member>
@@ -1328,7 +1328,7 @@
         </member>
         <member name="P:SharpKml.Dom.Kml.Feature">
             <summary>
-            Gets or sets the associated <see cref="P:SharpKml.Dom.Kml.Feature"/> of this instance.
+            Gets or sets the associated <see cref="P:SharpKml.Dom.Kml.Feature" /> of this instance.
             </summary>
         </member>
         <member name="P:SharpKml.Dom.Kml.Hint">
@@ -1338,7 +1338,7 @@
         </member>
         <member name="P:SharpKml.Dom.Kml.NetworkLinkControl">
             <summary>
-            Gets or sets the associated <see cref="P:SharpKml.Dom.Kml.NetworkLinkControl"/>
+            Gets or sets the associated <see cref="P:SharpKml.Dom.Kml.NetworkLinkControl" />
             of this instance.
             </summary>
         </member>
@@ -1346,16 +1346,16 @@
             <summary>References a KML resource on a local or remote network.</summary>
             <remarks>
             <para>OGC KML 2.2 Section 9.12</para>
-            <para>May be used in combination with <see cref="T:SharpKml.Dom.Region"/> elements to
+            <para>May be used in combination with <see cref="T:SharpKml.Dom.Region" /> elements to
             efficiently load and display large datasets.</para>
             </remarks>
         </member>
         <member name="M:SharpKml.Dom.NetworkLink.AddOrphan(SharpKml.Dom.Element)">
             <summary>
-            Converts depreciated <see cref="T:SharpKml.Dom.Url"/>s to <see cref="P:SharpKml.Dom.NetworkLink.Link"/>s.
+            Converts depreciated <see cref="T:SharpKml.Dom.Url" />s to <see cref="P:SharpKml.Dom.NetworkLink.Link" />s.
             </summary>
             <param name="orphan">
-            The <see cref="T:SharpKml.Dom.Element"/> to store for serialization.
+            The <see cref="T:SharpKml.Dom.Element" /> to store for serialization.
             </param>
         </member>
         <member name="P:SharpKml.Dom.NetworkLink.FlyToView">
@@ -1366,12 +1366,12 @@
             <para>A value of false indicates that the geographic view shall
             remain unchanged.</para>
             <para>A value of true indicates that the geographic view shall be
-            displayed according to the <see cref="T:SharpKml.Dom.AbstractView"/> specified by
+            displayed according to the <see cref="T:SharpKml.Dom.AbstractView" /> specified by
             either:
             <list type="bullet"><item>
-            <description>a <see cref="T:SharpKml.Dom.NetworkLinkControl"/></description>
+            <description>a <see cref="T:SharpKml.Dom.NetworkLinkControl" /></description>
             </item><item>
-            <description>a child <see cref="T:SharpKml.Dom.Feature"/> of <see cref="T:SharpKml.Dom.Kml"/></description>
+            <description>a child <see cref="T:SharpKml.Dom.Feature" /> of <see cref="T:SharpKml.Dom.Kml" /></description>
             </item></list>
             if they exist in the referenced KML resource. The <c>AbstractView</c>
             of the <c>NetworkLinkControl</c> shall take precedence over the
@@ -1386,7 +1386,7 @@
         </member>
         <member name="P:SharpKml.Dom.NetworkLink.RefreshVisibility">
             <summary>
-            Gets or sets the visibility of any <see cref="T:SharpKml.Dom.Feature"/>s within
+            Gets or sets the visibility of any <see cref="T:SharpKml.Dom.Feature" />s within
             the referenced KML resource.
             </summary>
             <remarks>
@@ -1400,7 +1400,7 @@
         </member>
         <member name="T:SharpKml.Dom.ChangeCollection">
             <summary>
-            Specifies modifications to zero or more <see cref="T:SharpKml.Dom.Feature"/>s in the
+            Specifies modifications to zero or more <see cref="T:SharpKml.Dom.Feature" />s in the
             target resource.
             </summary>
             <remarks>OGC KML 2.2 Section 13.6</remarks>
@@ -1409,15 +1409,15 @@
             <summary>Initializes a new instance of the ChangeCollection class.</summary>
         </member>
         <member name="M:SharpKml.Dom.ChangeCollection.Add(SharpKml.Dom.KmlObject)">
-            <summary>Adds a <see cref="T:SharpKml.Dom.KmlObject"/> to this instance.</summary>
+            <summary>Adds a <see cref="T:SharpKml.Dom.KmlObject" /> to this instance.</summary>
             <param name="item">The <c>KmlObject</c> to be added.</param>
             <exception cref="T:System.ArgumentNullException">item is null.</exception>
             <exception cref="T:System.InvalidOperationException">
-            item belongs to another <see cref="T:SharpKml.Dom.Element"/>.
+            item belongs to another <see cref="T:SharpKml.Dom.Element" />.
             </exception>
         </member>
         <member name="M:SharpKml.Dom.ChangeCollection.Clear">
-            <summary>Removes all <see cref="T:SharpKml.Dom.KmlObject"/>s from this instance.</summary>
+            <summary>Removes all <see cref="T:SharpKml.Dom.KmlObject" />s from this instance.</summary>
         </member>
         <member name="M:SharpKml.Dom.ChangeCollection.Contains(SharpKml.Dom.KmlObject)">
             <summary>
@@ -1472,7 +1472,7 @@
         </member>
         <member name="P:SharpKml.Dom.ChangeCollection.Count">
             <summary>
-            Gets the number of <see cref="T:SharpKml.Dom.KmlObject"/>s in this instance.
+            Gets the number of <see cref="T:SharpKml.Dom.KmlObject" />s in this instance.
             </summary>
         </member>
         <member name="P:SharpKml.Dom.ChangeCollection.System#Collections#Generic#ICollection{SharpKml#Dom#KmlObject}#IsReadOnly">
@@ -1480,8 +1480,8 @@
         </member>
         <member name="T:SharpKml.Dom.CreateCollection">
             <summary>
-            Specifies the addition of zero or more <see cref="T:SharpKml.Dom.Feature"/>s to an
-            identified <see cref="T:SharpKml.Dom.Folder"/> or <see cref="T:SharpKml.Dom.Document"/> in the
+            Specifies the addition of zero or more <see cref="T:SharpKml.Dom.Feature" />s to an
+            identified <see cref="T:SharpKml.Dom.Folder" /> or <see cref="T:SharpKml.Dom.Document" /> in the
             target resource.
             </summary>
             <remarks>OGC KML 2.2 Section 13.4</remarks>
@@ -1490,15 +1490,15 @@
             <summary>Initializes a new instance of the CreateCollection class.</summary>
         </member>
         <member name="M:SharpKml.Dom.CreateCollection.Add(SharpKml.Dom.Container)">
-            <summary>Adds a <see cref="T:SharpKml.Dom.Container"/> to this instance.</summary>
+            <summary>Adds a <see cref="T:SharpKml.Dom.Container" /> to this instance.</summary>
             <param name="item">The <c>Container</c> to be added.</param>
             <exception cref="T:System.ArgumentNullException">item is null.</exception>
             <exception cref="T:System.InvalidOperationException">
-            item belongs to another <see cref="T:SharpKml.Dom.Element"/>.
+            item belongs to another <see cref="T:SharpKml.Dom.Element" />.
             </exception>
         </member>
         <member name="M:SharpKml.Dom.CreateCollection.Clear">
-            <summary>Removes all <see cref="T:SharpKml.Dom.Container"/>s from this instance.</summary>
+            <summary>Removes all <see cref="T:SharpKml.Dom.Container" />s from this instance.</summary>
         </member>
         <member name="M:SharpKml.Dom.CreateCollection.Contains(SharpKml.Dom.Container)">
             <summary>
@@ -1553,7 +1553,7 @@
         </member>
         <member name="P:SharpKml.Dom.CreateCollection.Count">
             <summary>
-            Gets the number of <see cref="T:SharpKml.Dom.Container"/>s in this instance.
+            Gets the number of <see cref="T:SharpKml.Dom.Container" />s in this instance.
             </summary>
         </member>
         <member name="P:SharpKml.Dom.CreateCollection.System#Collections#Generic#ICollection{SharpKml#Dom#Container}#IsReadOnly">
@@ -1561,7 +1561,7 @@
         </member>
         <member name="T:SharpKml.Dom.DeleteCollection">
             <summary>
-            Specifies the deletion of zero or more <see cref="T:SharpKml.Dom.Feature"/>s in the
+            Specifies the deletion of zero or more <see cref="T:SharpKml.Dom.Feature" />s in the
             target resource.
             </summary>
             <remarks>OGC KML 2.2 Section 13.5</remarks>
@@ -1570,15 +1570,15 @@
             <summary>Initializes a new instance of the DeleteCollection class.</summary>
         </member>
         <member name="M:SharpKml.Dom.DeleteCollection.Add(SharpKml.Dom.Feature)">
-            <summary>Adds a <see cref="T:SharpKml.Dom.Feature"/> to this instance.</summary>
+            <summary>Adds a <see cref="T:SharpKml.Dom.Feature" /> to this instance.</summary>
             <param name="item">The <c>Feature</c> to be added.</param>
             <exception cref="T:System.ArgumentNullException">item is null.</exception>
             <exception cref="T:System.InvalidOperationException">
-            item belongs to another <see cref="T:SharpKml.Dom.Element"/>.
+            item belongs to another <see cref="T:SharpKml.Dom.Element" />.
             </exception>
         </member>
         <member name="M:SharpKml.Dom.DeleteCollection.Clear">
-            <summary>Removes all <see cref="T:SharpKml.Dom.Feature"/>s from this instance.</summary>
+            <summary>Removes all <see cref="T:SharpKml.Dom.Feature" />s from this instance.</summary>
         </member>
         <member name="M:SharpKml.Dom.DeleteCollection.Contains(SharpKml.Dom.Feature)">
             <summary>
@@ -1633,7 +1633,7 @@
         </member>
         <member name="P:SharpKml.Dom.DeleteCollection.Count">
             <summary>
-            Gets the number of <see cref="T:SharpKml.Dom.Container"/>s in this instance.
+            Gets the number of <see cref="T:SharpKml.Dom.Container" />s in this instance.
             </summary>
         </member>
         <member name="P:SharpKml.Dom.DeleteCollection.System#Collections#Generic#ICollection{SharpKml#Dom#Feature}#IsReadOnly">
@@ -1641,34 +1641,34 @@
         </member>
         <member name="T:SharpKml.Dom.NetworkLinkControl">
             <summary>
-            Controls the behavior of a <see cref="T:SharpKml.Dom.NetworkLink"/> that references
+            Controls the behavior of a <see cref="T:SharpKml.Dom.NetworkLink" /> that references
             the KML resource.
             </summary>
             <remarks>OGC KML 2.2 Section 13.2</remarks>
         </member>
         <member name="F:SharpKml.Dom.NetworkLinkControl.DefaultSessionLength">
-            <summary>The default value that should be used for <see cref="P:SharpKml.Dom.NetworkLinkControl.SessionLength"/>.</summary>
+            <summary>The default value that should be used for <see cref="P:SharpKml.Dom.NetworkLinkControl.SessionLength" />.</summary>
         </member>
         <member name="P:SharpKml.Dom.NetworkLinkControl.Cookie">
             <summary>
-            Gets or sets a string to append to the <see cref="T:SharpKml.Dom.NetworkLink"/>
+            Gets or sets a string to append to the <see cref="T:SharpKml.Dom.NetworkLink" />
             URL query.
             </summary>
         </member>
         <member name="P:SharpKml.Dom.NetworkLinkControl.Expires">
             <summary>
-            Gets or sets a point in time at which the <see cref="T:SharpKml.Dom.NetworkLink"/>
+            Gets or sets a point in time at which the <see cref="T:SharpKml.Dom.NetworkLink" />
             shall be refreshed.
             </summary>
             <remarks>
-            Applies only if <see cref="P:SharpKml.Dom.NetworkLink.Link"/> has its
-            <see cref="P:SharpKml.Dom.LinkType.RefreshMode"/> set to <see cref="F:SharpKml.Dom.RefreshMode.OnExpire"/>.
+            Applies only if <see cref="P:SharpKml.Dom.NetworkLink.Link" /> has its
+            <see cref="P:SharpKml.Dom.LinkType.RefreshMode" /> set to <see cref="F:SharpKml.Dom.RefreshMode.OnExpire" />.
             </remarks>
         </member>
         <member name="P:SharpKml.Dom.NetworkLinkControl.LinkDescription">
             <summary>
-            Gets or sets the text for the <see cref="P:SharpKml.Dom.Feature.Description"/> of
-            <see cref="T:SharpKml.Dom.NetworkLink"/>.
+            Gets or sets the text for the <see cref="P:SharpKml.Dom.Feature.Description" /> of
+            <see cref="T:SharpKml.Dom.NetworkLink" />.
             </summary>
             <remarks>
             The text may include well formed HTML. This value shall take
@@ -1677,8 +1677,8 @@
         </member>
         <member name="P:SharpKml.Dom.NetworkLinkControl.LinkName">
             <summary>
-            Gets or sets a valid content for the <see cref="P:SharpKml.Dom.Feature.Name"/> of
-            <see cref="T:SharpKml.Dom.NetworkLink"/>.
+            Gets or sets a valid content for the <see cref="P:SharpKml.Dom.Feature.Name" /> of
+            <see cref="T:SharpKml.Dom.NetworkLink" />.
             </summary>
             <remarks>
             This value shall take precedence over the value of
@@ -1687,8 +1687,8 @@
         </member>
         <member name="P:SharpKml.Dom.NetworkLinkControl.LinkSnippet">
             <summary>
-            Gets or sets the value for <see cref="P:SharpKml.Dom.Feature.Snippet"/> of
-            <see cref="T:SharpKml.Dom.NetworkLink"/>.
+            Gets or sets the value for <see cref="P:SharpKml.Dom.Feature.Snippet" /> of
+            <see cref="T:SharpKml.Dom.NetworkLink" />.
             </summary>
             <remarks>
             This value shall take precedence over the value of
@@ -1698,7 +1698,7 @@
         <member name="P:SharpKml.Dom.NetworkLinkControl.Message">
             <summary>
             Gets or sets the text that should be displayed when a
-            <see cref="T:SharpKml.Dom.NetworkLink"/> is first activated or the Message
+            <see cref="T:SharpKml.Dom.NetworkLink" /> is first activated or the Message
             value is updated.
             </summary>
         </member>
@@ -1708,7 +1708,7 @@
             of the referenced KML resource.
             </summary>
             <remarks>
-            The value shall take precedence over <see cref="P:SharpKml.Dom.LinkType.RefreshInterval"/>.
+            The value shall take precedence over <see cref="P:SharpKml.Dom.LinkType.RefreshInterval" />.
             </remarks>
         </member>
         <member name="P:SharpKml.Dom.NetworkLinkControl.SessionLength">
@@ -1722,27 +1722,27 @@
         </member>
         <member name="P:SharpKml.Dom.NetworkLinkControl.Update">
             <summary>
-            Gets or sets the associated <see cref="P:SharpKml.Dom.NetworkLinkControl.Update"/> of this instance.
+            Gets or sets the associated <see cref="P:SharpKml.Dom.NetworkLinkControl.Update" /> of this instance.
             </summary>
         </member>
         <member name="P:SharpKml.Dom.NetworkLinkControl.View">
             <summary>
-            Gets or sets the associated <see cref="T:SharpKml.Dom.AbstractView"/> of this instance.
+            Gets or sets the associated <see cref="T:SharpKml.Dom.AbstractView" /> of this instance.
             </summary>
         </member>
         <member name="T:SharpKml.Dom.Update">
             <summary>
             Specifies an addition, change, or deletion to a KML resource that has
-            previously been retrieved via <see cref="T:SharpKml.Dom.NetworkLink"/>.
+            previously been retrieved via <see cref="T:SharpKml.Dom.NetworkLink" />.
             </summary>
             <remarks>
             <para>OGC KML 2.2 Section 13.3</para>
             <para>Update does not affect the KML resource itself; rather it updates
             its representation within the earth browser only.</para>
             <para>All KML objects within an update context, that is a grandchild of
-            the Update element, shall have a <see cref="P:SharpKml.Dom.KmlObject.TargetId"/> that
+            the Update element, shall have a <see cref="P:SharpKml.Dom.KmlObject.TargetId" /> that
             identifies the object to be updated, and shall not have an
-            <see cref="P:SharpKml.Dom.KmlObject.Id"/>.</para>
+            <see cref="P:SharpKml.Dom.KmlObject.Id" />.</para>
             </remarks>
         </member>
         <member name="M:SharpKml.Dom.Update.#ctor">
@@ -1750,44 +1750,44 @@
         </member>
         <member name="M:SharpKml.Dom.Update.AddUpdate(SharpKml.Dom.ChangeCollection)">
             <summary>
-            Adds the specified <see cref="T:SharpKml.Dom.ChangeCollection"/> to <see cref="P:SharpKml.Dom.Update.Updates"/>.
+            Adds the specified <see cref="T:SharpKml.Dom.ChangeCollection" /> to <see cref="P:SharpKml.Dom.Update.Updates" />.
             </summary>
             <param name="update">The <c>Change</c> to add.</param>
             <exception cref="T:System.ArgumentNullException">update is null.</exception>
             <exception cref="T:System.InvalidOperationException">
-            update belongs to another <see cref="T:SharpKml.Dom.Element"/>.
+            update belongs to another <see cref="T:SharpKml.Dom.Element" />.
             </exception>
         </member>
         <member name="M:SharpKml.Dom.Update.AddUpdate(SharpKml.Dom.CreateCollection)">
             <summary>
-            Adds the specified <see cref="T:SharpKml.Dom.CreateCollection"/> to <see cref="P:SharpKml.Dom.Update.Updates"/>.
+            Adds the specified <see cref="T:SharpKml.Dom.CreateCollection" /> to <see cref="P:SharpKml.Dom.Update.Updates" />.
             </summary>
             <param name="update">The <c>Create</c> to add.</param>
             <exception cref="T:System.ArgumentNullException">update is null.</exception>
             <exception cref="T:System.InvalidOperationException">
-            update belongs to another <see cref="T:SharpKml.Dom.Element"/>.
+            update belongs to another <see cref="T:SharpKml.Dom.Element" />.
             </exception>
         </member>
         <member name="M:SharpKml.Dom.Update.AddUpdate(SharpKml.Dom.DeleteCollection)">
             <summary>
-            Adds the specified <see cref="T:SharpKml.Dom.DeleteCollection"/> to <see cref="P:SharpKml.Dom.Update.Updates"/>.
+            Adds the specified <see cref="T:SharpKml.Dom.DeleteCollection" /> to <see cref="P:SharpKml.Dom.Update.Updates" />.
             </summary>
             <param name="update">The <c>Delete</c> to add.</param>
             <exception cref="T:System.ArgumentNullException">update is null.</exception>
             <exception cref="T:System.InvalidOperationException">
-            update belongs to another <see cref="T:SharpKml.Dom.Element"/>.
+            update belongs to another <see cref="T:SharpKml.Dom.Element" />.
             </exception>
         </member>
         <member name="P:SharpKml.Dom.Update.Target">
             <summary>
             Gets or sets the URL for the target KML resource that has been
-            previously retrieved via <see cref="T:SharpKml.Dom.NetworkLink"/>.
+            previously retrieved via <see cref="T:SharpKml.Dom.NetworkLink" />.
             </summary>
         </member>
         <member name="P:SharpKml.Dom.Update.Updates">
             <summary>
-            Gets the update elements (<see cref="T:SharpKml.Dom.ChangeCollection"/>, <see cref="T:SharpKml.Dom.CreateCollection"/>
-            or <see cref="T:SharpKml.Dom.DeleteCollection"/>) associated with this instance.
+            Gets the update elements (<see cref="T:SharpKml.Dom.ChangeCollection" />, <see cref="T:SharpKml.Dom.CreateCollection" />
+            or <see cref="T:SharpKml.Dom.DeleteCollection" />) associated with this instance.
             </summary>
         </member>
         <member name="T:SharpKml.Dom.ImagePyramid">
@@ -1800,17 +1800,17 @@
             <para>Each image in the pyramid is subdivided into tiles so only the
             portions in view are loaded.</para>
             <para>The pixel size of the original image is specified by
-            <see cref="P:SharpKml.Dom.ImagePyramid.Width"/> and <see cref="P:SharpKml.Dom.ImagePyramid.Height"/>. The width and height
+            <see cref="P:SharpKml.Dom.ImagePyramid.Width" /> and <see cref="P:SharpKml.Dom.ImagePyramid.Height" />. The width and height
             can be any size and do not need to be a power of 2. You can fill out the
             remaining pixels with blank pixels (as described in Section 11.6.3)</para>
-            <para>Tiles must be square, and the <see cref="P:SharpKml.Dom.ImagePyramid.TileSize"/> must be a
+            <para>Tiles must be square, and the <see cref="P:SharpKml.Dom.ImagePyramid.TileSize" /> must be a
             power of 2. A tile size of 256 (the default) or 512 is recommended.</para>
             <para>See Section 11.4.3 for handling large images and Section 11.6.3
             for creating an Image Pyramid.</para>
             </remarks>
         </member>
         <member name="F:SharpKml.Dom.ImagePyramid.DefaultTileSize">
-            <summary>The default value that should be used for <see cref="P:SharpKml.Dom.ImagePyramid.TileSize"/>.</summary>
+            <summary>The default value that should be used for <see cref="P:SharpKml.Dom.ImagePyramid.TileSize" />.</summary>
         </member>
         <member name="P:SharpKml.Dom.ImagePyramid.GridOrigin">
             <summary>
@@ -1844,7 +1844,7 @@
             <remarks>
             <para>OGC KML 2.2 Section 11.4</para>
             <para>The PhotoOverlay may be rendered on one of three shapes
-            (as determined by <see cref="P:SharpKml.Dom.PhotoOverlay.Shape"/> hape):
+            (as determined by <see cref="P:SharpKml.Dom.PhotoOverlay.Shape" /> hape):
             <list type="bullet">
             <item><description>A 2D planar rectangle.</description></item>
             <item><description>A cylinder (for a panoramic photo).</description></item>
@@ -1853,23 +1853,23 @@
             <para>The photo overlay faces toward the viewpoint and its center is
             placed at the head of the view vector. The view vector is defined as the
             vector based at the viewpoint and in the direction specified by the
-            corresponding <see cref="T:SharpKml.Dom.AbstractView"/> element. The length of the view
-            vector is determined by the value of <see cref="P:SharpKml.Dom.ViewVolume.Near"/>. The
+            corresponding <see cref="T:SharpKml.Dom.AbstractView" /> element. The length of the view
+            vector is determined by the value of <see cref="P:SharpKml.Dom.ViewVolume.Near" />. The
             photo overlay is positioned such that the view vector points toward the
             photo and is orthogonal to the center of the image (see Section 11.4.2).
             </para><para>The URL for the PhotoOverlay image is specified in
-            <see cref="P:SharpKml.Dom.Overlay.Icon"/> in the <see cref="P:SharpKml.Dom.BasicLink.Href"/>
+            <see cref="P:SharpKml.Dom.Overlay.Icon" /> in the <see cref="P:SharpKml.Dom.BasicLink.Href" />
             property.</para>
             </remarks>
         </member>
         <member name="T:SharpKml.Dom.Overlay">
             <summary>
-            Specifies how to display an image specified by <see cref="P:SharpKml.Dom.Overlay.Icon"/>.
+            Specifies how to display an image specified by <see cref="P:SharpKml.Dom.Overlay.Icon" />.
             </summary>
             <remarks>OGC KML 2.2 Section 11.1</remarks>
         </member>
         <member name="F:SharpKml.Dom.Overlay.DefaultColor">
-            <summary>The default value that should be used for <see cref="P:SharpKml.Dom.Overlay.Color"/>.</summary>
+            <summary>The default value that should be used for <see cref="P:SharpKml.Dom.Overlay.Color" />.</summary>
         </member>
         <member name="P:SharpKml.Dom.Overlay.Color">
             <summary>Gets or sets the color of the graphic element.</summary>
@@ -1877,7 +1877,7 @@
         <member name="P:SharpKml.Dom.Overlay.DrawOrder">
             <summary>
             Gets or sets the stacking order, relative to the
-            <see cref="T:SharpKml.Dom.AbstractView"/>, for overlapping Overlay elements.
+            <see cref="T:SharpKml.Dom.AbstractView" />, for overlapping Overlay elements.
             </summary>
             <remarks>
             Overlay elements with higher DrawOrder values are drawn on top of
@@ -1893,13 +1893,13 @@
         </member>
         <member name="P:SharpKml.Dom.PhotoOverlay.Image">
             <summary>
-            Gets or sets the associated <see cref="T:SharpKml.Dom.ImagePyramid"/> of this instance.
+            Gets or sets the associated <see cref="T:SharpKml.Dom.ImagePyramid" /> of this instance.
             </summary>
         </member>
         <member name="P:SharpKml.Dom.PhotoOverlay.Location">
             <summary>Gets or sets the location of an associated icon.</summary>
             <remarks>
-            The <see cref="T:SharpKml.Dom.Point"/> is styled using associated or default styles.
+            The <see cref="T:SharpKml.Dom.Point" /> is styled using associated or default styles.
             </remarks>
         </member>
         <member name="P:SharpKml.Dom.PhotoOverlay.Rotation">
@@ -1914,7 +1914,7 @@
         </member>
         <member name="P:SharpKml.Dom.PhotoOverlay.Shape">
             <summary>
-            Gets or sets the <see cref="T:SharpKml.Dom.Shape"/> the PhotoOverlay is
+            Gets or sets the <see cref="T:SharpKml.Dom.Shape" /> the PhotoOverlay is
             projected onto.
             </summary>
         </member>
@@ -1935,16 +1935,16 @@
             <remarks>
             <para>OGC KML 2.2 Section 11.7</para>
             <para> The image position is determined by mapping a point relative to
-            the image (<see cref="P:SharpKml.Dom.ScreenOverlay.Origin"/>) to a point relative to the screen
-            (<see cref="P:SharpKml.Dom.ScreenOverlay.Screen"/>). The image may be rotated by <see cref="P:SharpKml.Dom.ScreenOverlay.Rotation"/>
-            degrees about a point relative to the screen (<see cref="P:SharpKml.Dom.ScreenOverlay.RotationOrigin"/>).
-            The image sizing is determined by <see cref="P:SharpKml.Dom.ScreenOverlay.Size"/>.</para>
+            the image (<see cref="P:SharpKml.Dom.ScreenOverlay.Origin" />) to a point relative to the screen
+            (<see cref="P:SharpKml.Dom.ScreenOverlay.Screen" />). The image may be rotated by <see cref="P:SharpKml.Dom.ScreenOverlay.Rotation" />
+            degrees about a point relative to the screen (<see cref="P:SharpKml.Dom.ScreenOverlay.RotationOrigin" />).
+            The image sizing is determined by <see cref="P:SharpKml.Dom.ScreenOverlay.Size" />.</para>
             </remarks>
         </member>
         <member name="P:SharpKml.Dom.ScreenOverlay.Origin">
             <summary>
             Gets or sets a point on (or outside of) the image that is mapped
-            to the screen coordinate <see cref="P:SharpKml.Dom.ScreenOverlay.Screen"/>.
+            to the screen coordinate <see cref="P:SharpKml.Dom.ScreenOverlay.Screen" />.
             </summary>
             <remarks>
             The origin of the coordinate system is the lower left corner of the icon.
@@ -1959,7 +1959,7 @@
             The value is an angle in decimal degrees counterclockwise starting
             from north. Use ±180 to indicate the rotation of the parent object.
             The center of the rotation, if not the objects center, is specified
-            in <see cref="P:SharpKml.Dom.ScreenOverlay.RotationOrigin"/>.
+            in <see cref="P:SharpKml.Dom.ScreenOverlay.RotationOrigin" />.
             </remarks>
         </member>
         <member name="P:SharpKml.Dom.ScreenOverlay.RotationOrigin">
@@ -1997,17 +1997,17 @@
             <remarks>OGC KML 2.2 Section 16.21</remarks>
         </member>
         <member name="F:SharpKml.Dom.VectorType.DefaultX">
-            <summary>The default value that should be used for <see cref="P:SharpKml.Dom.VectorType.X"/>.</summary>
+            <summary>The default value that should be used for <see cref="P:SharpKml.Dom.VectorType.X" />.</summary>
         </member>
         <member name="F:SharpKml.Dom.VectorType.DefaultY">
-            <summary>The default value that should be used for <see cref="P:SharpKml.Dom.VectorType.Y"/>.</summary>
+            <summary>The default value that should be used for <see cref="P:SharpKml.Dom.VectorType.Y" />.</summary>
         </member>
         <member name="P:SharpKml.Dom.VectorType.X">
             <summary>Gets or sets the x component of a point.</summary>
         </member>
         <member name="P:SharpKml.Dom.VectorType.XUnits">
             <summary>
-            Gets or sets the <see cref="T:SharpKml.Dom.Unit"/> in which the x value is specified.
+            Gets or sets the <see cref="T:SharpKml.Dom.Unit" /> in which the x value is specified.
             </summary>
         </member>
         <member name="P:SharpKml.Dom.VectorType.Y">
@@ -2015,7 +2015,7 @@
         </member>
         <member name="P:SharpKml.Dom.VectorType.YUnits">
             <summary>
-            Gets or sets the <see cref="T:SharpKml.Dom.Unit"/> in which the y value is specified.
+            Gets or sets the <see cref="T:SharpKml.Dom.Unit" /> in which the y value is specified.
             </summary>
         </member>
         <member name="T:SharpKml.Dom.RotationVector">
@@ -2039,14 +2039,14 @@
             Gets or sets the distance above the terrain in meters.
             </summary>
             <remarks>
-            The value shall be interpreted according to <see cref="P:SharpKml.Dom.GroundOverlay.AltitudeMode"/>.
-            Only <see cref="F:SharpKml.Dom.AltitudeMode.ClampToGround"/> or
-            <see cref="F:SharpKml.Dom.AltitudeMode.Absolute"/> values are valid.
+            The value shall be interpreted according to <see cref="P:SharpKml.Dom.GroundOverlay.AltitudeMode" />.
+            Only <see cref="F:SharpKml.Dom.AltitudeMode.ClampToGround" /> or
+            <see cref="F:SharpKml.Dom.AltitudeMode.Absolute" /> values are valid.
             </remarks>
         </member>
         <member name="P:SharpKml.Dom.GroundOverlay.AltitudeMode">
             <summary>
-            Gets or sets how <see cref="P:SharpKml.Dom.GroundOverlay.Altitude"/> should be interpreted.
+            Gets or sets how <see cref="P:SharpKml.Dom.GroundOverlay.Altitude" /> should be interpreted.
             </summary>
         </member>
         <member name="P:SharpKml.Dom.GroundOverlay.Bounds">
@@ -2067,16 +2067,16 @@
             <remarks>OGC KML 2.2 Section 9.14</remarks>
         </member>
         <member name="F:SharpKml.Dom.AbstractLatLonBox.DefaultEast">
-            <summary>The default value that should be used for <see cref="P:SharpKml.Dom.AbstractLatLonBox.East"/>.</summary>
+            <summary>The default value that should be used for <see cref="P:SharpKml.Dom.AbstractLatLonBox.East" />.</summary>
         </member>
         <member name="F:SharpKml.Dom.AbstractLatLonBox.DefaultNorth">
-            <summary>The default value that should be used for <see cref="P:SharpKml.Dom.AbstractLatLonBox.North"/>.</summary>
+            <summary>The default value that should be used for <see cref="P:SharpKml.Dom.AbstractLatLonBox.North" />.</summary>
         </member>
         <member name="F:SharpKml.Dom.AbstractLatLonBox.DefaultSouth">
-            <summary>The default value that should be used for <see cref="P:SharpKml.Dom.AbstractLatLonBox.South"/>.</summary>
+            <summary>The default value that should be used for <see cref="P:SharpKml.Dom.AbstractLatLonBox.South" />.</summary>
         </member>
         <member name="F:SharpKml.Dom.AbstractLatLonBox.DefaultWest">
-            <summary>The default value that should be used for <see cref="P:SharpKml.Dom.AbstractLatLonBox.West"/>.</summary>
+            <summary>The default value that should be used for <see cref="P:SharpKml.Dom.AbstractLatLonBox.West" />.</summary>
         </member>
         <member name="P:SharpKml.Dom.AbstractLatLonBox.East">
             <summary>
@@ -2126,7 +2126,7 @@
         </member>
         <member name="T:SharpKml.Dom.ViewVolume">
             <summary>
-            Defines how much of the current scene in a <see cref="T:SharpKml.Dom.PhotoOverlay"/>
+            Defines how much of the current scene in a <see cref="T:SharpKml.Dom.PhotoOverlay" />
             is visible.
             </summary>
             <remarks>
@@ -2156,7 +2156,7 @@
         <member name="P:SharpKml.Dom.ViewVolume.Near">
             <summary>
             Gets or sets the length in meters of the view vector, which starts
-            from the camera viewpoint and ends at the <see cref="T:SharpKml.Dom.PhotoOverlay"/>
+            from the camera viewpoint and ends at the <see cref="T:SharpKml.Dom.PhotoOverlay" />
             shape.
             </summary>
             <remarks>The value shall be positive.</remarks>
@@ -2190,23 +2190,23 @@
         </member>
         <member name="T:SharpKml.Dom.LinkType">
             <summary>
-            Provides common properties for <see cref="T:SharpKml.Dom.Icon"/> and <see cref="T:SharpKml.Dom.Link"/>.
+            Provides common properties for <see cref="T:SharpKml.Dom.Icon" /> and <see cref="T:SharpKml.Dom.Link" />.
             </summary>
             <remarks>
             This is not part of the KML specification but is declared in the XSD.
             Because it is not part of the specification, this class should not be
-            used; an instance of <see cref="T:SharpKml.Dom.Icon"/> or <see cref="T:SharpKml.Dom.Link"/> should
+            used; an instance of <see cref="T:SharpKml.Dom.Icon" /> or <see cref="T:SharpKml.Dom.Link" /> should
             be used instead.
             </remarks>
         </member>
         <member name="F:SharpKml.Dom.LinkType.DefaultRefreshInterval">
-            <summary>The default value that should be used for <see cref="P:SharpKml.Dom.LinkType.RefreshInterval"/>.</summary>
+            <summary>The default value that should be used for <see cref="P:SharpKml.Dom.LinkType.RefreshInterval" />.</summary>
         </member>
         <member name="F:SharpKml.Dom.LinkType.DefaultViewBoundScale">
-            <summary>The default value that should be used for <see cref="P:SharpKml.Dom.LinkType.ViewBoundScale"/>.</summary>
+            <summary>The default value that should be used for <see cref="P:SharpKml.Dom.LinkType.ViewBoundScale" />.</summary>
         </member>
         <member name="F:SharpKml.Dom.LinkType.DefaultViewRefreshTime">
-            <summary>The default value that should be used for <see cref="P:SharpKml.Dom.LinkType.ViewRefreshTime"/>.</summary>
+            <summary>The default value that should be used for <see cref="P:SharpKml.Dom.LinkType.ViewRefreshTime" />.</summary>
         </member>
         <member name="M:SharpKml.Dom.LinkType.#ctor">
             <summary>Initializes a new instance of the LinkType class.</summary>
@@ -2251,8 +2251,8 @@
         <member name="P:SharpKml.Dom.LinkType.RefreshMode">
             <summary>Gets or sets a time-based refresh mode.</summary>
             <remarks>
-            If <see cref="P:SharpKml.Dom.LinkType.RefreshInterval"/> is specified then RefreshMode should
-            be set to <see cref="F:SharpKml.Dom.RefreshMode.OnInterval"/>.
+            If <see cref="P:SharpKml.Dom.LinkType.RefreshInterval" /> is specified then RefreshMode should
+            be set to <see cref="F:SharpKml.Dom.RefreshMode.OnInterval" />.
             </remarks>
         </member>
         <member name="P:SharpKml.Dom.LinkType.ViewBoundScale">
@@ -2269,7 +2269,7 @@
         <member name="P:SharpKml.Dom.LinkType.ViewFormat">
             <summary>
             Gets or sets the format of a query string related to view parameters
-            that is appended to the <see cref="P:SharpKml.Dom.BasicLink.Href"/> before the
+            that is appended to the <see cref="P:SharpKml.Dom.BasicLink.Href" /> before the
             resource is fetched.
             </summary>
             <remarks>
@@ -2323,8 +2323,8 @@
             Gets or sets how the link is refreshed when the geographic view changes.
             </summary>
             <remarks>
-            If <see cref="P:SharpKml.Dom.LinkType.ViewRefreshTime"/> is specified then ViewRefreshMode
-            should be set to <see cref="F:SharpKml.Dom.ViewRefreshMode.OnStop"/>.
+            If <see cref="P:SharpKml.Dom.LinkType.ViewRefreshTime" /> is specified then ViewRefreshMode
+            should be set to <see cref="F:SharpKml.Dom.ViewRefreshMode.OnStop" />.
             </remarks>
         </member>
         <member name="P:SharpKml.Dom.LinkType.ViewRefreshTime">
@@ -2333,14 +2333,14 @@
             geographic view after camera movement stops.
             </summary>
             <remarks>
-            This applies when <see cref="P:SharpKml.Dom.LinkType.ViewRefreshMode"/> is set to
-            <see cref="F:SharpKml.Dom.ViewRefreshMode.OnStop"/>. The value shall be positive.
+            This applies when <see cref="P:SharpKml.Dom.LinkType.ViewRefreshMode" /> is set to
+            <see cref="F:SharpKml.Dom.ViewRefreshMode.OnStop" />. The value shall be positive.
             </remarks>
         </member>
         <member name="T:SharpKml.Dom.ItemIcon">
             <summary>
             Specifies the location for an icon used in the list view to reflect the
-            state of the <see cref="T:SharpKml.Dom.Folder"/> or <see cref="T:SharpKml.Dom.NetworkLink"/> to which
+            state of the <see cref="T:SharpKml.Dom.Folder" /> or <see cref="T:SharpKml.Dom.NetworkLink" /> to which
             it is associated.
             </summary>
             <remarks>OGC KML 2.2 Section 12.14</remarks>
@@ -2350,7 +2350,7 @@
         </member>
         <member name="M:SharpKml.Dom.ItemIcon.AddOrphan(SharpKml.Dom.Element)">
             <summary>Parses the &lt;state&gt; element.</summary>
-            <param name="orphan">The <see cref="T:SharpKml.Dom.Element"/> to add.</param>
+            <param name="orphan">The <see cref="T:SharpKml.Dom.Element" /> to add.</param>
         </member>
         <member name="P:SharpKml.Dom.ItemIcon.Href">
             <summary>Gets or sets the resource location.</summary>
@@ -2361,11 +2361,11 @@
         </member>
         <member name="P:SharpKml.Dom.ItemIcon.State">
             <summary>
-            Gets or sets the current state of the <see cref="T:SharpKml.Dom.Folder"/> or
-            <see cref="T:SharpKml.Dom.NetworkLink"/>.
+            Gets or sets the current state of the <see cref="T:SharpKml.Dom.Folder" /> or
+            <see cref="T:SharpKml.Dom.NetworkLink" />.
             </summary>
             <remarks>
-            Multiple values of <see cref="T:SharpKml.Dom.ItemIconStates"/> can be specified
+            Multiple values of <see cref="T:SharpKml.Dom.ItemIconStates" /> can be specified
             at the same time (using bitwise operations). See section 12.14.3
             for example combinations.
             </remarks>
@@ -2375,7 +2375,7 @@
         </member>
         <member name="M:SharpKml.Dom.ItemIcon.StateElement.CreateStartElement(System.Xml.XmlWriter)">
             <summary>Writes the start of an XML element.</summary>
-            <param name="writer">An <see cref="T:System.Xml.XmlWriter"/> to write to.</param>
+            <param name="writer">An <see cref="T:System.Xml.XmlWriter" /> to write to.</param>
         </member>
         <member name="M:SharpKml.Dom.ItemIcon.StateElement.Parse(System.String)">
             <summary>
@@ -2412,7 +2412,7 @@
             <remarks>OGC KML 2.2 Section 12.5</remarks>
         </member>
         <member name="F:SharpKml.Dom.ColorStyle.DefaultColor">
-            <summary>The default value that should be used for <see cref="P:SharpKml.Dom.ColorStyle.Color"/>.</summary>
+            <summary>The default value that should be used for <see cref="P:SharpKml.Dom.ColorStyle.Color" />.</summary>
         </member>
         <member name="P:SharpKml.Dom.ColorStyle.Color">
             <summary>Gets or sets the color of the graphic element.</summary>
@@ -2422,7 +2422,7 @@
         </member>
         <member name="F:SharpKml.Dom.LineStyle.DefaultWidth">
             <summary>
-            The default value that should be used for <see cref="P:SharpKml.Dom.LineStyle.Width"/>.
+            The default value that should be used for <see cref="P:SharpKml.Dom.LineStyle.Width" />.
             </summary>
         </member>
         <member name="P:SharpKml.Dom.LineStyle.Width">
@@ -2433,13 +2433,13 @@
         <member name="P:SharpKml.Dom.LineStyle.OuterColor">
             <summary>
             Gets or sets the color of the portion of the line defined by
-            <see cref="P:SharpKml.Dom.LineStyle.OuterWidth"/>. [Google Extension]
+            <see cref="P:SharpKml.Dom.LineStyle.OuterWidth" />. [Google Extension]
             </summary>
         </member>
         <member name="P:SharpKml.Dom.LineStyle.OuterWidth">
             <summary>
             Gets or sets a value between 0.0 and 1.0 that specifies the proportion
-            of the line that uses the <see cref="P:SharpKml.Dom.LineStyle.OuterColor"/>. [Google Extension]
+            of the line that uses the <see cref="P:SharpKml.Dom.LineStyle.OuterColor" />. [Google Extension]
             </summary>
         </member>
         <member name="P:SharpKml.Dom.LineStyle.PhysicalWidth">
@@ -2456,13 +2456,13 @@
         </member>
         <member name="T:SharpKml.Dom.LabelStyle">
             <summary>
-            Specifies how the name of a <see cref="T:SharpKml.Dom.Feature"/> is drawn in the
+            Specifies how the name of a <see cref="T:SharpKml.Dom.Feature" /> is drawn in the
             geographic view.
             </summary>
             <remarks>OGC KML 2.2 Section 12.10</remarks>
         </member>
         <member name="F:SharpKml.Dom.LabelStyle.DefaultScale">
-            <summary>The default value that should be used for <see cref="P:SharpKml.Dom.LabelStyle.Scale"/>.</summary>
+            <summary>The default value that should be used for <see cref="P:SharpKml.Dom.LabelStyle.Scale" />.</summary>
         </member>
         <member name="P:SharpKml.Dom.LabelStyle.Scale">
             <summary>
@@ -2477,21 +2477,21 @@
         </member>
         <member name="T:SharpKml.Dom.IconStyle">
             <summary>
-            Specifies how icons for <see cref="T:SharpKml.Dom.Placemark"/> and <see cref="T:SharpKml.Dom.PhotoOverlay"/>
+            Specifies how icons for <see cref="T:SharpKml.Dom.Placemark" /> and <see cref="T:SharpKml.Dom.PhotoOverlay" />
             with a Point geometry are drawn in an earth browser's list and geographic views.
             </summary>
             <remarks>
             <para>OGC KML 2.2 Section 12.8</para>
-            <para>The color specified in the <see cref="P:SharpKml.Dom.ColorStyle.Color"/> property
+            <para>The color specified in the <see cref="P:SharpKml.Dom.ColorStyle.Color" /> property
             is blended with the color of the icon.</para>
             </remarks>
         </member>
         <member name="F:SharpKml.Dom.IconStyle.DefaultScale">
-            <summary>The default value that should be used for <see cref="P:SharpKml.Dom.IconStyle.Scale"/>.</summary>
+            <summary>The default value that should be used for <see cref="P:SharpKml.Dom.IconStyle.Scale" />.</summary>
         </member>
         <member name="M:SharpKml.Dom.IconStyle.AddOrphan(SharpKml.Dom.Element)">
             <summary>
-            Stores an invalid child <see cref="T:SharpKml.Dom.Element"/> for later serialization.
+            Stores an invalid child <see cref="T:SharpKml.Dom.Element" /> for later serialization.
             </summary>
             <param name="orphan">The <c>Element</c> to store for serialization.</param>
         </member>
@@ -2504,8 +2504,8 @@
         <member name="P:SharpKml.Dom.IconStyle.Hotspot">
             <summary>
             Gets or sets the position of the reference point on the icon that is
-            anchored to the <see cref="T:SharpKml.Dom.Point"/> specified in
-            <see cref="P:SharpKml.Dom.Placemark.Geometry"/>.
+            anchored to the <see cref="T:SharpKml.Dom.Point" /> specified in
+            <see cref="P:SharpKml.Dom.Placemark.Geometry" />.
             </summary>
             <remarks>
             The origin of the image coordinate system is in the lower left
@@ -2525,11 +2525,11 @@
         </member>
         <member name="M:SharpKml.Dom.IconStyle.IconLink.#ctor(System.Uri)">
             <summary>Initializes a new instance of the IconLink class.</summary>
-            <param name="href">The value for <see cref="P:SharpKml.Dom.BasicLink.Href"/></param>
+            <param name="href">The value for <see cref="P:SharpKml.Dom.BasicLink.Href" /></param>
         </member>
         <member name="M:SharpKml.Dom.IconStyle.IconLink.SharpKml#Dom#ICustomElement#CreateStartElement(System.Xml.XmlWriter)">
             <summary>Writes the start of an XML element.</summary>
-            <param name="writer">An <see cref="T:System.Xml.XmlWriter"/> to write to.</param>
+            <param name="writer">An <see cref="T:System.Xml.XmlWriter" /> to write to.</param>
         </member>
         <member name="P:SharpKml.Dom.IconStyle.IconLink.Height">
             <summary>
@@ -2562,27 +2562,27 @@
         </member>
         <member name="T:SharpKml.Dom.ListStyle">
             <summary>
-            Specifies how a <see cref="T:SharpKml.Dom.Feature"/> is displayed in the list view.
+            Specifies how a <see cref="T:SharpKml.Dom.Feature" /> is displayed in the list view.
             </summary>
             <remarks>OGC KML 2.2 Section 12.13</remarks>
         </member>
         <member name="F:SharpKml.Dom.ListStyle.DefaultMaximumSnippetLines">
-            <summary>The default value that should be used for <see cref="P:SharpKml.Dom.ListStyle.MaximumSnippetLines"/>.</summary>
+            <summary>The default value that should be used for <see cref="P:SharpKml.Dom.ListStyle.MaximumSnippetLines" />.</summary>
         </member>
         <member name="F:SharpKml.Dom.ListStyle.DefaultBackgroundColor">
-            <summary>The default value that should be used for <see cref="P:SharpKml.Dom.ListStyle.BackgroundColor"/>.</summary>
+            <summary>The default value that should be used for <see cref="P:SharpKml.Dom.ListStyle.BackgroundColor" />.</summary>
         </member>
         <member name="M:SharpKml.Dom.ListStyle.#ctor">
             <summary>Initializes a new instance of the ListStyle class.</summary>
         </member>
         <member name="M:SharpKml.Dom.ListStyle.AddItemIcon(SharpKml.Dom.ItemIcon)">
             <summary>
-            Adds the specified <see cref="T:SharpKml.Dom.ItemIcon"/> to this instance.
+            Adds the specified <see cref="T:SharpKml.Dom.ItemIcon" /> to this instance.
             </summary>
             <param name="icon">The <c>ItemIcon</c> to add to this instance.</param>
             <exception cref="T:System.ArgumentNullException">icon is null.</exception>
             <exception cref="T:System.InvalidOperationException">
-            icon belongs to another <see cref="T:SharpKml.Dom.Element"/>.
+            icon belongs to another <see cref="T:SharpKml.Dom.Element" />.
             </exception>
         </member>
         <member name="P:SharpKml.Dom.ListStyle.BackgroundColor">
@@ -2592,65 +2592,65 @@
         </member>
         <member name="P:SharpKml.Dom.ListStyle.ItemIcons">
             <summary>
-            Gets the <see cref="T:SharpKml.Dom.ItemIcon"/>s contained by this instance.
+            Gets the <see cref="T:SharpKml.Dom.ItemIcon" />s contained by this instance.
             </summary>
         </member>
         <member name="P:SharpKml.Dom.ListStyle.ItemType">
             <summary>
-            Gets or sets how a <see cref="T:SharpKml.Dom.Folder"/> and its contents shall be
+            Gets or sets how a <see cref="T:SharpKml.Dom.Folder" /> and its contents shall be
             displayed as items in the list view.
             </summary>
         </member>
         <member name="P:SharpKml.Dom.ListStyle.MaximumSnippetLines">
             <summary>
             Gets or sets the maximum number of lines to display for the
-            <see cref="P:SharpKml.Dom.Feature.Snippet"/> value in the list view.
+            <see cref="P:SharpKml.Dom.Feature.Snippet" /> value in the list view.
             </summary>
         </member>
         <member name="T:SharpKml.Dom.Pair">
             <summary>
             Defines a key/value pair that maps a mode
-            (<see cref="T:SharpKml.Dom.StyleState"/>) to the predefined
-            <see cref="P:SharpKml.Dom.Pair.StyleUrl"/> and/or a <see cref="T:SharpKml.Dom.StyleSelector"/>.
+            (<see cref="T:SharpKml.Dom.StyleState" />) to the predefined
+            <see cref="P:SharpKml.Dom.Pair.StyleUrl" /> and/or a <see cref="T:SharpKml.Dom.StyleSelector" />.
             </summary>
             <remarks>
             <para>OGC KML 2.2 Section 12.4</para>
-            <para>If both <c>StyleUrl</c> and <see cref="P:SharpKml.Dom.Pair.Selector"/> exist then
+            <para>If both <c>StyleUrl</c> and <see cref="P:SharpKml.Dom.Pair.Selector" /> exist then
             their styles shall be merged.</para>
             </remarks>
         </member>
         <member name="P:SharpKml.Dom.Pair.Selector">
             <summary>
-            Gets or sets the associated <see cref="T:SharpKml.Dom.StyleSelector"/> of this instance.
+            Gets or sets the associated <see cref="T:SharpKml.Dom.StyleSelector" /> of this instance.
             </summary>
         </member>
         <member name="P:SharpKml.Dom.Pair.State">
             <summary>
-            Gets or sets the <see cref="T:SharpKml.Dom.StyleState"/> for the key.
+            Gets or sets the <see cref="T:SharpKml.Dom.StyleState" /> for the key.
             </summary>
         </member>
         <member name="P:SharpKml.Dom.Pair.StyleUrl">
             <summary>
-            Gets or sets a reference to a <see cref="T:SharpKml.Dom.Style"/> or
-            <see cref="T:SharpKml.Dom.StyleMapCollection"/>.
+            Gets or sets a reference to a <see cref="T:SharpKml.Dom.Style" /> or
+            <see cref="T:SharpKml.Dom.StyleMapCollection" />.
             </summary>
             <remarks>
             The value of the fragment shall be the id of a <c>Style</c> or
-            <c>StyleMap</c> defined in a <see cref="T:SharpKml.Dom.Document"/>.
+            <c>StyleMap</c> defined in a <see cref="T:SharpKml.Dom.Document" />.
             </remarks>
         </member>
         <member name="T:SharpKml.Dom.PolygonStyle">
             <summary>
-            Specifies the drawing style for a <see cref="T:SharpKml.Dom.Polygon"/>, including the
-            extruded portion of a <c>Polygon</c> or <see cref="T:SharpKml.Dom.LineString"/>.
+            Specifies the drawing style for a <see cref="T:SharpKml.Dom.Polygon" />, including the
+            extruded portion of a <c>Polygon</c> or <see cref="T:SharpKml.Dom.LineString" />.
             </summary>
             <remarks>OGC KML 2.2 Section 12.12</remarks>
         </member>
         <member name="F:SharpKml.Dom.PolygonStyle.DefaultFill">
-            <summary>The default value that should be used for <see cref="P:SharpKml.Dom.PolygonStyle.Fill"/>.</summary>
+            <summary>The default value that should be used for <see cref="P:SharpKml.Dom.PolygonStyle.Fill" />.</summary>
         </member>
         <member name="F:SharpKml.Dom.PolygonStyle.DefaultOutline">
-            <summary>The default value that should be used for <see cref="P:SharpKml.Dom.PolygonStyle.Outline"/>.</summary>
+            <summary>The default value that should be used for <see cref="P:SharpKml.Dom.PolygonStyle.Outline" />.</summary>
         </member>
         <member name="P:SharpKml.Dom.PolygonStyle.Fill">
             <summary>Gets or sets whether to fill the polygon.</summary>
@@ -2662,13 +2662,13 @@
         </member>
         <member name="T:SharpKml.Dom.Style">
             <summary>
-            Specifies a container of zero or more <see cref="T:SharpKml.Dom.ColorStyle"/> objects
-            that can referenced from a <see cref="T:SharpKml.Dom.StyleMapCollection"/> or
-            <see cref="T:SharpKml.Dom.Feature"/>.
+            Specifies a container of zero or more <see cref="T:SharpKml.Dom.ColorStyle" /> objects
+            that can referenced from a <see cref="T:SharpKml.Dom.StyleMapCollection" /> or
+            <see cref="T:SharpKml.Dom.Feature" />.
             </summary>
             <remarks>
             <para>OGC KML 2.2 Section 12.2</para>
-            <para>Styles affect how a <see cref="T:SharpKml.Dom.Geometry"/> is presented in the
+            <para>Styles affect how a <see cref="T:SharpKml.Dom.Geometry" /> is presented in the
             geographic view and how a <c>Feature</c> appears in the list view.</para>
             </remarks>
         </member>
@@ -2678,61 +2678,61 @@
         </member>
         <member name="P:SharpKml.Dom.Style.Balloon">
             <summary>
-            Gets or sets the associated <see cref="T:SharpKml.Dom.BalloonStyle"/> of this instance.
+            Gets or sets the associated <see cref="T:SharpKml.Dom.BalloonStyle" /> of this instance.
             </summary>
         </member>
         <member name="P:SharpKml.Dom.Style.Icon">
             <summary>
-            Gets or sets the associated <see cref="T:SharpKml.Dom.IconStyle"/> of this instance.
+            Gets or sets the associated <see cref="T:SharpKml.Dom.IconStyle" /> of this instance.
             </summary>
         </member>
         <member name="P:SharpKml.Dom.Style.Label">
             <summary>
-            Gets or sets the associated <see cref="T:SharpKml.Dom.LabelStyle"/> of this instance.
+            Gets or sets the associated <see cref="T:SharpKml.Dom.LabelStyle" /> of this instance.
             </summary>
         </member>
         <member name="P:SharpKml.Dom.Style.Line">
             <summary>
-            Gets or sets the associated <see cref="T:SharpKml.Dom.LineStyle"/> of this instance.
+            Gets or sets the associated <see cref="T:SharpKml.Dom.LineStyle" /> of this instance.
             </summary>
         </member>
         <member name="P:SharpKml.Dom.Style.List">
             <summary>
-            Gets or sets the associated <see cref="T:SharpKml.Dom.ListStyle"/> of this instance.
+            Gets or sets the associated <see cref="T:SharpKml.Dom.ListStyle" /> of this instance.
             </summary>
         </member>
         <member name="P:SharpKml.Dom.Style.Polygon">
             <summary>
-            Gets or sets the associated <see cref="T:SharpKml.Dom.PolygonStyle"/> of this instance.
+            Gets or sets the associated <see cref="T:SharpKml.Dom.PolygonStyle" /> of this instance.
             </summary>
         </member>
         <member name="T:SharpKml.Dom.StyleMapCollection">
             <summary>
-            Specifies a mapping between two <see cref="T:SharpKml.Dom.Style"/>s using a key/value
-            pair that maps a mode to the predefined <see cref="P:SharpKml.Dom.Feature.StyleUrl"/>.
+            Specifies a mapping between two <see cref="T:SharpKml.Dom.Style" />s using a key/value
+            pair that maps a mode to the predefined <see cref="P:SharpKml.Dom.Feature.StyleUrl" />.
             </summary>
             <remarks>
             <para>OGC KML 2.2 Section 12.3</para>
             <para>A StyleMap may be used to provide separate normal and highlighted
-            styles for a <see cref="T:SharpKml.Dom.Placemark"/>. StyleMap should contain two
-            <see cref="T:SharpKml.Dom.Pair"/> objects, one with a <see cref="P:SharpKml.Dom.Pair.State"/> value of
-            <see cref="F:SharpKml.Dom.StyleState.Normal"/> and the other with a value of
-            <see cref="F:SharpKml.Dom.StyleState.Highlight"/>.</para>
+            styles for a <see cref="T:SharpKml.Dom.Placemark" />. StyleMap should contain two
+            <see cref="T:SharpKml.Dom.Pair" /> objects, one with a <see cref="P:SharpKml.Dom.Pair.State" /> value of
+            <see cref="F:SharpKml.Dom.StyleState.Normal" /> and the other with a value of
+            <see cref="F:SharpKml.Dom.StyleState.Highlight" />.</para>
             </remarks>
         </member>
         <member name="M:SharpKml.Dom.StyleMapCollection.#ctor">
             <summary>Initializes a new instance of the StyleMapCollection class.</summary>
         </member>
         <member name="M:SharpKml.Dom.StyleMapCollection.Add(SharpKml.Dom.Pair)">
-            <summary>Adds a <see cref="T:SharpKml.Dom.Pair"/> to this instance.</summary>
+            <summary>Adds a <see cref="T:SharpKml.Dom.Pair" /> to this instance.</summary>
             <param name="item">The <c>Pair</c> to be added.</param>
             <exception cref="T:System.ArgumentNullException">item is null.</exception>
             <exception cref="T:System.InvalidOperationException">
-            item belongs to another <see cref="T:SharpKml.Dom.Element"/>.
+            item belongs to another <see cref="T:SharpKml.Dom.Element" />.
             </exception>
         </member>
         <member name="M:SharpKml.Dom.StyleMapCollection.Clear">
-            <summary>Removes all <see cref="T:SharpKml.Dom.Pair"/>s from this instance.</summary>
+            <summary>Removes all <see cref="T:SharpKml.Dom.Pair" />s from this instance.</summary>
         </member>
         <member name="M:SharpKml.Dom.StyleMapCollection.Contains(SharpKml.Dom.Pair)">
             <summary>
@@ -2787,7 +2787,7 @@
         </member>
         <member name="P:SharpKml.Dom.StyleMapCollection.Count">
             <summary>
-            Gets the number of <see cref="T:SharpKml.Dom.Pair"/>s in this instance.
+            Gets the number of <see cref="T:SharpKml.Dom.Pair" />s in this instance.
             </summary>
         </member>
         <member name="P:SharpKml.Dom.StyleMapCollection.System#Collections#Generic#ICollection{SharpKml#Dom#Pair}#IsReadOnly">
@@ -2817,7 +2817,7 @@
             <remarks>Legacy API - not part of OGC KML 2.2</remarks>
         </member>
         <member name="M:SharpKml.Dom.Url.op_Explicit(SharpKml.Dom.Url)~SharpKml.Dom.Link">
-            <summary>Converts the specified Url into a <see cref="T:SharpKml.Dom.Link"/></summary>
+            <summary>Converts the specified Url into a <see cref="T:SharpKml.Dom.Link" /></summary>
             <param name="url">The value to convert.</param>
             <returns>
             A copy of the specified value parameter as a <c>Link</c>.
@@ -2916,7 +2916,7 @@
         </member>
         <member name="M:SharpKml.Dom.CoordinateCollection.SharpKml#Dom#ICustomElement#CreateStartElement(System.Xml.XmlWriter)">
             <summary>Writes the start of an XML element.</summary>
-            <param name="writer">An <see cref="T:System.Xml.XmlWriter"/> to write to.</param>
+            <param name="writer">An <see cref="T:System.Xml.XmlWriter" /> to write to.</param>
         </member>
         <member name="M:SharpKml.Dom.CoordinateCollection.System#Collections#IEnumerable#GetEnumerator">
             <summary>
@@ -2957,11 +2957,11 @@
             <returns>The value at the specified index.</returns>
             <exception cref="T:System.ArgumentOutOfRangeException">
             index is less than 0 or index is equal to or greater than
-            <see cref="P:SharpKml.Dom.CoordinateCollection.Count"/>.
+            <see cref="P:SharpKml.Dom.CoordinateCollection.Count" />.
             </exception>
         </member>
         <member name="T:SharpKml.Dom.Folder">
-            <summary>Used to organize <see cref="T:SharpKml.Dom.Feature"/> elements hierarchically.</summary>
+            <summary>Used to organize <see cref="T:SharpKml.Dom.Feature" /> elements hierarchically.</summary>
             <remarks>OGC KML 2.2 Section 9.10</remarks>
         </member>
         <member name="T:SharpKml.Dom.Container">
@@ -2973,17 +2973,17 @@
         </member>
         <member name="M:SharpKml.Dom.Container.AddFeature(SharpKml.Dom.Feature)">
             <summary>
-            Adds the specified <see cref="T:SharpKml.Dom.Feature"/> to this instance.
+            Adds the specified <see cref="T:SharpKml.Dom.Feature" /> to this instance.
             </summary>
             <param name="feature">The <c>Feature</c> to add to this instance.</param>
             <exception cref="T:System.ArgumentNullException">feature is null.</exception>
             <exception cref="T:System.InvalidOperationException">
-            feature belongs to another <see cref="T:SharpKml.Dom.Element"/>.
+            feature belongs to another <see cref="T:SharpKml.Dom.Element" />.
             </exception>
         </member>
         <member name="M:SharpKml.Dom.Container.FindFeature(System.String)">
             <summary>
-            Returns the first <see cref="T:SharpKml.Dom.Feature"/> found with the specified id.
+            Returns the first <see cref="T:SharpKml.Dom.Feature" /> found with the specified id.
             </summary>
             <param name="id">The id of the <c>Feature</c> to search for.</param>
             <returns>
@@ -2994,19 +2994,19 @@
         </member>
         <member name="M:SharpKml.Dom.Container.RemoveFeature(System.String)">
             <summary>
-            Removes the specified <see cref="T:SharpKml.Dom.Feature"/> this instance.
+            Removes the specified <see cref="T:SharpKml.Dom.Feature" /> this instance.
             </summary>
             <param name="id">The Id of the <c>Feature</c> to remove.</param>
             <returns>
             true if the value parameter is successfully removed; otherwise,
             false. This method also returns false if item was not found in
-            <see cref="P:SharpKml.Dom.Container.Features"/>.
+            <see cref="P:SharpKml.Dom.Container.Features" />.
             </returns>
             <exception cref="T:System.ArgumentNullException">id is null.</exception>
         </member>
         <member name="P:SharpKml.Dom.Container.Features">
             <summary>
-            Gets the <see cref="T:SharpKml.Dom.Feature"/>s contained by this instance.
+            Gets the <see cref="T:SharpKml.Dom.Feature" />s contained by this instance.
             </summary>
         </member>
         <member name="M:SharpKml.Dom.Folder.#ctor">
@@ -3078,7 +3078,7 @@
         </member>
         <member name="T:SharpKml.Dom.MultipleGeometry">
             <summary>
-            Represents a container for zero or more <see cref="P:SharpKml.Dom.MultipleGeometry.Geometry"/> elements
+            Represents a container for zero or more <see cref="P:SharpKml.Dom.MultipleGeometry.Geometry" /> elements
             associated with the same KML feature.
             </summary>
             <remarks>OGC KML 2.2 Section 10.2</remarks>
@@ -3088,16 +3088,16 @@
         </member>
         <member name="M:SharpKml.Dom.MultipleGeometry.AddGeometry(SharpKml.Dom.Geometry)">
             <summary>
-            Adds the specified <see cref="P:SharpKml.Dom.MultipleGeometry.Geometry"/> to this instance.
+            Adds the specified <see cref="P:SharpKml.Dom.MultipleGeometry.Geometry" /> to this instance.
             </summary>
             <param name="geometry">The <c>Geometry</c> to add to this instance.</param>
             <exception cref="T:System.ArgumentNullException">geometry is null.</exception>
             <exception cref="T:System.InvalidOperationException">
-            geometry belongs to another <see cref="T:SharpKml.Dom.Element"/>.
+            geometry belongs to another <see cref="T:SharpKml.Dom.Element" />.
             </exception>
         </member>
         <member name="P:SharpKml.Dom.MultipleGeometry.Geometry">
-            <summary>Gets a collection of <see cref="P:SharpKml.Dom.MultipleGeometry.Geometry"/> elements.</summary>
+            <summary>Gets a collection of <see cref="P:SharpKml.Dom.MultipleGeometry.Geometry" /> elements.</summary>
         </member>
         <member name="T:SharpKml.Dom.Orientation">
             <summary>
@@ -3144,12 +3144,12 @@
         </member>
         <member name="M:SharpKml.Dom.ResourceMap.AddAlias(SharpKml.Dom.Alias)">
             <summary>
-            Adds the specified <see cref="T:SharpKml.Dom.Alias"/> to this instance.
+            Adds the specified <see cref="T:SharpKml.Dom.Alias" /> to this instance.
             </summary>
             <param name="alias">The <c>Alias</c> to add to this instance.</param>
             <exception cref="T:System.ArgumentNullException">alias is null.</exception>
             <exception cref="T:System.InvalidOperationException">
-            alias belongs to another <see cref="T:SharpKml.Dom.Element"/>.
+            alias belongs to another <see cref="T:SharpKml.Dom.Element" />.
             </exception>
         </member>
         <member name="P:SharpKml.Dom.ResourceMap.Aliases">
@@ -3157,19 +3157,19 @@
         </member>
         <member name="T:SharpKml.Dom.Scale">
             <summary>
-            Scales a <see cref="T:SharpKml.Dom.Model"/> along the x, y, and z axes in the
+            Scales a <see cref="T:SharpKml.Dom.Model" /> along the x, y, and z axes in the
             <c>Model</c>'s coordinate space.
             </summary>
             <remarks>OGC KML 2.2 Section 10.12</remarks>
         </member>
         <member name="F:SharpKml.Dom.Scale.DefaultX">
-            <summary>The default value that should be used for <see cref="P:SharpKml.Dom.Scale.X"/>.</summary>
+            <summary>The default value that should be used for <see cref="P:SharpKml.Dom.Scale.X" />.</summary>
         </member>
         <member name="F:SharpKml.Dom.Scale.DefaultY">
-            <summary>The default value that should be used for <see cref="P:SharpKml.Dom.Scale.Y"/>.</summary>
+            <summary>The default value that should be used for <see cref="P:SharpKml.Dom.Scale.Y" />.</summary>
         </member>
         <member name="F:SharpKml.Dom.Scale.DefaultZ">
-            <summary>The default value that should be used for <see cref="P:SharpKml.Dom.Scale.Z"/>.</summary>
+            <summary>The default value that should be used for <see cref="P:SharpKml.Dom.Scale.Z" />.</summary>
         </member>
         <member name="P:SharpKml.Dom.Scale.X">
             <summary>Gets or sets the scale factor along x axis.</summary>
@@ -3182,7 +3182,7 @@
         </member>
         <member name="T:SharpKml.Dom.GX.AltitudeMode">
             <summary>
-            Can be used instead of the OGC KML standard <see cref="T:SharpKml.Dom.AltitudeMode"/>.
+            Can be used instead of the OGC KML standard <see cref="T:SharpKml.Dom.AltitudeMode" />.
             </summary>
         </member>
         <member name="F:SharpKml.Dom.GX.AltitudeMode.ClampToSeafloor">
@@ -3249,38 +3249,38 @@
         </member>
         <member name="M:SharpKml.Dom.Document.AddSchema(SharpKml.Dom.Schema)">
             <summary>
-            Adds the specified <see cref="T:SharpKml.Dom.Schema"/> to this instance.
+            Adds the specified <see cref="T:SharpKml.Dom.Schema" /> to this instance.
             </summary>
             <param name="schema">The <c>Schema</c> to add to this instance.</param>
             <exception cref="T:System.ArgumentNullException">schema is null.</exception>
             <exception cref="T:System.InvalidOperationException">
-            schema belongs to another <see cref="T:SharpKml.Dom.Element"/>.
+            schema belongs to another <see cref="T:SharpKml.Dom.Element" />.
             </exception>
         </member>
         <member name="M:SharpKml.Dom.Document.AddStyle(SharpKml.Dom.StyleSelector)">
             <summary>
-            Adds the specified <see cref="T:SharpKml.Dom.StyleSelector"/> to this instance.
+            Adds the specified <see cref="T:SharpKml.Dom.StyleSelector" /> to this instance.
             </summary>
             <param name="style">The <c>StyleSelector</c> to add to this instance.
             </param>
             <exception cref="T:System.ArgumentNullException">style is null.</exception>
             <exception cref="T:System.InvalidOperationException">
-            style belongs to another <see cref="T:SharpKml.Dom.Element"/>.
+            style belongs to another <see cref="T:SharpKml.Dom.Element" />.
             </exception>
         </member>
         <member name="P:SharpKml.Dom.Document.Schemas">
             <summary>
-            Gets a collection of <see cref="T:SharpKml.Dom.Schema"/> contained by this instance.
+            Gets a collection of <see cref="T:SharpKml.Dom.Schema" /> contained by this instance.
             </summary>
         </member>
         <member name="P:SharpKml.Dom.Document.Styles">
             <summary>
-            Gets a collection of <see cref="T:SharpKml.Dom.StyleSelector"/> contained by this instance.
+            Gets a collection of <see cref="T:SharpKml.Dom.StyleSelector" /> contained by this instance.
             </summary>
         </member>
         <member name="T:SharpKml.Dom.GX.SimpleArrayField">
             <summary>
-            Specifies a user-defined field for use in <see cref="T:SharpKml.Dom.GX.SimpleArrayData"/>.
+            Specifies a user-defined field for use in <see cref="T:SharpKml.Dom.GX.SimpleArrayData" />.
             </summary>
             <remarks>This is not part of the OGC KML 2.2 standard.</remarks>
         </member>
@@ -3332,15 +3332,15 @@
             <remarks>OGC KML 2.2 Section 13.1</remarks>
         </member>
         <member name="T:SharpKml.Dom.LinkSnippet">
-            <summary>Specifies a short description for a <see cref="T:SharpKml.Dom.NetworkLinkControl"/>.</summary>
+            <summary>Specifies a short description for a <see cref="T:SharpKml.Dom.NetworkLinkControl" />.</summary>
             <remarks>
             <para>OGC KML 2.2 Sections 13.2.3.7 and 16.19</para>
             <para>LinkSnippet content shall take precedence over the
-            <see cref="P:SharpKml.Dom.Feature.Snippet"/> value.</para>
+            <see cref="P:SharpKml.Dom.Feature.Snippet" /> value.</para>
             </remarks>
         </member>
         <member name="F:SharpKml.Dom.LinkSnippet.DefaultMaximumLines">
-            <summary>The default value that should be used for <see cref="P:SharpKml.Dom.LinkSnippet.MaximumLines"/>.</summary>
+            <summary>The default value that should be used for <see cref="P:SharpKml.Dom.LinkSnippet.MaximumLines" />.</summary>
         </member>
         <member name="P:SharpKml.Dom.LinkSnippet.MaximumLines">
             <summary>Gets or sets the maximum number of lines to display.</summary>
@@ -3359,7 +3359,7 @@
         <member name="P:SharpKml.Dom.Data.Name">
             <summary>Gets or sets the name of the data pair.</summary>
             <remarks>
-            The value shall be unique within the context of its <see cref="P:SharpKml.Dom.Element.Parent"/>.
+            The value shall be unique within the context of its <see cref="P:SharpKml.Dom.Element.Parent" />.
             </remarks>
         </member>
         <member name="P:SharpKml.Dom.Data.Value">
@@ -3369,7 +3369,7 @@
             <summary>Represents a KML AbstractFeatureGroup</summary>
             <remarks>
             <para>OGC KML 2.2 Section 9.2</para>
-            <para>The scope of ExtendedData is restricted to its <see cref="P:SharpKml.Dom.Element.Parent"/>
+            <para>The scope of ExtendedData is restricted to its <see cref="P:SharpKml.Dom.Element.Parent" />
             only. Child elements support entity substitution - see section 6.5 for details.</para>
             </remarks>
         </member>
@@ -3378,29 +3378,29 @@
         </member>
         <member name="M:SharpKml.Dom.ExtendedData.AddData(SharpKml.Dom.Data)">
             <summary>
-            Adds the specified <see cref="P:SharpKml.Dom.ExtendedData.Data"/> to this instance.
+            Adds the specified <see cref="P:SharpKml.Dom.ExtendedData.Data" /> to this instance.
             </summary>
             <param name="data">The <c>Data</c> to add to this instance.</param>
             <exception cref="T:System.ArgumentNullException">data is null.</exception>
             <exception cref="T:System.InvalidOperationException">
-            data belongs to another <see cref="T:SharpKml.Dom.Element"/>.
+            data belongs to another <see cref="T:SharpKml.Dom.Element" />.
             </exception>
         </member>
         <member name="M:SharpKml.Dom.ExtendedData.AddSchemaData(SharpKml.Dom.SchemaData)">
             <summary>
-            Adds the specified <see cref="P:SharpKml.Dom.ExtendedData.SchemaData"/> to this instance.
+            Adds the specified <see cref="P:SharpKml.Dom.ExtendedData.SchemaData" /> to this instance.
             </summary>
             <param name="data">The <c>SchemaData</c> to add to this instance.</param>
             <exception cref="T:System.ArgumentNullException">data is null.</exception>
             <exception cref="T:System.InvalidOperationException">
-            data belongs to another <see cref="T:SharpKml.Dom.Element"/>.
+            data belongs to another <see cref="T:SharpKml.Dom.Element" />.
             </exception>
         </member>
         <member name="P:SharpKml.Dom.ExtendedData.Data">
             <summary>Gets a collection of untyped name/value pairs.</summary>
         </member>
         <member name="P:SharpKml.Dom.ExtendedData.SchemaData">
-            <summary>Gets a collection of <see cref="P:SharpKml.Dom.ExtendedData.SchemaData"/> objects.</summary>
+            <summary>Gets a collection of <see cref="P:SharpKml.Dom.ExtendedData.SchemaData" /> objects.</summary>
         </member>
         <member name="T:SharpKml.Dom.GX.SimpleArrayData">
             <summary>Represents an array of values.</summary>
@@ -3411,13 +3411,13 @@
         </member>
         <member name="M:SharpKml.Dom.GX.SimpleArrayData.AddValue(System.String)">
             <summary>
-            Adds the specified value to <see cref="P:SharpKml.Dom.GX.SimpleArrayData.Values"/>.</summary>
+            Adds the specified value to <see cref="P:SharpKml.Dom.GX.SimpleArrayData.Values" />.</summary>
             <param name="value">The value to add.</param>
             <exception cref="T:System.ArgumentNullException">value is null.</exception>
         </member>
         <member name="M:SharpKml.Dom.GX.SimpleArrayData.AddOrphan(SharpKml.Dom.Element)">
-            <summary>Adds the gx:value to <see cref="P:SharpKml.Dom.GX.SimpleArrayData.Values"/>.</summary>
-            <param name="orphan">The <see cref="T:SharpKml.Dom.Element"/> to add.</param>
+            <summary>Adds the gx:value to <see cref="P:SharpKml.Dom.GX.SimpleArrayData.Values" />.</summary>
+            <param name="orphan">The <see cref="T:SharpKml.Dom.Element" /> to add.</param>
         </member>
         <member name="P:SharpKml.Dom.GX.SimpleArrayData.Name">
             <summary>Gets or sets the name of the array.</summary>
@@ -3435,12 +3435,12 @@
             Initializes a new instance of the ValueElement class.
             </summary>
             <param name="value">
-            The value to set the <see cref="P:SharpKml.Dom.Element.InnerText"/> to.
+            The value to set the <see cref="P:SharpKml.Dom.Element.InnerText" /> to.
             </param>
         </member>
         <member name="M:SharpKml.Dom.GX.SimpleArrayData.ValueElement.CreateStartElement(System.Xml.XmlWriter)">
             <summary>Writes the start of an XML element.</summary>
-            <param name="writer">An <see cref="T:System.Xml.XmlWriter"/> to write to.</param>
+            <param name="writer">An <see cref="T:System.Xml.XmlWriter" /> to write to.</param>
         </member>
         <member name="P:SharpKml.Dom.GX.SimpleArrayData.ValueElement.ProcessChildren">
             <summary>
@@ -3627,7 +3627,7 @@
         <member name="F:SharpKml.Dom.ViewRefreshMode.Never">
             <summary>Ignore changes in the geographic view.</summary>
             <remarks>
-            Also ignore <see cref="P:SharpKml.Dom.LinkType.ViewFormat"/> values, if any.
+            Also ignore <see cref="P:SharpKml.Dom.LinkType.ViewFormat" /> values, if any.
             </remarks>
         </member>
         <member name="F:SharpKml.Dom.ViewRefreshMode.OnRequest">
@@ -3637,18 +3637,18 @@
         </member>
         <member name="F:SharpKml.Dom.ViewRefreshMode.OnStop">
             <summary>
-            Refresh the resource <see cref="P:SharpKml.Dom.LinkType.ViewRefreshTime"/> seconds
+            Refresh the resource <see cref="P:SharpKml.Dom.LinkType.ViewRefreshTime" /> seconds
             after movement stops.
             </summary>
         </member>
         <member name="F:SharpKml.Dom.ViewRefreshMode.OnRegion">
             <summary>
-            Refresh the resource if a <see cref="T:SharpKml.Dom.Region"/> becomes active.
+            Refresh the resource if a <see cref="T:SharpKml.Dom.Region" /> becomes active.
             </summary>
         </member>
         <member name="T:SharpKml.Base.KmlFactory">
             <summary>
-            Creates a derived class of <see cref="T:SharpKml.Dom.Element"/> from an XML element.
+            Creates a derived class of <see cref="T:SharpKml.Dom.Element" /> from an XML element.
             </summary>
         </member>
         <member name="M:SharpKml.Base.KmlFactory.#cctor">
@@ -3656,7 +3656,7 @@
         </member>
         <member name="M:SharpKml.Base.KmlFactory.CreateElement(SharpKml.Base.XmlComponent)">
             <summary>
-            Creates a derived class of <see cref="T:SharpKml.Dom.Element"/> based on the XML
+            Creates a derived class of <see cref="T:SharpKml.Dom.Element" /> based on the XML
             information.
             </summary>
             <param name="xml">The XML information of the element.</param>
@@ -3696,7 +3696,7 @@
             </summary>
             <typeparam name="T">
             The type of the class to be registered, deriving from
-            <see cref="T:SharpKml.Dom.Element"/>.
+            <see cref="T:SharpKml.Dom.Element" />.
             </typeparam>
             <param name="xml">The XML information of the element.</param>
             <exception cref="T:System.ArgumentNullException">xml is null.</exception>
@@ -3788,13 +3788,13 @@
         </member>
         <member name="T:SharpKml.Base.Parser">
             <summary>
-            Creates a structure of <see cref="T:SharpKml.Dom.Element"/>s from XML data.
+            Creates a structure of <see cref="T:SharpKml.Dom.Element" />s from XML data.
             </summary>
         </member>
         <member name="M:SharpKml.Base.Parser.Parse(System.IO.Stream)">
             <summary>
             Parses the specified stream for classes deriving from
-            <see cref="T:SharpKml.Dom.Element"/>.
+            <see cref="T:SharpKml.Dom.Element" />.
             </summary>
             <param name="input">The stream containing the XML data.</param>
             <exception cref="T:System.ArgumentNullException">input is null.</exception>
@@ -3812,10 +3812,10 @@
         <member name="M:SharpKml.Base.Parser.Parse(System.IO.TextReader)">
             <summary>
             Parses the specified stream for classes deriving from
-            <see cref="T:SharpKml.Dom.Element"/>.
+            <see cref="T:SharpKml.Dom.Element" />.
             </summary>
             <param name="input">
-            The <see cref="T:System.IO.TextReader"/> containing the XML data.
+            The <see cref="T:System.IO.TextReader" /> containing the XML data.
             </param>
             <exception cref="T:System.ArgumentNullException">input is null.</exception>
             <exception cref="T:System.InvalidOperationException">
@@ -3828,7 +3828,7 @@
         <member name="M:SharpKml.Base.Parser.ParseString(System.String,System.Boolean)">
             <summary>
             Parses the specified string for classes deriving from
-            <see cref="T:SharpKml.Dom.Element"/>.
+            <see cref="T:SharpKml.Dom.Element" />.
             </summary>
             <param name="xml">The XML data to parse.</param>
             <param name="namespaces">
@@ -3843,13 +3843,13 @@
         </member>
         <member name="E:SharpKml.Base.Parser.ElementAdded">
             <summary>
-            Raised when a new <see cref="T:SharpKml.Dom.Element"/> is parsed and added to the
+            Raised when a new <see cref="T:SharpKml.Dom.Element" /> is parsed and added to the
             hierarchy.
             </summary>
         </member>
         <member name="P:SharpKml.Base.Parser.Root">
             <summary>
-            Gets the root <see cref="T:SharpKml.Dom.Element"/> found during parsing.
+            Gets the root <see cref="T:SharpKml.Dom.Element" /> found during parsing.
             </summary>
         </member>
         <member name="T:SharpKml.Base.Parser.IgnoreNamespaceManager">
@@ -3876,12 +3876,12 @@
         </member>
         <member name="T:SharpKml.Base.Serializer">
             <summary>
-            Serializes a derived class of <see cref="T:SharpKml.Dom.Element"/> into XML data.
+            Serializes a derived class of <see cref="T:SharpKml.Dom.Element" /> into XML data.
             </summary>
         </member>
         <member name="M:SharpKml.Base.Serializer.Serialize(SharpKml.Dom.Element)">
             <summary>
-            Serializes the specified <see cref="T:SharpKml.Dom.Element"/> to XML.
+            Serializes the specified <see cref="T:SharpKml.Dom.Element" /> to XML.
             </summary>
             <param name="root">
             The <c>Element</c> to serialize, including all its children.
@@ -3894,7 +3894,7 @@
         </member>
         <member name="M:SharpKml.Base.Serializer.SerializeRaw(SharpKml.Dom.Element)">
             <summary>
-            Serializes the specified <see cref="T:SharpKml.Dom.Element"/> to XML without formatting.
+            Serializes the specified <see cref="T:SharpKml.Dom.Element" /> to XML without formatting.
             </summary>
             <param name="root">
             The <c>Element</c> to serialize, including all its children.
@@ -3908,7 +3908,7 @@
         <member name="P:SharpKml.Base.Serializer.Xml">
             <summary>
             Gets the XML content after the most recent call to
-            <see cref="M:SharpKml.Base.Serializer.Serialize(SharpKml.Dom.Element)"/>.
+            <see cref="M:SharpKml.Base.Serializer.Serialize(SharpKml.Dom.Element)" />.
             </summary>
         </member>
         <member name="T:SharpKml.Base.TypeBrowser">
@@ -3999,7 +3999,7 @@
         <member name="M:SharpKml.Base.XmlComponent.#ctor(System.Xml.XmlReader)">
             <summary>Initializes a new instance of the XmlComponent class.</summary>
             <param name="reader">
-            A <see cref="T:System.Xml.XmlReader"/> object to extract information from. The
+            A <see cref="T:System.Xml.XmlReader" /> object to extract information from. The
             reader will be left in the same state and will not be modified.
             </param>
         </member>
@@ -4071,7 +4071,7 @@
         </member>
         <member name="M:SharpKml.Dom.AbstractView.AddGXOption(SharpKml.Dom.GX.Option)">
             <summary>
-            Adds the specified <see cref="T:SharpKml.Dom.GX.Option"/> to this instance.
+            Adds the specified <see cref="T:SharpKml.Dom.GX.Option" /> to this instance.
             [Google Extension]
             </summary>
             <param name="option">
@@ -4079,7 +4079,7 @@
             </param>
             <exception cref="T:System.ArgumentNullException">option is null.</exception>
             <exception cref="T:System.InvalidOperationException">
-            option belongs to another <see cref="T:SharpKml.Dom.Element"/>.
+            option belongs to another <see cref="T:SharpKml.Dom.Element" />.
             </exception>
         </member>
         <member name="P:SharpKml.Dom.AbstractView.GXTimePrimitive">
@@ -4099,7 +4099,7 @@
         </member>
         <member name="P:SharpKml.Dom.AbstractView.ViewerOptions">
             <summary>
-            Gets the <see cref="T:SharpKml.Dom.GX.Option"/>s stored by this instance.
+            Gets the <see cref="T:SharpKml.Dom.GX.Option" />s stored by this instance.
             [Google Extension]
             </summary>
         </member>
@@ -4191,22 +4191,22 @@
         </member>
         <member name="M:SharpKml.Dom.Atom.Entry.AddCategory(SharpKml.Dom.Atom.Category)">
             <summary>
-            Adds the specified <see cref="T:SharpKml.Dom.Atom.Category"/> to this instance.
+            Adds the specified <see cref="T:SharpKml.Dom.Atom.Category" /> to this instance.
             </summary>
             <param name="category">The <c>Category</c> to add to this instance.</param>
             <exception cref="T:System.ArgumentNullException">category is null.</exception>
             <exception cref="T:System.InvalidOperationException">
-            category belongs to another <see cref="T:SharpKml.Dom.Element"/>.
+            category belongs to another <see cref="T:SharpKml.Dom.Element" />.
             </exception>
         </member>
         <member name="M:SharpKml.Dom.Atom.Entry.AddLink(SharpKml.Dom.Atom.Link)">
             <summary>
-            Adds the specified <see cref="T:SharpKml.Dom.Atom.Link"/> to this instance.
+            Adds the specified <see cref="T:SharpKml.Dom.Atom.Link" /> to this instance.
             </summary>
             <param name="link">The <c>Link</c> to add to this instance.</param>
             <exception cref="T:System.ArgumentNullException">link is null.</exception>
             <exception cref="T:System.InvalidOperationException">
-            link belongs to another <see cref="T:SharpKml.Dom.Element"/>.
+            link belongs to another <see cref="T:SharpKml.Dom.Element" />.
             </exception>
         </member>
         <member name="P:SharpKml.Dom.Atom.Entry.Categories">
@@ -4228,8 +4228,8 @@
             Gets or sets a short summary, abstract, or excerpt of an entry.
             </summary>
             <remarks>
-            It is not advisable for the Summary to duplicate <see cref="P:SharpKml.Dom.Atom.Entry.Title"/>
-            or <see cref="P:SharpKml.Dom.Atom.Entry.Content"/> because Atom Processors might assume there
+            It is not advisable for the Summary to duplicate <see cref="P:SharpKml.Dom.Atom.Entry.Title" />
+            or <see cref="P:SharpKml.Dom.Atom.Entry.Content" /> because Atom Processors might assume there
             is a useful summary when there is none.
             </remarks>
         </member>
@@ -4258,7 +4258,7 @@
         </member>
         <member name="P:SharpKml.Dom.Atom.Link.HrefLang">
             <summary>
-            Gets or sets the language of the resource pointed to by <see cref="P:SharpKml.Dom.Atom.Link.Href"/>.
+            Gets or sets the language of the resource pointed to by <see cref="P:SharpKml.Dom.Atom.Link.Href" />.
             </summary>
             <remarks>
             Value must be a language tag [RFC 3066]. When used together with the
@@ -4271,7 +4271,7 @@
             </summary>
             <remarks>
             This is a hint about the content length of the representation returned
-            when the value of <see cref="P:SharpKml.Dom.Atom.Link.Href"/> is dereferenced. Note that Length
+            when the value of <see cref="P:SharpKml.Dom.Atom.Link.Href" /> is dereferenced. Note that Length
             does not override the actual content length of the representation as
             reported by the underlying protocol.
             </remarks>
@@ -4339,15 +4339,15 @@
         </member>
         <member name="T:SharpKml.Dom.BalloonStyle">
             <summary>
-            Specifies how the description balloon for a <see cref="T:SharpKml.Dom.Feature"/> is drawn.
+            Specifies how the description balloon for a <see cref="T:SharpKml.Dom.Feature" /> is drawn.
             </summary>
             <remarks>OGC KML 2.2 Section 12.6</remarks>
         </member>
         <member name="F:SharpKml.Dom.BalloonStyle.DefaultBackground">
-            <summary>The default value that should be used for <see cref="P:SharpKml.Dom.BalloonStyle.BackgroundColor"/>.</summary>
+            <summary>The default value that should be used for <see cref="P:SharpKml.Dom.BalloonStyle.BackgroundColor" />.</summary>
         </member>
         <member name="F:SharpKml.Dom.BalloonStyle.DefaultText">
-            <summary>The default value that should be used for <see cref="P:SharpKml.Dom.BalloonStyle.TextColor"/>.</summary>
+            <summary>The default value that should be used for <see cref="P:SharpKml.Dom.BalloonStyle.TextColor" />.</summary>
         </member>
         <member name="P:SharpKml.Dom.BalloonStyle.BackgroundColor">
             <summary>
@@ -4381,7 +4381,7 @@
         <member name="P:SharpKml.Dom.Camera.Altitude">
             <summary>
             Gets or sets the distance of the camera from the Earth's surface,
-            in meters, interpreted according to the <see cref="P:SharpKml.Dom.Camera.AltitudeMode"/>.
+            in meters, interpreted according to the <see cref="P:SharpKml.Dom.Camera.AltitudeMode" />.
             </summary>
         </member>
         <member name="P:SharpKml.Dom.Camera.AltitudeMode">
@@ -4454,32 +4454,32 @@
         </member>
         <member name="M:SharpKml.Dom.Atom.Feed.AddCategory(SharpKml.Dom.Atom.Category)">
             <summary>
-            Adds the specified <see cref="T:SharpKml.Dom.Atom.Category"/> to this instance.
+            Adds the specified <see cref="T:SharpKml.Dom.Atom.Category" /> to this instance.
             </summary>
             <param name="category">The <c>Category</c> to add to this instance.</param>
             <exception cref="T:System.ArgumentNullException">category is null.</exception>
             <exception cref="T:System.InvalidOperationException">
-            category belongs to another <see cref="T:SharpKml.Dom.Element"/>.
+            category belongs to another <see cref="T:SharpKml.Dom.Element" />.
             </exception>
         </member>
         <member name="M:SharpKml.Dom.Atom.Feed.AddEntry(SharpKml.Dom.Atom.Entry)">
             <summary>
-            Adds the specified <see cref="T:SharpKml.Dom.Atom.Entry"/> to this instance.
+            Adds the specified <see cref="T:SharpKml.Dom.Atom.Entry" /> to this instance.
             </summary>
             <param name="entry">The <c>Entry</c> to add to this instance.</param>
             <exception cref="T:System.ArgumentNullException">entry is null.</exception>
             <exception cref="T:System.InvalidOperationException">
-            entry belongs to another <see cref="T:SharpKml.Dom.Element"/>.
+            entry belongs to another <see cref="T:SharpKml.Dom.Element" />.
             </exception>
         </member>
         <member name="M:SharpKml.Dom.Atom.Feed.AddLink(SharpKml.Dom.Atom.Link)">
             <summary>
-            Adds the specified <see cref="T:SharpKml.Dom.Atom.Link"/> to this instance.
+            Adds the specified <see cref="T:SharpKml.Dom.Atom.Link" /> to this instance.
             </summary>
             <param name="link">The <c>Link</c> to add to this instance.</param>
             <exception cref="T:System.ArgumentNullException">link is null.</exception>
             <exception cref="T:System.InvalidOperationException">
-            link belongs to another <see cref="T:SharpKml.Dom.Element"/>.
+            link belongs to another <see cref="T:SharpKml.Dom.Element" />.
             </exception>
         </member>
         <member name="P:SharpKml.Dom.Atom.Feed.Categories">
@@ -4510,7 +4510,7 @@
         </member>
         <member name="T:SharpKml.Dom.Description">
             <summary>
-            Specifies a description of a <see cref="T:SharpKml.Dom.Feature"/>, which should be
+            Specifies a description of a <see cref="T:SharpKml.Dom.Feature" />, which should be
             displayed in the description balloon.
             </summary>
             <remarks>
@@ -4529,8 +4529,8 @@
         </member>
         <member name="P:SharpKml.Dom.LatLonAltBox.AltitudeMode">
             <summary>
-            Gets or sets how <see cref="P:SharpKml.Dom.LatLonAltBox.MinimumAltitude"/> and
-            <see cref="P:SharpKml.Dom.LatLonAltBox.MaximumAltitude"/> should be interpreted.
+            Gets or sets how <see cref="P:SharpKml.Dom.LatLonAltBox.MinimumAltitude" /> and
+            <see cref="P:SharpKml.Dom.LatLonAltBox.MaximumAltitude" /> should be interpreted.
             </summary>
         </member>
         <member name="P:SharpKml.Dom.LatLonAltBox.MaximumAltitude">
@@ -4538,11 +4538,11 @@
             Gets or sets the maximum altitude in meters above the vertical datum.
             </summary>
             <remarks>
-            This property is affected by <see cref="P:SharpKml.Dom.LatLonAltBox.AltitudeMode"/> and must
-            be greater than or equal to <see cref="P:SharpKml.Dom.LatLonAltBox.MinimumAltitude"/>. If both
+            This property is affected by <see cref="P:SharpKml.Dom.LatLonAltBox.AltitudeMode" /> and must
+            be greater than or equal to <see cref="P:SharpKml.Dom.LatLonAltBox.MinimumAltitude" />. If both
             <c>MinimumAltitude</c> and <c>MaximumAltitude</c> are specified,
             <c>AltitudeMode</c> shall not have a value of
-            <see cref="F:SharpKml.Dom.AltitudeMode.ClampToGround"/>.
+            <see cref="F:SharpKml.Dom.AltitudeMode.ClampToGround" />.
             </remarks>
         </member>
         <member name="P:SharpKml.Dom.LatLonAltBox.MinimumAltitude">
@@ -4550,11 +4550,11 @@
             Gets or sets the minimum altitude in meters above the vertical datum.
             </summary>
             <remarks>
-            This property is affected by <see cref="P:SharpKml.Dom.LatLonAltBox.AltitudeMode"/> and must
-            be less than or equal to <see cref="P:SharpKml.Dom.LatLonAltBox.MaximumAltitude"/>. If both
+            This property is affected by <see cref="P:SharpKml.Dom.LatLonAltBox.AltitudeMode" /> and must
+            be less than or equal to <see cref="P:SharpKml.Dom.LatLonAltBox.MaximumAltitude" />. If both
             <c>MinimumAltitude</c> and <c>MaximumAltitude</c> are specified,
             <c>AltitudeMode</c> shall not have a value of
-            <see cref="F:SharpKml.Dom.AltitudeMode.ClampToGround"/>.
+            <see cref="F:SharpKml.Dom.AltitudeMode.ClampToGround" />.
             </remarks>
         </member>
         <member name="P:SharpKml.Dom.LatLonAltBox.GXAltitudeMode">
@@ -4570,7 +4570,7 @@
             </summary>
             <remarks>
             Many of the formulae here were copied from the Aviation Formulary
-            <see href="http://williams.best.vwh.net/avform.htm"/>.
+            <see href="http://williams.best.vwh.net/avform.htm" />.
             </remarks>
         </member>
         <member name="M:SharpKml.Base.MathHelpers.Azimuth(System.Double,System.Double,System.Double,System.Double)">
@@ -4587,7 +4587,7 @@
             </returns>
             <remarks>
             This is directly useful as the value of heading in
-            <see cref="T:SharpKml.Dom.AbstractView"/>.
+            <see cref="T:SharpKml.Dom.AbstractView" />.
             </remarks>
             <example>
             The azimuth from 0,0 to 1,0 is 0 degrees. From 0,0 to 0,1 is 90
@@ -4695,7 +4695,7 @@
             The radial in degrees, measures clockwise from north.
             </param>
             <returns>
-            A <see cref="T:SharpKml.Base.Vector"/> containing the Latitude and Longitude of the
+            A <see cref="T:SharpKml.Base.Vector" /> containing the Latitude and Longitude of the
             calculated point.
             </returns>
             <remarks>The antemeridian is not considered.</remarks>
@@ -4712,7 +4712,7 @@
         </member>
         <member name="T:SharpKml.Base.Vector">
             <summary>
-            Represents a point in either 2D or, if <see cref="P:SharpKml.Base.Vector.Altitude"/> is set, 3D space.
+            Represents a point in either 2D or, if <see cref="P:SharpKml.Base.Vector.Altitude" /> is set, 3D space.
             </summary>
         </member>
         <member name="M:SharpKml.Base.Vector.#ctor">
@@ -4906,22 +4906,22 @@
         </member>
         <member name="T:SharpKml.Dom.Lod">
             <summary>
-            Specifies the Level Of Detail to use when displaying a <see cref="T:SharpKml.Dom.Region"/>.
+            Specifies the Level Of Detail to use when displaying a <see cref="T:SharpKml.Dom.Region" />.
             </summary>
             <remarks>
             <para>OGC KML 2.2 Section 9.18</para>
-            <para>An earth browser should calculate the size of the <see cref="T:SharpKml.Dom.Region"/>
+            <para>An earth browser should calculate the size of the <see cref="T:SharpKml.Dom.Region" />
             when projected onto screen space then compute the square root of the
             <c>Region</c>'s area. For example, if an untiled <c>Region</c> is square
             and the viewpoint is directly above it, this measurement is equal to the
             width of the projected <c>Region</c>. If this measurement falls within the
-            limits defined by <see cref="P:SharpKml.Dom.Lod.MinimumPixels"/> and
-            <see cref="P:SharpKml.Dom.Lod.MaximumPixels"/>, and if the <see cref="T:SharpKml.Dom.LatLonAltBox"/> is in
+            limits defined by <see cref="P:SharpKml.Dom.Lod.MinimumPixels" /> and
+            <see cref="P:SharpKml.Dom.Lod.MaximumPixels" />, and if the <see cref="T:SharpKml.Dom.LatLonAltBox" /> is in
             view, then the <c>Region</c> should be activated. If this limit is not
             reached, the associated geometry should not be drawn since it would be
             too far from the user's viewpoint to be visible.</para>
             <para>See the standard for further details of how to handle
-            <see cref="P:SharpKml.Dom.Lod.MinimumFadeExtent"/> and <see cref="P:SharpKml.Dom.Lod.MaximumFadeExtent"/>.</para>
+            <see cref="P:SharpKml.Dom.Lod.MinimumFadeExtent" /> and <see cref="P:SharpKml.Dom.Lod.MaximumFadeExtent" />.</para>
             </remarks>
             <example>
             <code>
@@ -4939,7 +4939,7 @@
             </code></example>
         </member>
         <member name="F:SharpKml.Dom.Lod.DefaultMaximumPixels">
-            <summary>The default value that should be used for <see cref="P:SharpKml.Dom.Lod.MaximumPixels"/>.</summary>
+            <summary>The default value that should be used for <see cref="P:SharpKml.Dom.Lod.MaximumPixels" />.</summary>
         </member>
         <member name="P:SharpKml.Dom.Lod.MaximumFadeExtent">
             <summary>
@@ -4981,7 +4981,7 @@
             </summary>
             <remarks>
             <para>OGC KML 2.2 Section 14.3</para>
-            <para>The LookAt class is more limited in scope than <see cref="T:SharpKml.Dom.Camera"/>
+            <para>The LookAt class is more limited in scope than <see cref="T:SharpKml.Dom.Camera" />
             and should establish a view direction that intersects the Earth's surface.
             </para>
             </remarks>
@@ -4989,12 +4989,12 @@
         <member name="P:SharpKml.Dom.LookAt.Altitude">
             <summary>
             Gets or sets the altitude in meters, interpreted according to
-            <see cref="P:SharpKml.Dom.LookAt.AltitudeMode"/>.
+            <see cref="P:SharpKml.Dom.LookAt.AltitudeMode" />.
             </summary>
         </member>
         <member name="P:SharpKml.Dom.LookAt.AltitudeMode">
             <summary>
-            Gets or sets how <see cref="P:SharpKml.Dom.LookAt.Altitude"/> should be interpreted.
+            Gets or sets how <see cref="P:SharpKml.Dom.LookAt.Altitude" /> should be interpreted.
             </summary>
         </member>
         <member name="P:SharpKml.Dom.LookAt.Heading">
@@ -5025,7 +5025,7 @@
         <member name="P:SharpKml.Dom.LookAt.Range">
             <summary>
             Gets or sets the distance in meters from the point specified by
-            <see cref="P:SharpKml.Dom.LookAt.Longitude"/>, <see cref="P:SharpKml.Dom.LookAt.Latitude"/> and <see cref="P:SharpKml.Dom.LookAt.Altitude"/>
+            <see cref="P:SharpKml.Dom.LookAt.Longitude" />, <see cref="P:SharpKml.Dom.LookAt.Latitude" /> and <see cref="P:SharpKml.Dom.LookAt.Altitude" />
             to the LookAt position.
             </summary>
         </member>
@@ -5047,19 +5047,19 @@
             </summary>
         </member>
         <member name="T:SharpKml.Dom.Region">
-            <summary>Affects the visibility of a <see cref="T:SharpKml.Dom.Feature"/>.</summary>
+            <summary>Affects the visibility of a <see cref="T:SharpKml.Dom.Feature" />.</summary>
             <remarks>
             <para>OGC KML 2.2 Section 9.13</para>
             <para>Regions define both culling and level-of-detail control over the
-            display of the <see cref="T:SharpKml.Dom.Feature"/>, including elements that are defined
+            display of the <see cref="T:SharpKml.Dom.Feature" />, including elements that are defined
             lower in the hierarchy.</para>
             <para>A Region is said to be "active" when the bounding box is within the
             user's view and the LOD requirements are met. Feature elements associated
             with a Region are drawn only when the Region is active.</para>
-            <para>When <see cref="P:SharpKml.Dom.LinkType.ViewRefreshMode"/> is
-            <see cref="F:SharpKml.Dom.ViewRefreshMode.OnRegion"/>, the <see cref="T:SharpKml.Dom.Link"/> or
-            <see cref="T:SharpKml.Dom.Icon"/> is loaded only when the Region is active. In a
-            <see cref="T:SharpKml.Dom.Container"/> or <see cref="T:SharpKml.Dom.NetworkLinkControl"/> hierarchy, this
+            <para>When <see cref="P:SharpKml.Dom.LinkType.ViewRefreshMode" /> is
+            <see cref="F:SharpKml.Dom.ViewRefreshMode.OnRegion" />, the <see cref="T:SharpKml.Dom.Link" /> or
+            <see cref="T:SharpKml.Dom.Icon" /> is loaded only when the Region is active. In a
+            <see cref="T:SharpKml.Dom.Container" /> or <see cref="T:SharpKml.Dom.NetworkLinkControl" /> hierarchy, this
             calculation uses the Region that is the closest ancestor in the hierarchy.</para>
             </remarks>
         </member>
@@ -5077,7 +5077,7 @@
         <member name="T:SharpKml.Dom.Schema">
             <summary>
             Specifies a user-defined schema that is used to add user-defined data
-            encoded within a child <see cref="T:SharpKml.Dom.ExtendedData"/> element of a <see cref="T:SharpKml.Dom.Feature"/>.
+            encoded within a child <see cref="T:SharpKml.Dom.ExtendedData" /> element of a <see cref="T:SharpKml.Dom.Feature" />.
             </summary>
             <remarks>OGC KML 2.2 Section 9.8</remarks>
         </member>
@@ -5086,28 +5086,28 @@
         </member>
         <member name="M:SharpKml.Dom.Schema.AddField(SharpKml.Dom.SimpleField)">
             <summary>
-            Adds the specified <see cref="T:SharpKml.Dom.SimpleField"/> to this instance.
+            Adds the specified <see cref="T:SharpKml.Dom.SimpleField" /> to this instance.
             </summary>
             <param name="field">The <c>SimpleField</c> to add to this instance.</param>
             <exception cref="T:System.ArgumentNullException">field is null.</exception>
             <exception cref="T:System.InvalidOperationException">
-            field belongs to another <see cref="T:SharpKml.Dom.Element"/>.
+            field belongs to another <see cref="T:SharpKml.Dom.Element" />.
             </exception>
         </member>
         <member name="M:SharpKml.Dom.Schema.AddArray(SharpKml.Dom.GX.SimpleArrayField)">
             <summary>
-            Adds the specified <see cref="T:SharpKml.Dom.GX.SimpleArrayField"/> to this instance.
+            Adds the specified <see cref="T:SharpKml.Dom.GX.SimpleArrayField" /> to this instance.
             [Google extension]
             </summary>
             <param name="array">The <c>SimpleArrayField</c> to add to this instance.</param>
             <exception cref="T:System.ArgumentNullException">array is null.</exception>
             <exception cref="T:System.InvalidOperationException">
-            array belongs to another <see cref="T:SharpKml.Dom.Element"/>.
+            array belongs to another <see cref="T:SharpKml.Dom.Element" />.
             </exception>
         </member>
         <member name="P:SharpKml.Dom.Schema.Fields">
             <summary>
-            Gets a collection of <see cref="T:SharpKml.Dom.SimpleField"/> contained by this instance.
+            Gets a collection of <see cref="T:SharpKml.Dom.SimpleField" /> contained by this instance.
             </summary>
         </member>
         <member name="P:SharpKml.Dom.Schema.Name">
@@ -5115,14 +5115,14 @@
         </member>
         <member name="P:SharpKml.Dom.Schema.Arrays">
             <summary>
-            Gets a collection of <see cref="T:SharpKml.Dom.GX.SimpleArrayField"/> contained by this instance.
+            Gets a collection of <see cref="T:SharpKml.Dom.GX.SimpleArrayField" /> contained by this instance.
             [Google extension]
             </summary>
         </member>
         <member name="T:SharpKml.Dom.SchemaData">
             <summary>
             Encodes an instance of a user-defined data type defined by a referenced
-            <see cref="T:SharpKml.Dom.Schema"/>.
+            <see cref="T:SharpKml.Dom.Schema" />.
             </summary>
             <remarks>OGC KML 2.2 Section 9.4</remarks>
         </member>
@@ -5131,29 +5131,29 @@
         </member>
         <member name="M:SharpKml.Dom.SchemaData.AddData(SharpKml.Dom.SimpleData)">
             <summary>
-            Adds the specified <see cref="P:SharpKml.Dom.SchemaData.SimpleData"/> to this instance.
+            Adds the specified <see cref="P:SharpKml.Dom.SchemaData.SimpleData" /> to this instance.
             </summary>
             <param name="data">The <c>SimpleData</c> to add to this instance.</param>
             <exception cref="T:System.ArgumentNullException">data is null.</exception>
             <exception cref="T:System.InvalidOperationException">
-            data belongs to another <see cref="T:SharpKml.Dom.Element"/>.
+            data belongs to another <see cref="T:SharpKml.Dom.Element" />.
             </exception>
         </member>
         <member name="M:SharpKml.Dom.SchemaData.AddArray(SharpKml.Dom.GX.SimpleArrayData)">
             <summary>
-            Adds the specified <see cref="T:SharpKml.Dom.GX.SimpleArrayData"/> to this instance.
+            Adds the specified <see cref="T:SharpKml.Dom.GX.SimpleArrayData" /> to this instance.
             [Google Extension]
             </summary>
             <param name="array">The <c>SimpleArrayData</c> to add to this instance.</param>
             <exception cref="T:System.ArgumentNullException">array is null.</exception>
             <exception cref="T:System.InvalidOperationException">
-            array belongs to another <see cref="T:SharpKml.Dom.Element"/>.
+            array belongs to another <see cref="T:SharpKml.Dom.Element" />.
             </exception>
         </member>
         <member name="P:SharpKml.Dom.SchemaData.SchemaUrl">
             <summary>
-            Gets or sets a reference to a <see cref="P:SharpKml.Dom.KmlObject.Id"/> belonging
-            to a <see cref="T:SharpKml.Dom.Schema"/>.
+            Gets or sets a reference to a <see cref="P:SharpKml.Dom.KmlObject.Id" /> belonging
+            to a <see cref="T:SharpKml.Dom.Schema" />.
             </summary>
             <remarks>
             Reference can either be a full URL or a reference to a <c>Schema</c>
@@ -5172,17 +5172,17 @@
         <member name="T:SharpKml.Dom.SimpleData">
             <summary>
             Encodes an instance of a user-defined field defined by a referenced
-            <see cref="T:SharpKml.Dom.SimpleField"/>.
+            <see cref="T:SharpKml.Dom.SimpleField" />.
             </summary>
             <remarks>OGC KML 2.2 Section 9.5</remarks>
         </member>
         <member name="P:SharpKml.Dom.SimpleData.Name">
             <summary>Gets or sets a value acting as an identifier.</summary>
             <remarks>
-            This shall be used to identify the <see cref="T:SharpKml.Dom.SimpleField"/> by name.
+            This shall be used to identify the <see cref="T:SharpKml.Dom.SimpleField" /> by name.
             The identified <c>SimpleField</c> shall be declared within the
-            <see cref="T:SharpKml.Dom.Schema"/> element that is referenced from the
-            <see cref="P:SharpKml.Dom.SchemaData.SchemaUrl"/>.
+            <see cref="T:SharpKml.Dom.Schema" /> element that is referenced from the
+            <see cref="P:SharpKml.Dom.SchemaData.SchemaUrl" />.
             </remarks>
         </member>
         <member name="P:SharpKml.Dom.SimpleData.Text">
@@ -5237,16 +5237,16 @@
         </member>
         <member name="T:SharpKml.Dom.Snippet">
             <summary>
-            Specifies a short description for a <see cref="T:SharpKml.Dom.Feature"/>.
+            Specifies a short description for a <see cref="T:SharpKml.Dom.Feature" />.
             </summary>
             <remarks>
             <para>OGC KML 2.2 Sections 9.1.3.9 and 16.19</para>
             <para>This content should be used instead of
-            <see cref="P:SharpKml.Dom.Feature.Description"/>, if it exists.</para>
+            <see cref="P:SharpKml.Dom.Feature.Description" />, if it exists.</para>
             </remarks>
         </member>
         <member name="F:SharpKml.Dom.Snippet.DefaultMaximumLines">
-            <summary>The default value that should be used for <see cref="P:SharpKml.Dom.Snippet.MaximumLines"/>.</summary>
+            <summary>The default value that should be used for <see cref="P:SharpKml.Dom.Snippet.MaximumLines" />.</summary>
         </member>
         <member name="P:SharpKml.Dom.Snippet.MaximumLines">
             <summary>Gets or sets the maximum number of lines to display.</summary>
@@ -5269,7 +5269,7 @@
         </member>
         <member name="M:SharpKml.Dom.UnknownElement.SharpKml#Dom#ICustomElement#CreateStartElement(System.Xml.XmlWriter)">
             <summary>Writes the start of an XML element.</summary>
-            <param name="writer">An <see cref="T:System.Xml.XmlWriter"/> to write to.</param>
+            <param name="writer">An <see cref="T:System.Xml.XmlWriter" /> to write to.</param>
         </member>
         <member name="P:SharpKml.Dom.UnknownElement.UnknownData">
             <summary>Gets the unrecognized data found during parsing.</summary>
@@ -5287,7 +5287,7 @@
         </member>
         <member name="P:SharpKml.Dom.Xal.AddressDetails.Country">
             <summary>
-            Gets or sets the <see cref="P:SharpKml.Dom.Xal.AddressDetails.Country"/> associated with this instance.
+            Gets or sets the <see cref="P:SharpKml.Dom.Xal.AddressDetails.Country" /> associated with this instance.
             </summary>
         </member>
         <member name="T:SharpKml.Dom.Xal.AdministrativeArea">
@@ -5298,7 +5298,7 @@
         </member>
         <member name="P:SharpKml.Dom.Xal.AdministrativeArea.Locality">
             <summary>
-            Gets or sets the <see cref="P:SharpKml.Dom.Xal.AdministrativeArea.Locality"/> associated with this instance.
+            Gets or sets the <see cref="P:SharpKml.Dom.Xal.AdministrativeArea.Locality" /> associated with this instance.
             </summary>
         </member>
         <member name="P:SharpKml.Dom.Xal.AdministrativeArea.Name">
@@ -5306,7 +5306,7 @@
         </member>
         <member name="P:SharpKml.Dom.Xal.AdministrativeArea.SubAdministrativeArea">
             <summary>
-            Gets or sets the <see cref="P:SharpKml.Dom.Xal.AdministrativeArea.SubAdministrativeArea"/> associated
+            Gets or sets the <see cref="P:SharpKml.Dom.Xal.AdministrativeArea.SubAdministrativeArea" /> associated
             with this instance.
             </summary>
         </member>
@@ -5315,7 +5315,7 @@
         </member>
         <member name="P:SharpKml.Dom.Xal.Country.AdministrativeArea">
             <summary>
-            Gets or sets the <see cref="P:SharpKml.Dom.Xal.Country.AdministrativeArea"/> associated with
+            Gets or sets the <see cref="P:SharpKml.Dom.Xal.Country.AdministrativeArea" /> associated with
             this instance.
             </summary>
         </member>
@@ -5333,12 +5333,12 @@
         </member>
         <member name="P:SharpKml.Dom.Xal.Locality.PostalCode">
             <summary>
-            Gets or sets the <see cref="P:SharpKml.Dom.Xal.Locality.PostalCode"/> associated with this instance.
+            Gets or sets the <see cref="P:SharpKml.Dom.Xal.Locality.PostalCode" /> associated with this instance.
             </summary>
         </member>
         <member name="P:SharpKml.Dom.Xal.Locality.Thoroughfare">
             <summary>
-            Gets or sets the <see cref="P:SharpKml.Dom.Xal.Locality.Thoroughfare"/> associated with this instance.
+            Gets or sets the <see cref="P:SharpKml.Dom.Xal.Locality.Thoroughfare" /> associated with this instance.
             </summary>
         </member>
         <member name="T:SharpKml.Dom.Xal.PostalCode">
@@ -5363,7 +5363,7 @@
         </member>
         <member name="P:SharpKml.Dom.Xal.SubAdministrativeArea.Locality">
             <summary>
-            Gets or sets the <see cref="P:SharpKml.Dom.Xal.SubAdministrativeArea.Locality"/> associated with this instance.
+            Gets or sets the <see cref="P:SharpKml.Dom.Xal.SubAdministrativeArea.Locality" /> associated with this instance.
             </summary>
         </member>
         <member name="P:SharpKml.Dom.Xal.SubAdministrativeArea.Name">
@@ -5398,10 +5398,10 @@
             Initializes a new instance of the BoundingBox class with the
             specified values;
             </summary>
-            <param name="north">The value for <see cref="P:SharpKml.Engine.BoundingBox.North"/>.</param>
-            <param name="south">The value for <see cref="P:SharpKml.Engine.BoundingBox.South"/>.</param>
-            <param name="east">The value for <see cref="P:SharpKml.Engine.BoundingBox.East"/>.</param>
-            <param name="west">The value for <see cref="P:SharpKml.Engine.BoundingBox.West"/>.</param>
+            <param name="north">The value for <see cref="P:SharpKml.Engine.BoundingBox.North" />.</param>
+            <param name="south">The value for <see cref="P:SharpKml.Engine.BoundingBox.South" />.</param>
+            <param name="east">The value for <see cref="P:SharpKml.Engine.BoundingBox.East" />.</param>
+            <param name="west">The value for <see cref="P:SharpKml.Engine.BoundingBox.West" />.</param>
         </member>
         <member name="M:SharpKml.Engine.BoundingBox.Align(SharpKml.Engine.BoundingBox,System.Int32)">
             <summary>
@@ -5502,12 +5502,12 @@
         </member>
         <member name="T:SharpKml.Engine.ElementExtensions">
             <summary>
-            Provides extension methods for <see cref="T:SharpKml.Dom.Element"/> objects.
+            Provides extension methods for <see cref="T:SharpKml.Dom.Element" /> objects.
             </summary>
         </member>
         <member name="M:SharpKml.Engine.ElementExtensions.Clone``1(``0)">
             <summary>
-            Creates a deep copy of the <see cref="T:SharpKml.Dom.Element"/>.
+            Creates a deep copy of the <see cref="T:SharpKml.Dom.Element" />.
             </summary>
             <typeparam name="T">A class deriving from <c>Element</c>.</typeparam>
             <param name="element">The class instance.</param>
@@ -5516,7 +5516,7 @@
         </member>
         <member name="M:SharpKml.Engine.ElementExtensions.Flatten(SharpKml.Dom.Element)">
             <summary>
-            Provides a way to iterate over all children <see cref="T:SharpKml.Dom.Element"/>s
+            Provides a way to iterate over all children <see cref="T:SharpKml.Dom.Element" />s
             contained by this instance.
             </summary>
             <param name="element">The class instance.</param>
@@ -5525,7 +5525,7 @@
         </member>
         <member name="M:SharpKml.Engine.ElementExtensions.GetParent``1(SharpKml.Dom.Element)">
             <summary>
-            Finds the <see cref="P:SharpKml.Dom.Element.Parent"/> of the element which is
+            Finds the <see cref="P:SharpKml.Dom.Element.Parent" /> of the element which is
             of the specified type.
             </summary>
             <typeparam name="T">A type deriving from <c>Element</c>.</typeparam>
@@ -5538,7 +5538,7 @@
         </member>
         <member name="M:SharpKml.Engine.ElementExtensions.IsChildOf``1(SharpKml.Dom.Element)">
             <summary>
-            Determines if the <see cref="T:SharpKml.Dom.Element"/> has a parent of the
+            Determines if the <see cref="T:SharpKml.Dom.Element" /> has a parent of the
             specified type.
             </summary>
             <typeparam name="T">A type deriving from <c>Element</c>.</typeparam>
@@ -5551,7 +5551,7 @@
         </member>
         <member name="M:SharpKml.Engine.ElementExtensions.Merge``1(``0,``0)">
             <summary>
-            Copies the <see cref="T:SharpKml.Dom.Element"/>s properties from the specified source.
+            Copies the <see cref="T:SharpKml.Dom.Element" />s properties from the specified source.
             </summary>
             <typeparam name="T">A class deriving from <c>Element</c>.</typeparam>
             <param name="element">The class instance.</param>
@@ -5564,7 +5564,7 @@
             </exception>
         </member>
         <member name="T:SharpKml.Engine.EntityMapper">
-            <summary>Handles replaceable entities in <see cref="T:SharpKml.Dom.Feature"/>s.</summary>
+            <summary>Handles replaceable entities in <see cref="T:SharpKml.Dom.Feature" />s.</summary>
         </member>
         <member name="M:SharpKml.Engine.EntityMapper.#ctor(SharpKml.Engine.KmlFile)">
             <summary>
@@ -5576,7 +5576,7 @@
         <member name="M:SharpKml.Engine.EntityMapper.CreateBalloonText(SharpKml.Dom.Feature)">
             <summary>
             Creates a balloon text for the specified feature, calling
-            <see cref="M:SharpKml.Engine.EntityMapper.ParseEntityFields(SharpKml.Dom.Feature)"/> to gather information.
+            <see cref="M:SharpKml.Engine.EntityMapper.ParseEntityFields(SharpKml.Dom.Feature)" /> to gather information.
             </summary>
             <param name="feature">The feature to create a balloon text for.</param>
             <returns>
@@ -5591,19 +5591,19 @@
         <member name="M:SharpKml.Engine.EntityMapper.ExpandEntities(System.String)">
             <summary>
             Replaces known entities in the specified string with their
-            corresponding data from the most recently parsed <see cref="T:SharpKml.Dom.Feature"/>.
+            corresponding data from the most recently parsed <see cref="T:SharpKml.Dom.Feature" />.
             </summary>
             <param name="input">The string containing replaceable entities.</param>
             <returns>A string with the entity placeholders replaced.</returns>
             <remarks>
             This method searches for $[entityName] in the input string and
             replaces it with data found during the most recent call to
-            <see cref="M:SharpKml.Engine.EntityMapper.ParseEntityFields(SharpKml.Dom.Feature)"/>.
+            <see cref="M:SharpKml.Engine.EntityMapper.ParseEntityFields(SharpKml.Dom.Feature)" />.
             </remarks>
         </member>
         <member name="M:SharpKml.Engine.EntityMapper.ParseEntityFields(SharpKml.Dom.Feature)">
             <summary>
-            Maps all replaceable entities in the specified <see cref="T:SharpKml.Dom.Feature"/>.
+            Maps all replaceable entities in the specified <see cref="T:SharpKml.Dom.Feature" />.
             </summary>
             <param name="feature">
             The <c>Feature</c> to search for replaceable entities.
@@ -5624,12 +5624,12 @@
         </member>
         <member name="T:SharpKml.Engine.FeatureExtensions">
             <summary>
-            Provides extension methods for <see cref="T:SharpKml.Dom.Feature"/> objects.
+            Provides extension methods for <see cref="T:SharpKml.Dom.Feature" /> objects.
             </summary>
         </member>
         <member name="M:SharpKml.Engine.FeatureExtensions.CalculateBounds(SharpKml.Dom.Feature)">
             <summary>
-            Calculates the coordinates of the bounds of the <see cref="T:SharpKml.Dom.Feature"/>.
+            Calculates the coordinates of the bounds of the <see cref="T:SharpKml.Dom.Feature" />.
             </summary>
             <param name="feature">The feature instance.</param>
             <returns>
@@ -5637,15 +5637,15 @@
             feature.
             </returns>
             <remarks>
-            If the feature is a <see cref="T:SharpKml.Dom.Container"/> then the returned value
+            If the feature is a <see cref="T:SharpKml.Dom.Container" /> then the returned value
             will be the bounds of all the features within that container.
             </remarks>
             <exception cref="T:System.ArgumentNullException">feature is null.</exception>
         </member>
         <member name="M:SharpKml.Engine.FeatureExtensions.CalculateLookAt(SharpKml.Dom.Feature)">
             <summary>
-            Calculates a <see cref="T:SharpKml.Dom.LookAt"/> object from the spatial extents
-            of the <see cref="T:SharpKml.Dom.Feature"/>.
+            Calculates a <see cref="T:SharpKml.Dom.LookAt" /> object from the spatial extents
+            of the <see cref="T:SharpKml.Dom.Feature" />.
             </summary>
             <param name="feature">The feature instance.</param>
             <returns>
@@ -5664,12 +5664,12 @@
         </member>
         <member name="T:SharpKml.Engine.GeometryExtensions">
             <summary>
-            Provides extension methods for <see cref="T:SharpKml.Dom.Geometry"/> objects.
+            Provides extension methods for <see cref="T:SharpKml.Dom.Geometry" /> objects.
             </summary>
         </member>
         <member name="M:SharpKml.Engine.GeometryExtensions.CalculateBounds(SharpKml.Dom.Geometry)">
             <summary>
-            Calculates the coordinates of the bounds of the <see cref="T:SharpKml.Dom.Geometry"/>.
+            Calculates the coordinates of the bounds of the <see cref="T:SharpKml.Dom.Geometry" />.
             </summary>
             <param name="geometry">The geometry instance.</param>
             <returns>
@@ -5701,11 +5701,11 @@
         </member>
         <member name="M:SharpKml.Engine.KmlFile.Create(SharpKml.Dom.Element,System.Boolean)">
             <summary>
-            Creates a KmlFie from the specified <see cref="T:SharpKml.Dom.Element"/> hierarchy.
+            Creates a KmlFie from the specified <see cref="T:SharpKml.Dom.Element" /> hierarchy.
             </summary>
             <param name="root">The root <c>Element</c> of the file.</param>
             <param name="duplicates">
-            true to allow duplicate <see cref="P:SharpKml.Dom.KmlObject.Id"/> values (newer
+            true to allow duplicate <see cref="P:SharpKml.Dom.KmlObject.Id" /> values (newer
             values will overwrite existing values); false to throw an exception
             for duplicate values.
             </param>
@@ -5727,8 +5727,8 @@
             <remarks>
             This method checks for duplicate Id's in the file and throws an
             exception if duplicate Id's are found. To enable duplicate Id's
-            use the <see cref="T:SharpKml.Base.Parser"/> class and pass the root element
-            to <see cref="M:SharpKml.Engine.KmlFile.Create(SharpKml.Dom.Element,System.Boolean)"/>.
+            use the <see cref="T:SharpKml.Base.Parser" /> class and pass the root element
+            to <see cref="M:SharpKml.Engine.KmlFile.Create(SharpKml.Dom.Element,System.Boolean)" />.
             </remarks>
             <exception cref="T:System.ArgumentNullException">input is null.</exception>
             <exception cref="T:System.InvalidOperationException">
@@ -5756,8 +5756,8 @@
             <remarks>
             This method checks for duplicate Id's in the file and throws an
             exception if duplicate Id's are found. To enable duplicate Id's
-            use the <see cref="T:SharpKml.Base.Parser"/> class and pass the root element
-            to <see cref="M:SharpKml.Engine.KmlFile.Create(SharpKml.Dom.Element,System.Boolean)"/>.
+            use the <see cref="T:SharpKml.Base.Parser" /> class and pass the root element
+            to <see cref="M:SharpKml.Engine.KmlFile.Create(SharpKml.Dom.Element,System.Boolean)" />.
             </remarks>
             <exception cref="T:System.ArgumentNullException">path is null.</exception>
             <exception cref="T:System.IO.IOException">An I/O error occurred.</exception>
@@ -5777,12 +5777,12 @@
             <remarks>
             This method checks for duplicate Id's in the file and throws an
             exception if duplicate Id's are found. To enable duplicate Id's
-            use the <see cref="T:SharpKml.Base.Parser"/> class and pass the root element
-            to <see cref="M:SharpKml.Engine.KmlFile.Create(SharpKml.Dom.Element,System.Boolean)"/>.
+            use the <see cref="T:SharpKml.Base.Parser" /> class and pass the root element
+            to <see cref="M:SharpKml.Engine.KmlFile.Create(SharpKml.Dom.Element,System.Boolean)" />.
             </remarks>
             <exception cref="T:System.ArgumentNullException">kmz is null.</exception>
             <exception cref="T:System.ObjectDisposedException">
-            <see cref="M:SharpKml.Engine.KmzFile.Dispose"/> has been called on kmz.
+            <see cref="M:SharpKml.Engine.KmzFile.Dispose" /> has been called on kmz.
             </exception>
             <exception cref="T:System.Xml.XmlException">
             An error occurred while parsing the KML.
@@ -5790,8 +5790,8 @@
         </member>
         <member name="M:SharpKml.Engine.KmlFile.FindObject(System.String)">
             <summary>
-            Searches for a <see cref="T:SharpKml.Dom.KmlObject"/> with the specified
-            <see cref="P:SharpKml.Dom.KmlObject.Id"/>.
+            Searches for a <see cref="T:SharpKml.Dom.KmlObject" /> with the specified
+            <see cref="P:SharpKml.Dom.KmlObject.Id" />.
             </summary>
             <param name="id">The id of the <c>KmlObject</c> to find.</param>
             <returns>
@@ -5802,8 +5802,8 @@
         </member>
         <member name="M:SharpKml.Engine.KmlFile.FindStyle(System.String)">
             <summary>
-            Searches for a <see cref="T:SharpKml.Dom.StyleSelector"/> with the specified
-            <see cref="P:SharpKml.Dom.KmlObject.Id"/>.
+            Searches for a <see cref="T:SharpKml.Dom.StyleSelector" /> with the specified
+            <see cref="P:SharpKml.Dom.KmlObject.Id" />.
             </summary>
             <param name="id">The id of the <c>StyleSelector</c> to find.</param>
             <returns>
@@ -5833,7 +5833,7 @@
             <exception cref="T:System.ArgumentException">
             path is a zero-length string, contains only white space, or contains
             one or more invalid characters as defined by
-            <see cref="M:System.IO.Path.GetInvalidPathChars"/>.
+            <see cref="M:System.IO.Path.GetInvalidPathChars" />.
             </exception>
             <exception cref="T:System.ArgumentNullException">path is null.</exception>
             <exception cref="T:System.IO.DirectoryNotFoundException">
@@ -5869,11 +5869,11 @@
             <remarks>This is used for Update operations.</remarks>
         </member>
         <member name="P:SharpKml.Engine.KmlFile.Root">
-            <summary>Gets the root <see cref="T:SharpKml.Dom.Element"/> of the file.</summary>
+            <summary>Gets the root <see cref="T:SharpKml.Dom.Element" /> of the file.</summary>
         </member>
         <member name="P:SharpKml.Engine.KmlFile.Styles">
             <summary>
-            Gets the <see cref="T:SharpKml.Dom.StyleSelector"/>s which have their Id set.
+            Gets the <see cref="T:SharpKml.Dom.StyleSelector" />s which have their Id set.
             </summary>
         </member>
         <member name="P:SharpKml.Engine.KmlFile.StyleMap">
@@ -5903,7 +5903,7 @@
         </member>
         <member name="T:SharpKml.Engine.StyleResolver">
             <summary>
-            Merges and resolves <see cref="T:SharpKml.Dom.Style"/> links.
+            Merges and resolves <see cref="T:SharpKml.Dom.Style" /> links.
             </summary>
         </member>
         <member name="M:SharpKml.Engine.StyleResolver.CreateResolvedStyle(SharpKml.Dom.Feature,SharpKml.Engine.KmlFile,SharpKml.Dom.StyleState,System.Boolean)">
@@ -5928,7 +5928,7 @@
             Inlines the shared Style of the features in the specified element.
             </summary>
             <typeparam name="T">
-            A class deriving from <see cref="T:SharpKml.Dom.Element"/>.
+            A class deriving from <see cref="T:SharpKml.Dom.Element" />.
             </typeparam>
             <param name="element">The element instance.</param>
             <returns>A new element with the shared styles inlined.</returns>
@@ -5938,7 +5938,7 @@
             Changes inlined styles to shared styles in the closest Document parent.
             </summary>
             <typeparam name="T">
-            A class deriving from <see cref="T:SharpKml.Dom.Element"/>.
+            A class deriving from <see cref="T:SharpKml.Dom.Element" />.
             </typeparam>
             <param name="element">The element instance.</param>
             <returns>
@@ -5947,12 +5947,12 @@
         </member>
         <member name="T:SharpKml.Engine.UpdateExtensions">
             <summary>
-            Provides extension methods for <see cref="T:SharpKml.Dom.Update"/> objects.
+            Provides extension methods for <see cref="T:SharpKml.Dom.Update" /> objects.
             </summary>
         </member>
         <member name="M:SharpKml.Engine.UpdateExtensions.Process(SharpKml.Dom.Update,SharpKml.Engine.KmlFile)">
             <summary>
-            Provides in-place (destructive) processing of the <see cref="T:SharpKml.Dom.Update"/>.
+            Provides in-place (destructive) processing of the <see cref="T:SharpKml.Dom.Update" />.
             </summary>
             <param name="update">The update instance.</param>
             <param name="file">
@@ -6032,7 +6032,7 @@
             </summary>
             <remarks>
             The entire Kmz archive (in its compressed state) will be held in memory
-            until a call to <see cref="M:SharpKml.Engine.KmzFile.Dispose"/> is made.
+            until a call to <see cref="M:SharpKml.Engine.KmzFile.Dispose" /> is made.
             </remarks>
         </member>
         <member name="M:SharpKml.Engine.KmzFile.Create(SharpKml.Engine.KmlFile)">
@@ -6113,11 +6113,11 @@
             <exception cref="T:System.ArgumentException">
             path is a zero-length string, contains only white space, or contains
             one or more invalid characters as defined by
-            <see cref="M:System.IO.Path.GetInvalidPathChars"/>.
+            <see cref="M:System.IO.Path.GetInvalidPathChars" />.
             </exception>
             <exception cref="T:System.ArgumentNullException">path/data is null.</exception>
             <exception cref="T:System.ObjectDisposedException">
-            <see cref="M:SharpKml.Engine.KmzFile.Dispose"/> has been called on this instance.
+            <see cref="M:SharpKml.Engine.KmzFile.Dispose" /> has been called on this instance.
             </exception>
         </member>
         <member name="M:SharpKml.Engine.KmzFile.Dispose">
@@ -6133,7 +6133,7 @@
             archive; otherwise, null.
             </returns>
             <exception cref="T:System.ObjectDisposedException">
-            <see cref="M:SharpKml.Engine.KmzFile.Dispose"/> has been called on this instance.
+            <see cref="M:SharpKml.Engine.KmzFile.Dispose" /> has been called on this instance.
             </exception>
         </member>
         <member name="M:SharpKml.Engine.KmzFile.ReadKml">
@@ -6148,7 +6148,7 @@
             necessarily be in the root directory.
             </remarks>
             <exception cref="T:System.ObjectDisposedException">
-            <see cref="M:SharpKml.Engine.KmzFile.Dispose"/> has been called on this instance.
+            <see cref="M:SharpKml.Engine.KmzFile.Dispose" /> has been called on this instance.
             </exception>
         </member>
         <member name="M:SharpKml.Engine.KmzFile.RemoveFile(System.String)">
@@ -6161,7 +6161,7 @@
             removed; otherwise, false.
             </returns>
             <exception cref="T:System.ObjectDisposedException">
-            <see cref="M:SharpKml.Engine.KmzFile.Dispose"/> has been called on this instance.
+            <see cref="M:SharpKml.Engine.KmzFile.Dispose" /> has been called on this instance.
             </exception>
         </member>
         <member name="M:SharpKml.Engine.KmzFile.Save(System.IO.Stream)">
@@ -6174,7 +6174,7 @@
             The stream does not support writing.
             </exception>
             <exception cref="T:System.ObjectDisposedException">
-            <see cref="M:SharpKml.Engine.KmzFile.Dispose"/> has been called on this instance or the
+            <see cref="M:SharpKml.Engine.KmzFile.Dispose" /> has been called on this instance or the
             stream was closed.
             </exception>
         </member>
@@ -6188,7 +6188,7 @@
             <exception cref="T:System.ArgumentException">
             path is a zero-length string, contains only white space, or contains
             one or more invalid characters as defined by
-            <see cref="M:System.IO.Path.GetInvalidPathChars"/>.
+            <see cref="M:System.IO.Path.GetInvalidPathChars" />.
             </exception>
             <exception cref="T:System.ArgumentNullException">path is null.</exception>
             <exception cref="T:System.IO.DirectoryNotFoundException">
@@ -6199,7 +6199,7 @@
             path is in an invalid format.
             </exception>
             <exception cref="T:System.ObjectDisposedException">
-            <see cref="M:SharpKml.Engine.KmzFile.Dispose"/> has been called on this instance.
+            <see cref="M:SharpKml.Engine.KmzFile.Dispose" /> has been called on this instance.
             </exception>
             <exception cref="T:System.IO.PathTooLongException">
             The specified path, file name, or both exceed the system-defined
@@ -6221,7 +6221,7 @@
             <param name="data">The data to add to the archive.</param>
             <exception cref="T:System.ArgumentNullException">path/data is null.</exception>
             <exception cref="T:System.ObjectDisposedException">
-            <see cref="M:SharpKml.Engine.KmzFile.Dispose"/> has been called on this instance.
+            <see cref="M:SharpKml.Engine.KmzFile.Dispose" /> has been called on this instance.
             </exception>
         </member>
         <member name="P:SharpKml.Engine.KmzFile.DefaultEncoding">
@@ -6235,7 +6235,7 @@
             Gets the filenames for the entries contained in the archive.
             </summary>
             <exception cref="T:System.ObjectDisposedException">
-            <see cref="M:SharpKml.Engine.KmzFile.Dispose"/> has been called on this instance or the
+            <see cref="M:SharpKml.Engine.KmzFile.Dispose" /> has been called on this instance or the
             stream was closed.
             </exception>
         </member>

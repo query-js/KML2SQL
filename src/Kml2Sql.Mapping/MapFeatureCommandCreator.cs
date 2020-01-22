@@ -2,11 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Globalization;
 using System.Linq;
 using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace Kml2Sql.Mapping
 {
@@ -158,7 +155,6 @@ namespace Kml2Sql.Mapping
         private static string CreatePolygon(MapFeature mapFeature, Kml2SqlConfig config, bool declareVariables)
         {
             var sb = new StringBuilder();
-
 
             if (!config.PolygonToClipboard)
             {

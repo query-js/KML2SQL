@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace Kml2Sql.Mapping
 {
@@ -14,26 +11,32 @@ namespace Kml2Sql.Mapping
         /// Table name that Placemarks will be uploaded to. Default is "KmlUpload".
         /// </summary>
         public string TableName { get; set; } = "KmlUpload";
+
         /// <summary>
         /// Name of the column that SqlGeography or SqlGeometry object will be stored in. Default is "Placemark".
         /// </summary>
         public string PlacemarkColumnName { get; set; } = "Placemark";
+
         /// <summary>
         /// Column ID name. Default is "Id".
         /// </summary>
         public string IdColumnName { get; set; } = "Id";
+
         /// <summary>
         /// Name of column with placemark name. Default is "Name".
         /// </summary>
         public string NameColumnName { get; set; } = "Name";
+
         /// <summary>
         /// Sql Polygon type that will be used. Default is "Geometry".
         /// </summary>
         public PolygonType GeoType { get; set; }
+
         /// <summary>
         /// Close ring of any open polygons.
         /// </summary>
         public bool FixPolygons { get; set; }
+
         /// <summary>
         /// Geography SRID. Not used for is PolygonType is set to Gemetry. Default is 4326.
         /// </summary>
