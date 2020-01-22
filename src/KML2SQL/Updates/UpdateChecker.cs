@@ -16,8 +16,8 @@ namespace KML2SQL.Updates
 {
     public static class UpdateChecker
     {
-        static readonly string apiUrl = "https://api.github.com/repos/pharylon/kml2sql/releases/latest";
-        static readonly string downloadUrl = "https://github.com/Pharylon/KML2SQL/releases/latest";
+        static readonly string apiUrl = "https://api.github.com/repos/query-js/kml2sql/releases/latest";
+        static readonly string downloadUrl = "https://github.com/query-js/KML2SQL/releases/latest";
         public static async Task CheckForNewVersion()
         {
             var settings = SettingsPersister.Retrieve();
@@ -26,7 +26,7 @@ namespace KML2SQL.Updates
                 settings.UpdateInfo.LastCheckedForUpdates = DateTime.Now;
                 var client = new HttpClient();
                 //client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/vnd.github.v3+json"));
-                client.DefaultRequestHeaders.Add("User-Agent", "Pharylon");
+                client.DefaultRequestHeaders.Add("User-Agent", "query-js");
                 var response = await client.GetAsync(apiUrl);
                 if (response.IsSuccessStatusCode)
                 {

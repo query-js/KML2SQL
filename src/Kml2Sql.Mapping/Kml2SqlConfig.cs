@@ -43,6 +43,8 @@ namespace Kml2Sql.Mapping
 
         public bool GeographyOnly { get; set; }
 
+        public bool PolygonToClipboard { get; set; }
+
         /// <summary>
         /// Change SQL column name of placemark data.
         /// </summary>

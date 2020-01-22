@@ -18,7 +18,9 @@ using Microsoft.Win32;
 using System.Diagnostics;
 using Kml2Sql.Mapping;
 using KML2SQL.Updates;
-
+using System.Globalization;
+using System.Threading;
+using System.Windows;
 namespace KML2SQL
 {
     /// <summary>
@@ -31,6 +33,9 @@ namespace KML2SQL
 
         public MainWindow()
         {
+            CultureInfo culture = CultureInfo.CreateSpecificCulture("en");
+            CultureInfo.DefaultThreadCurrentCulture = culture;
+            CultureInfo.DefaultThreadCurrentUICulture = culture;
             InitializeComponent();
             if (!Directory.Exists(Utility.GetApplicationFolder()))
                 Directory.CreateDirectory(Utility.GetApplicationFolder());
@@ -93,47 +98,62 @@ namespace KML2SQL
 
         private async void UploadFile()
         {
-            var logger = new Logger();
+            Logger logger = new Logger();
             try
             {
                 CreateDatabaseButton.Visibility = Visibility.Hidden;
-                var connectionString = BuildConnectionString();
-                var config = GetConfig();
-                var progresss = new Progress<ProgressReoprt>(p =>
+                Kml2SqlConfig config = GetConfig();
+                string kmlFile = KMLFileLocationBox.Text;
+                if (!config.PolygonToClipboard)
                 {
-                    UpdateProgressBar(p.PercentDone);
-                    logger.AddToLog(p.Message);
-                    if (p.Exception != null)
+                    string connectionString = BuildConnectionString();
+                    Progress<ProgressReoprt> progresss = new Progress<ProgressReoprt>(p =>
                     {
-                        AlertFailure(p.Exception);
-                        logger.AddToLog(p.Exception);
-                        logger.WriteOut();
-                        CreateDatabaseButton.Visibility = Visibility.Visible;
-                    }
-                    if (p.PercentDone == 100)
-                    {
-                        logger.WriteOut();
-                    }
-                });
-                var dropTable = Convert.ToBoolean(dropExisting.IsChecked);
-                var kmlFile = KMLFileLocationBox.Text;
-                if (tabControl.SelectedIndex == 0)
-                {
-                    await Task.Run(() =>
-                    {
-                        var uploader = new Uploader(kmlFile, config, progresss);
-                        uploader.Upload(connectionString, dropTable);
+                        UpdateProgressBar(p.PercentDone);
+                        logger.AddToLog(p.Message);
+                        if (p.Exception != null)
+                        {
+                            AlertFailure(p.Exception);
+                            logger.AddToLog(p.Exception);
+                            logger.WriteOut();
+                            CreateDatabaseButton.Visibility = Visibility.Visible;
+                        }
+                        if (p.PercentDone == 100)
+                        {
+                            logger.WriteOut();
+                        }
                     });
+                    bool dropTable = Convert.ToBoolean(dropExisting.IsChecked);
+                    if (tabControl.SelectedIndex == 0)
+                    {
+                        await Task.Run(() =>
+                        {
+                            Uploader uploader = new Uploader(kmlFile, config, progresss);
+                            uploader.Upload(connectionString, dropTable);
+                        });
+                    }
+                    else
+                    {
+                        var fileLoc = saveScriptTo.Text;
+                        await Task.Run(() =>
+                        {
+                            Uploader uploader = new Uploader(kmlFile, config, progresss);
+                            string script = uploader.GetScript();
+                            File.WriteAllText(fileLoc, script);
+                        });
+                    }
                 }
                 else
                 {
-                    var fileLoc = saveScriptTo.Text;
-                    await Task.Run(() =>
+                    Progress<ProgressReoprt> progresss = new Progress<ProgressReoprt>(p =>
                     {
-                        var uploader = new Uploader(kmlFile, config, progresss);
-                        var script = uploader.GetScript();
-                        File.WriteAllText(fileLoc, script);
+                        UpdateProgressBar(p.PercentDone);
                     });
+
+                    Uploader uploader = new Uploader(kmlFile, config, progresss);
+                    string script = uploader.GetScript();
+                    Clipboard.Clear();
+                    Clipboard.SetText(script);
                 }
 
             }
@@ -149,6 +169,8 @@ namespace KML2SQL
         {
             MessageBox.Show("The process failed with the following error. See the log for details: \r\n\r\n "
                     + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+
+            WriteErrorLog(ex);
         }
 
         private void WriteErrorLog(Exception ex)
@@ -173,7 +195,8 @@ namespace KML2SQL
             config = new Kml2SqlConfig
             {
                 GeoType = geographyMode.IsChecked != null && geographyMode.IsChecked.Value ? PolygonType.Geography : PolygonType.Geometry,
-                GeographyOnly = geographyOnly.IsChecked != null ? geographyOnly.IsChecked.Value : false
+                GeographyOnly = geographyOnly.IsChecked != null ? geographyOnly.IsChecked.Value : false,
+                PolygonToClipboard = polyToClipboard.IsChecked != null ? polyToClipboard.IsChecked.Value : false
             };
 
             config.Srid = ParseSRID(config.GeoType);
@@ -330,6 +353,12 @@ namespace KML2SQL
             {
                 databaseNameBox.IsEnabled = tableBox.IsEnabled = columnNameBox.IsEnabled = dropExisting.IsEnabled = !geographyOnly.IsChecked.Value;
             }
+        }
+
+        private void polyToClipboard_Checked(object sender, RoutedEventArgs e)
+        {
+            geographyOnly.IsChecked = true;
+            geographyOnly_Checked(sender, e);
         }
     }
 }

@@ -129,14 +129,14 @@
             Grid.Column="1"
             Width="179"
             Height="17"
-            Margin="238.094,352,0,0"
+            Margin="202,341,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top" />
         <Button
             x:Name="CreateDatabaseButton"
             Grid.Column="1"
             Width="179"
-            Margin="238.094,352,0,0"
+            Margin="202,341,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="CreateDatabaseButton_Click"
@@ -165,7 +165,7 @@
             Opacity="0.25" />
         <Button
             Width="75"
-            Margin="10,352,0,0"
+            Margin="10,338,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="Log_Click"
@@ -300,5 +300,12 @@
             VerticalAlignment="Top"
             Checked="geographyOnly_Checked"
             Content="Export Geography Only" />
+        <CheckBox
+            x:Name="polyToClipboard"
+            Grid.Column="1"
+            Margin="192,224,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Export Polygon to Clipboard" Checked="polyToClipboard_Checked" />
     </Grid>
 </Window>

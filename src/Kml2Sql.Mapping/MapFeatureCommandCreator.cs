@@ -2,8 +2,10 @@
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Kml2Sql.Mapping
@@ -40,11 +42,11 @@ namespace Kml2Sql.Mapping
         {
             var columnNames = mapFeature.Data.Keys.Select(x => config.GetColumnName(x)).ToArray();
             string columnText = GetColumnText(columnNames);
-            string parameters = GetParameters(mapFeature, useParameters, columnNames);
             StringBuilder query = new StringBuilder();
             query.Append(ParseCoordinates(mapFeature, config, declareVariables));
             if (!config.GeographyOnly)
             {
+                string parameters = GetParameters(mapFeature, useParameters, columnNames);
                 query.Append(string.Format($"INSERT INTO {config.TableName}({config.IdColumnName}, {config.NameColumnName}, {columnText} {config.PlacemarkColumnName})"));
                 query.Append(Environment.NewLine);
                 query.Append($"VALUES({parameters} @placemark);");
@@ -101,11 +103,13 @@ namespace Kml2Sql.Mapping
             else
             {
                 commandString.Append(ParseCoordinatesGeometry(mapFeature, config, declareVariables));
-                if (declareVariables)
+                if (!config.PolygonToClipboard)
                 {
-                    commandString.Append("DECLARE @placemark geometry;" + Environment.NewLine);
+                    if (declareVariables)
+                        commandString.Append("DECLARE @placemark geometry;" + Environment.NewLine);
+
+                    commandString.Append("SET @placemark = @validGeom;" + Environment.NewLine);
                 }
-                commandString.Append("SET @placemark = @validGeom;" + Environment.NewLine);
             }
             return commandString.ToString();
         }
@@ -154,22 +158,35 @@ namespace Kml2Sql.Mapping
         private static string CreatePolygon(MapFeature mapFeature, Kml2SqlConfig config, bool declareVariables)
         {
             var sb = new StringBuilder();
-            if (declareVariables)
+
+
+            if (!config.PolygonToClipboard)
             {
-                sb.Append("DECLARE @geom geometry;" + Environment.NewLine);
+                if (declareVariables)
+                    sb.Append("DECLARE @geom geometry;" + Environment.NewLine);
+
+                sb.Append("SET @geom = geometry::STPolyFromText('");
             }
-            sb.Append("SET @geom = geometry::STPolyFromText('POLYGON((");
+
+            sb.Append("POLYGON((");
+
             sb.Append(GetOuterRingSql(mapFeature.Coordinates, config));
             foreach (Vector[] innerCoordinates in mapFeature.InnerCoordinates)
             {
                 sb.Append(GetInnerRingSql(innerCoordinates, config));
             }
-            sb.Append(@"))', " + config.Srid + @").MakeValid();" + Environment.NewLine);
-            if (declareVariables)
+            sb.Append(@"))");
+
+            if (!config.PolygonToClipboard)
             {
-                sb.Append("DECLARE @validGeom geometry;" + Environment.NewLine);
+                sb.Append("'");
+                sb.Append(", " + config.Srid + @").MakeValid();" + Environment.NewLine);
+                if (declareVariables)
+                {
+                    sb.Append("DECLARE @validGeom geometry;" + Environment.NewLine);
+                }
+                sb.Append("SET @validGeom = @geom.MakeValid().STUnion(@geom.STStartPoint());");
             }
-            sb.Append("SET @validGeom = @geom.MakeValid().STUnion(@geom.STStartPoint());");
             return sb.ToString();
         }
 

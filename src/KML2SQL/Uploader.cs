@@ -38,7 +38,7 @@ namespace KML2SQL
             OnProgressChange = onChange;
         }
 
-        public Uploader(string fileStream, Kml2SqlConfig configuration, Progress<ProgressReoprt> onChange)
+        public Uploader(string fileStream, Kml2SqlConfig configuration, Progress<ProgressReoprt> onChange = null)
             : this(fileStream, configuration)
         {
             OnProgressChange = onChange;
