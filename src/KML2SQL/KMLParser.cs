@@ -9,7 +9,7 @@ namespace KML2SQL
     {
         public static Kml Parse(string filePath)
         {
-            using (var sr = new StreamReader(filePath))
+            using (StreamReader sr = new StreamReader(filePath))
             {
                 KmlFile file = KmlFile.Load(sr);
                 Kml kml = file.Root as Kml;

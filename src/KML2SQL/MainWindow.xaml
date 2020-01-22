@@ -306,6 +306,7 @@
             Margin="192,224,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Export Polygon to Clipboard" Checked="polyToClipboard_Checked" />
+            Checked="polyToClipboard_Checked"
+            Content="Export Polygon to Clipboard" />
     </Grid>
 </Window>

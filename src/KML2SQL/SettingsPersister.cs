@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using Newtonsoft.Json;
+using System.IO;
 
 namespace KML2SQL
 {
@@ -11,7 +12,7 @@ namespace KML2SQL
         {
             lock (_sync)
             {
-                var settingsText = Newtonsoft.Json.JsonConvert.SerializeObject(settings);
+                string settingsText = JsonConvert.SerializeObject(settings);
                 File.WriteAllText(FileName, settingsText);
             }
         }
@@ -24,8 +25,8 @@ namespace KML2SQL
                 {
                     try
                     {
-                        var settingsText = File.ReadAllText(FileName);
-                        var settings = Newtonsoft.Json.JsonConvert.DeserializeObject<Settings>(settingsText);
+                        string settingsText = File.ReadAllText(FileName);
+                        Settings settings = JsonConvert.DeserializeObject<Settings>(settingsText);
                         return settings;
                     }
                     catch

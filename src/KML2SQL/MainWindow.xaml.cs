@@ -122,7 +122,7 @@ namespace KML2SQL
                     }
                     else
                     {
-                        var fileLoc = saveScriptTo.Text;
+                        string fileLoc = saveScriptTo.Text;
                         await Task.Run(() =>
                         {
                             Uploader uploader = new Uploader(kmlFile, config, progresss);
@@ -162,8 +162,8 @@ namespace KML2SQL
 
         private void WriteErrorLog(Exception ex)
         {
-            var logFileName = "log_" + DateTime.Now.ToString("yyyy-MM-dd-hh-mm-ss-ffff") + ".txt";
-            var fullPath = System.IO.Path.Combine(Utility.GetApplicationFolder(), logFileName);
+            string logFileName = "log_" + DateTime.Now.ToString("yyyy-MM-dd-hh-mm-ss-ffff") + ".txt";
+            string fullPath = System.IO.Path.Combine(Utility.GetApplicationFolder(), logFileName);
             File.WriteAllText(fullPath, ex.ToString());
         }
 
@@ -195,18 +195,20 @@ namespace KML2SQL
 
         private void SaveSettings()
         {
-            var settings = new Settings();
-            settings.DatabaseName = databaseNameBox.Text;
-            settings.ServerName = serverNameBox.Text;
-            settings.KMLFileName = KMLFileLocationBox.Text;
-            settings.TableName = tableBox.Text;
-            settings.ShapeColumnName = columnNameBox.Text;
-            settings.Login = userNameBox.Text;
-            settings.SRID = sridBox.Text;
-            settings.SRIDEnabled = sridCheckBox.IsChecked.Value;
-            settings.Geography = geographyMode.IsChecked.Value;
-            settings.UseIntegratedSecurity = integratedSecurityCheckbox.IsChecked.Value;
-            settings.FixBrokenPolygons = fixBrokenPolygons.IsChecked.Value;
+            Settings settings = new Settings
+            {
+                DatabaseName = databaseNameBox.Text,
+                ServerName = serverNameBox.Text,
+                KMLFileName = KMLFileLocationBox.Text,
+                TableName = tableBox.Text,
+                ShapeColumnName = columnNameBox.Text,
+                Login = userNameBox.Text,
+                SRID = sridBox.Text,
+                SRIDEnabled = sridCheckBox.IsChecked.Value,
+                Geography = geographyMode.IsChecked.Value,
+                UseIntegratedSecurity = integratedSecurityCheckbox.IsChecked.Value,
+                FixBrokenPolygons = fixBrokenPolygons.IsChecked.Value
+            };
             SettingsPersister.Persist(settings);
         }
 
@@ -247,8 +249,7 @@ namespace KML2SQL
             }
             else
             {
-                int srid;
-                if (int.TryParse(sridBox.Text, out srid))
+                if (int.TryParse(sridBox.Text, out int srid))
                     return srid;
                 else
                     MessageBox.Show("SRID must be a valid four digit number");

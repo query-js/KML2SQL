@@ -1,9 +1,20 @@
-﻿<Window x:Class="KML2SQL.About"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        ResizeMode="NoResize"
-        Title="About" Height="412.1" Width="782">
+﻿<Window
+    x:Class="KML2SQL.About"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="About"
+    Width="782"
+    Height="412.1"
+    ResizeMode="NoResize">
     <Grid>
-        <TextBlock x:Name="AboutBox" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="364" Width="756" />
+        <TextBlock
+            x:Name="AboutBox"
+            Width="756"
+            Height="364"
+            Margin="10,10,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Text="TextBlock"
+            TextWrapping="Wrap" />
     </Grid>
 </Window>

@@ -17,7 +17,7 @@ namespace KML2SQL.Updates
 
         public static async Task CheckForNewVersion()
         {
-            var settings = SettingsPersister.Retrieve();
+            Settings settings = SettingsPersister.Retrieve();
             if (CheckForUpdates(settings))
             {
                 settings.UpdateInfo.LastCheckedForUpdates = DateTime.Now;
@@ -25,12 +25,12 @@ namespace KML2SQL.Updates
                 HttpResponseMessage response = await client.GetAsync(apiUrl);
                 if (response.IsSuccessStatusCode)
                 {
-                    var latestVersion = await GetLatestVersion(response);
-                    var thisVersion = SemVersion.Parse(GetCurrentVersion());
+                    SemVersion latestVersion = await GetLatestVersion(response);
+                    SemVersion thisVersion = SemVersion.Parse(GetCurrentVersion());
                     if (latestVersion > thisVersion && ShouldNag(settings, latestVersion))
                     {
                         settings.UpdateInfo.LastTimeNagged = DateTime.Now;
-                        var mbResult = MessageBox.Show(
+                        MessageBoxResult mbResult = MessageBox.Show(
                             "A new version is availbe. Press 'Yes' to go to the download page, Cancel to skip, or 'No' to not be reminded unless an even newer version comes out.",
                             "New Version Available!",
                             MessageBoxButton.YesNoCancel);

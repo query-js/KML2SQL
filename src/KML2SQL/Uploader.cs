@@ -20,7 +20,7 @@ namespace KML2SQL
 
         public Uploader(string filePath, Kml2SqlConfig configuration)
         {
-            using (var stream = File.OpenRead(filePath))
+            using (FileStream stream = File.OpenRead(filePath))
             {
                 Mapper = new Kml2SqlMapper(stream, configuration);
             }
@@ -48,7 +48,7 @@ namespace KML2SQL
 
         public void Upload(string connectionString, bool dropExistingTable)
         {
-            using (var conn = new SqlConnection(connectionString))
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 Upload(conn, dropExistingTable);
             }
@@ -76,8 +76,8 @@ namespace KML2SQL
                 }
                 ReportProgress("Creating Table", 0);
                 CreateTable(connection);
-                var mapFeatures = Mapper.GetMapFeatures().ToArray();
-                for (var i = 0; i < mapFeatures.Length; i++)
+                MapFeature[] mapFeatures = Mapper.GetMapFeatures().ToArray();
+                for (int i = 0; i < mapFeatures.Length; i++)
                 {
                     ReportProgress(GetProgressMessage(mapFeatures[i]), GetPercentage(i + 1, mapFeatures.Length));
                     sqlCommand = mapFeatures[i].GetInsertCommand();
@@ -98,7 +98,7 @@ namespace KML2SQL
 
         private static string GetProgressMessage(MapFeature mf)
         {
-            var message = "Uploading Placemark " + mf.Id;
+            string message = "Uploading Placemark " + mf.Id;
             if (mf.Name != mf.Id.ToString())
             {
                 message += $" ({mf.Name})";
@@ -108,7 +108,7 @@ namespace KML2SQL
 
         public string GetScript()
         {
-            var sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             sb.Append(Mapper.GetCreateTableScript());
             sb.Append(Mapper.GetCombinedInsertCommands());
             if (OnProgressChange != null)
@@ -120,22 +120,24 @@ namespace KML2SQL
 
         private static int GetPercentage(int current, int total)
         {
-            var percentage = ((double)current / total) * 100;
+            double percentage = ((double)current / total) * 100;
             percentage = Math.Floor(percentage);
             return Math.Min((int)percentage, 99);
         }
 
         public void CreateTable(SqlConnection connection)
         {
-            var tableCommand = Mapper.GetCreateTableCommand(connection);
+            SqlCommand tableCommand = Mapper.GetCreateTableCommand(connection);
             tableCommand.ExecuteNonQuery();
         }
 
         public void DropTable(SqlConnection connection)
         {
             string dropCommandString = String.Format("DROP TABLE {0};", Mapper.Configuration.TableName);
-            var dropCommand = new SqlCommand(dropCommandString, connection);
-            dropCommand.CommandType = System.Data.CommandType.Text;
+            SqlCommand dropCommand = new SqlCommand(dropCommandString, connection)
+            {
+                CommandType = System.Data.CommandType.Text
+            };
             dropCommand.ExecuteNonQuery();
         }
 
@@ -143,9 +145,11 @@ namespace KML2SQL
         {
             if (OnProgressChange != null)
             {
-                var report = new ProgressReoprt();
-                report.Message = message;
-                report.PercentDone = percentage;
+                ProgressReoprt report = new ProgressReoprt
+                {
+                    Message = message,
+                    PercentDone = percentage
+                };
                 OnProgressChange.Report(report);
             }
         }
