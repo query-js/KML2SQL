@@ -216,3 +216,4 @@ pip-log.txt
 .mr.developer.cfg
 
 packages
+/src/.vs/KML2SQL/v16/Server/sqlite3

@@ -25,15 +25,10 @@ namespace KML2SQL
 
         public static string GetDefaultScriptSaveLoc()
         {
-            var path = Path.Combine(
+            return Path.Combine(
                 Environment.GetFolderPath(Environment.SpecialFolder.Desktop),
-                "Kml2Sql.sql"
+                "script.sql"
             );
-            if (!Directory.Exists(path))
-            {
-                Directory.CreateDirectory(path);
-            }
-            return path;
         }
     }
 }

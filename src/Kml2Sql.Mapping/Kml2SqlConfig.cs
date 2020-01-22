@@ -41,6 +41,8 @@ namespace Kml2Sql.Mapping
 
         private Dictionary<string, string> ColumnNameMap = new Dictionary<string, string>();
 
+        public bool GeographyOnly { get; set; }
+
         /// <summary>
         /// Change SQL column name of placemark data.
         /// </summary>

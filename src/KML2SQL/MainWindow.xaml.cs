@@ -108,7 +108,7 @@ namespace KML2SQL
                         AlertFailure(p.Exception);
                         logger.AddToLog(p.Exception);
                         logger.WriteOut();
-                        CreateDatabaseButton.Visibility = Visibility.Visible;                  
+                        CreateDatabaseButton.Visibility = Visibility.Visible;
                     }
                     if (p.PercentDone == 100)
                     {
@@ -119,7 +119,7 @@ namespace KML2SQL
                 var kmlFile = KMLFileLocationBox.Text;
                 if (tabControl.SelectedIndex == 0)
                 {
-                    await Task.Run(() => 
+                    await Task.Run(() =>
                     {
                         var uploader = new Uploader(kmlFile, config, progresss);
                         uploader.Upload(connectionString, dropTable);
@@ -135,11 +135,11 @@ namespace KML2SQL
                         File.WriteAllText(fileLoc, script);
                     });
                 }
-                
+
             }
             catch (Exception ex)
             {
-                CreateDatabaseButton.Visibility = Visibility.Visible;                
+                CreateDatabaseButton.Visibility = Visibility.Visible;
                 logger.AddToLog(ex);
                 AlertFailure(ex);
             }
@@ -170,8 +170,12 @@ namespace KML2SQL
 
         private Kml2SqlConfig GetConfig()
         {
-            config = new Kml2SqlConfig();
-            config.GeoType = geographyMode.IsChecked != null && geographyMode.IsChecked.Value ? PolygonType.Geography : PolygonType.Geometry;
+            config = new Kml2SqlConfig
+            {
+                GeoType = geographyMode.IsChecked != null && geographyMode.IsChecked.Value ? PolygonType.Geography : PolygonType.Geometry,
+                GeographyOnly = geographyOnly.IsChecked != null ? geographyOnly.IsChecked.Value : false
+            };
+
             config.Srid = ParseSRID(config.GeoType);
             config.TableName = tableBox.Text;
             config.PlacemarkColumnName = columnNameBox.Text;
@@ -254,7 +258,7 @@ namespace KML2SQL
             myOpenFileDialog.InitialDirectory = Environment.SpecialFolder.MyDocuments.ToString();
             myOpenFileDialog.Filter = "KML Files (*.kml|*.kml|All Files (*.*)|*.*";
             myOpenFileDialog.FileName = "myFile.kml";
-            Nullable<bool> result = myOpenFileDialog.ShowDialog();
+            bool? result = myOpenFileDialog.ShowDialog();
             if (result == true)
             {
                 try
@@ -320,5 +324,12 @@ namespace KML2SQL
             }
         }
 
+        private void geographyOnly_Checked(object sender, RoutedEventArgs e)
+        {
+            if (geographyOnly.IsChecked.HasValue)
+            {
+                databaseNameBox.IsEnabled = tableBox.IsEnabled = columnNameBox.IsEnabled = dropExisting.IsEnabled = !geographyOnly.IsChecked.Value;
+            }
+        }
     }
 }

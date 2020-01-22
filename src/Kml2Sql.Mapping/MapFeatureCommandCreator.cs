@@ -33,9 +33,9 @@ namespace Kml2Sql.Mapping
         }
 
         internal static string CreateCommandQuery(
-            MapFeature mapFeature, 
-            Kml2SqlConfig config, 
-            bool useParameters = true, 
+            MapFeature mapFeature,
+            Kml2SqlConfig config,
+            bool useParameters = true,
             bool declareVariables = true)
         {
             var columnNames = mapFeature.Data.Keys.Select(x => config.GetColumnName(x)).ToArray();
@@ -43,9 +43,12 @@ namespace Kml2Sql.Mapping
             string parameters = GetParameters(mapFeature, useParameters, columnNames);
             StringBuilder query = new StringBuilder();
             query.Append(ParseCoordinates(mapFeature, config, declareVariables));
-            query.Append(string.Format($"INSERT INTO {config.TableName}({config.IdColumnName}, {config.NameColumnName}, {columnText} {config.PlacemarkColumnName})"));
-            query.Append(Environment.NewLine);
-            query.Append($"VALUES({parameters} @placemark);");
+            if (!config.GeographyOnly)
+            {
+                query.Append(string.Format($"INSERT INTO {config.TableName}({config.IdColumnName}, {config.NameColumnName}, {columnText} {config.PlacemarkColumnName})"));
+                query.Append(Environment.NewLine);
+                query.Append($"VALUES({parameters} @placemark);");
+            }
             return query.ToString();
         }
 
@@ -73,8 +76,8 @@ namespace Kml2Sql.Mapping
             }
             else
             {
-                var joinedData = string.Join(", ", mapFeature.Data.Values.Select(x=> "'" + x.Replace("'","") + "'"));
-                parameters = $"{mapFeature.Id}, '{mapFeature.Name.Replace("'","''")}', {joinedData}";
+                var joinedData = string.Join(", ", mapFeature.Data.Values.Select(x => "'" + x.Replace("'", "") + "'"));
+                parameters = $"{mapFeature.Id}, '{mapFeature.Name.Replace("'", "''")}', {joinedData}";
                 if (mapFeature.Data.Values.Count > 0)
                 {
                     parameters += ", ";
@@ -92,7 +95,7 @@ namespace Kml2Sql.Mapping
                 if (declareVariables)
                 {
                     commandString.Append("DECLARE @placemark geography;" + Environment.NewLine);
-                }                
+                }
                 commandString.Append("SET @placemark = @validGeo;" + Environment.NewLine);
             }
             else
@@ -101,7 +104,7 @@ namespace Kml2Sql.Mapping
                 if (declareVariables)
                 {
                     commandString.Append("DECLARE @placemark geometry;" + Environment.NewLine);
-                }                
+                }
                 commandString.Append("SET @placemark = @validGeom;" + Environment.NewLine);
             }
             return commandString.ToString();
@@ -124,7 +127,7 @@ namespace Kml2Sql.Mapping
             if (declareVariables)
             {
                 sb.Append(@"DECLARE @validGeom geometry;" + Environment.NewLine);
-            }            
+            }
             sb.Append("SET @validGeom = geometry::STPointFromText('POINT (");
             sb.Append(mapFeature.Coordinates[0].Longitude + " " + mapFeature.Coordinates[0].Latitude);
             sb.Append(@")', " + config.Srid + @");" + Environment.NewLine);
@@ -137,7 +140,7 @@ namespace Kml2Sql.Mapping
             if (declareVariables)
             {
                 sb.Append("DECLARE @validGeom geometry;" + Environment.NewLine);
-            }            
+            }
             sb.Append("SET @validGeom = geometry::STLineFromText('LINESTRING (");
             foreach (Vector coordinate in mapFeature.Coordinates)
             {
@@ -154,7 +157,7 @@ namespace Kml2Sql.Mapping
             if (declareVariables)
             {
                 sb.Append("DECLARE @geom geometry;" + Environment.NewLine);
-            }            
+            }
             sb.Append("SET @geom = geometry::STPolyFromText('POLYGON((");
             sb.Append(GetOuterRingSql(mapFeature.Coordinates, config));
             foreach (Vector[] innerCoordinates in mapFeature.InnerCoordinates)
@@ -165,7 +168,7 @@ namespace Kml2Sql.Mapping
             if (declareVariables)
             {
                 sb.Append("DECLARE @validGeom geometry;" + Environment.NewLine);
-            }            
+            }
             sb.Append("SET @validGeom = @geom.MakeValid().STUnion(@geom.STStartPoint());");
             return sb.ToString();
         }
@@ -212,7 +215,7 @@ namespace Kml2Sql.Mapping
             if (declare)
             {
                 commandString.Append("DECLARE @validGeo geography;");
-            }            
+            }
             commandString.Append("SET @validGeo = geography::STGeomFromText(@validGeom.STAsText(), " + config.Srid + @").MakeValid();");
             return commandString.ToString();
         }

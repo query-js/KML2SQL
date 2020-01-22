@@ -26,7 +26,7 @@ namespace Kml2Sql.Mapping
             if (configuration != null)
             {
                 Configuration = configuration;
-            }           
+            }
         }
 
         public Kml2SqlMapper(Stream fileStream)
@@ -111,15 +111,19 @@ namespace Kml2Sql.Mapping
         /// <returns>SQL Script</returns>
         public string GetCreateTableScript()
         {
+            if (Configuration.GeographyOnly)
+                return string.Empty;
+
             StringBuilder sb = new StringBuilder();
-            sb.Append(String.Format("CREATE TABLE [{0}] (", Configuration.TableName));
+            sb.Append(string.Format("CREATE TABLE [{0}] (", Configuration.TableName));
             sb.Append($"[{Configuration.IdColumnName}] INT NOT NULL PRIMARY KEY,");
             sb.Append($"[{Configuration.NameColumnName}] VARCHAR(255),");
             foreach (var columnName in GetColumnNames().Select(Configuration.GetColumnName))
             {
-                sb.Append(String.Format("[{0}] VARCHAR(max), ", columnName));
+                sb.Append(string.Format("[{0}] VARCHAR(max), ", columnName));
             }
-            sb.Append(String.Format("[{0}] [sys].[{1}] NOT NULL);", Configuration.PlacemarkColumnName, Configuration.GeoType));
+
+            sb.Append(string.Format("[{0}] [sys].[{1}] NOT NULL);", Configuration.PlacemarkColumnName, Configuration.GeoType));
             return sb.ToString();
         }
 
@@ -131,6 +135,6 @@ namespace Kml2Sql.Mapping
         private IEnumerable<string> GetColumnNames()
         {
             return _mapFeatures.SelectMany(x => x.Data.Keys).Distinct();
-        }        
+        }
     }
 }
