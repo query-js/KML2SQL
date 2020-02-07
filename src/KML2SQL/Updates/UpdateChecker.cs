@@ -16,9 +16,13 @@ namespace KML2SQL.Updates
         private static readonly string apiUrl = $"{Uri.UriSchemeHttps}{Uri.SchemeDelimiter}api.github.com/repos/query-js/KML2SQL/releases/latest";
         private static readonly string downloadUrl = $"{Uri.UriSchemeHttps}{Uri.SchemeDelimiter}github.com/query-js/KML2SQL/releases";
 
-        public static async Task CheckForNewVersion()
+        public static async Task CheckForNewVersion(bool isStartup, bool forceUpdate = false)
         {
             Settings settings = SettingsPersister.Retrieve();
+
+            if (forceUpdate)
+                settings.UpdateInfo = null;
+
             if (CheckForUpdates(settings))
             {
                 settings.UpdateInfo.LastCheckedForUpdates = DateTime.Now;
@@ -46,8 +50,16 @@ namespace KML2SQL.Updates
                             settings.UpdateInfo.DontNag = true;
                         }
                     }
+                    else if (!isStartup)
+                    {
+                        MessageBox.Show("Your app is fully updated", "No updates found", MessageBoxButton.OK, MessageBoxImage.Information);
+                    }
                 }
                 SettingsPersister.Persist(settings);
+            }
+            else if (!isStartup)
+            {
+                MessageBox.Show("Your app is fully updated", "No updates found", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
 

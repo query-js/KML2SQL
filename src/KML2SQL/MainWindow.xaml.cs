@@ -31,7 +31,7 @@ namespace KML2SQL
                 Directory.CreateDirectory(Utility.GetApplicationFolder());
             saveScriptTo.Text = Utility.GetDefaultScriptSaveLoc();
             RestoreSettings();
-            Task.Run(UpdateChecker.CheckForNewVersion);
+            Task.Run(() => UpdateChecker.CheckForNewVersion(true));
         }
 
         private void ResetUploadButton()
@@ -358,6 +358,11 @@ namespace KML2SQL
         {
             geographyOnly.IsChecked = true;
             geographyOnly_Checked(sender, e);
+        }
+
+        private async void checkForUpdates_button_Click(object sender, RoutedEventArgs e)
+        {
+            await UpdateChecker.CheckForNewVersion(false, true);
         }
     }
 }

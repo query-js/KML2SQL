@@ -17,6 +17,15 @@ namespace KML2SQL
             }
         }
 
+        public static void DeleteSettings()
+        {
+            lock (_sync)
+            {
+                if (File.Exists(FileName))
+                    File.Delete(FileName);
+            }
+        }
+
         public static Settings Retrieve()
         {
             lock (_sync)
